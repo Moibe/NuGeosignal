@@ -1,0 +1,38 @@
+.main_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+
+
+
+@media screen and (max-width: 767px) {
+.main_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.main_row {
+    flex-direction: column;
+}
+
+.main_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 19px;
+
+}
+
+.glass2 {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+}

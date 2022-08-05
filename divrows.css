@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Esto sirve para todos:  */
+
+.todo{
+    position: static; 
+    width:100%;
+    height: 100vh;
+    border: 0px solid rgb(238, 11, 11);
+    /* z-index: 1; */
+    /* overflow-x: hidden;
+    overflow-y: hidden; */
+}
+
+div{
+    /* display: block; */
+    border: 0px solid rgb(235, 10, 10);
+   /*  align-items: center !important;
+    justify-content: center !important; */
+    }
+
+br {
+    content: "";
+    margin: 2em;
+    display: block;
+    font-size: 24%;
+    outline: red;
+    }
+    
+h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color:    rgb(245, 11, 11);
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-left: 5%;
+}
+
+.main_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    border: 4px solid rgb(236, 20, 207);
+}
+
+#query{
+    border: 0px solid rgb(240, 12, 12);
+    z-index: 1; 
+    position:absolute;
+    top: 40%;  
+    left: 0%; 
+    text-align: center;
+    width: 100%;    
+    padding: 1px 1px 1px 1px;
+    right: 2%;
+    z-index: 1;
+}
+
+#mensajes{
+    width: 50%; 
+    left: 25%;
+    margin-left: 25%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    /* letter-spacing: 1px; */
+    color: rgb(68, 50, 226);
+    /* Características de la ventana. */
+    background: rgba(125, 249, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    border: 1px solid rgba(147, 41, 235, 0.18);
+    }
+
+#writing_area{
+    /* Fuente */
+font-size: 1rem;
+font-weight: bold;
+font-family: 'Roboto', sans-serif;
+letter-spacing: 1px;
+color: rgb(20, 8, 92);
+
+}
+
+input[type=text]{
+    background-color: #e052bd;
+    width: 80%; 
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 3px;
+    color: #fff;
+    border:none;
+    /* background-image: url(lupa.jpg); */
+    background-position: 1rem center;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 1rem 1rem 1rem 2rem;
+    }
+
+    input[type=button]{
+        background-color: #9a26dd;
+        width: 30%; 
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 3px;
+        color: #fff;
+        border:none;
+        padding-top: 5px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        float: center;
+    }
+
+    #btnBuscar{
+        justify-content: center;
+        align-items: center;
+        margin-left: 33%;
+        }
+       
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+    opacity:  1;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+    opacity:  1;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #fff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+  }
+
+.cuerpo {
+position: relative;
+display: flex;
+flex-direction: column;
+height: 80%;
+border: 1px solid rgb(60, 20, 236);
+}
+
+.pie {
+display: flex;
+flex-direction: column;
+height: 10%;
+}
+
+#map{
+    position:relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0%;  
+    left: 0%; 
+    }
+
+
+@media screen and (max-width: 767px) {
+    /* Dispositivos Móviles */
+
+
+#titulo{
+    border: 0px solid rgb(20, 236, 31);
+    position:absolute;
+    top: 1%;  
+    left: 0%; 
+    z-index: 1;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: rgb(235, 46, 194);
+    font-weight: 600;
+}
+
+
+
+#glassDisplay {
+border: 3px solid rgb(179, 255, 0);   
+z-index: 1; 
+position:absolute;
+top: 10%;  
+left: 5%; 
+/* Medidas */
+height: 80%;
+width: 70%;
+margin-left: 5%;
+/* margin-right: 10%; */
+    /* Lo que tenía container */
+display: flex;
+flex-direction: column;
+overflow: hidden;
+/* Alineaciones textuales. */
+justify-content: center;
+align-items: center;
+/* Paddings */
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+
+/* Características de la ventana. */
+background: rgba(125, 249, 255, 0.2);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(7px);
+-webkit-backdrop-filter: blur(7px);
+border-radius: 10px;
+border: 1px solid rgba(147, 41, 235, 0.18);
+
+
+}
+
+.blockDisplay {
+    border: 3px solid rgb(179, 255, 0);   
+    z-index: 1; 
+    position:absolute;
+    top: 0%;  
+    left: 0%; 
+    /* Medidas */
+    height: 100%;
+    width: 100%;
+    /* margin-top: 10px; */
+        /* Lo que tenía container */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Alineaciones textuales. */
+    justify-content: center;
+    align-items: center;
+
+    /* Características de la ventana. */
+    background: rgba(125, 249, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(147, 41, 235, 0.18);
+    }
+ 
+
+}
+
+@media screen and (min-width: 767px) {
+
+    /* Para escritorio:  */
+
+    input[type=submit]{
+        background-color: #9a26dd;
+        width: 10%; 
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 3px;
+        color: #fff;
+        border:none;
+        padding-top: 5px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        float: center;
+    }
+
+    #glassDisplay {
+        border: 0px solid rgb(179, 255, 0);   
+        z-index: 1; 
+        position:absolute;
+        top: 17%;  
+        left: 5%; 
+        /* Medidas */
+        height: 70%;
+        width: 80%;
+        margin-left: 5%;
+        /* margin-right: 10%; */
+        /* margin-top: 10px; */
+            /* Lo que tenía container */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        
+        /* Alineaciones textuales. */
+        justify-content: center;
+        align-items: center;
+        /* Paddings */
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        
+        /* Características de la ventana. */
+        background: rgba(125, 249, 255, 0.2);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(7px);
+        border-radius: 10px;
+        border: 1px solid rgba(147, 41, 235, 0.18);
+      
+        }
+
+        .blockDisplay {
+            border: 3px solid rgb(179, 255, 0);   
+            z-index: 1; 
+            position:absolute;
+            top: 0%;  
+            left: 0%; 
+            /* Medidas */
+            height: 100%;
+            width: 100%;
+            /* margin-top: 10px; */
+                /* Lo que tenía container */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            /* Alineaciones textuales. */
+            justify-content: center;
+            align-items: center;
+      
+            /* Características de la ventana. */
+            background: rgba(125, 249, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+            border-radius: 10px;
+            border: 1px solid rgba(147, 41, 235, 0.18);
+            }
+
+            #titulo{
+                border: 0px solid rgb(20, 236, 31);
+                position:absolute;
+                top: 5%;  
+                left: 0%; 
+                z-index: 1;
+                width: 100%;
+                height: 10%;
+                text-align: center;
+                /* transform: translate(-50%, -50%); */
+                font-family: 'Roboto', sans-serif;
+                font-size: 50px;
+                letter-spacing: 1px;
+                color: rgb(235, 46, 194);
+                font-weight: 600;
+            }
+
+
+}
