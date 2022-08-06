@@ -374,6 +374,17 @@ function registrarPosicion() {
         xhr.open("POST", "https://softwarehomework.com/es/checkout/", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
-        idd: 23
+        idd: "23"
         }));
+
+
+        /* let data = {idd: "barium"};
+
+        fetch("https://softwarehomework.com/es/checkout", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data)
+        }).then(res => {
+        console.log("Request complete! response:", res);
+        }); */
     }
