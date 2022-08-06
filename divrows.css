@@ -7,7 +7,7 @@
     width:100%;
     height: 100vh;
     border: 0px solid rgb(238, 11, 11);
-    /* z-index: 1; */
+   
     /* overflow-x: hidden;
     overflow-y: hidden; */
 }
@@ -54,8 +54,7 @@ h1{
     width: 100%;    
     padding: 1px 1px 1px 1px;
     right: 2%;
-    z-index: 1;
-}
+    }
 
 #mensajes{
     width: 50%; 
@@ -128,6 +127,7 @@ input[type=text]{
         justify-content: center;
         align-items: center;
         margin-left: 33%;
+        
         }
        
 
@@ -215,11 +215,9 @@ height: 10%;
     font-weight: 600;
 }
 
-
-
 #glassDisplay {
 border: 3px solid rgb(179, 255, 0);   
-z-index: 1; 
+z-index: 13; 
 position:absolute;
 top: 10%;  
 left: 5%; 
@@ -252,7 +250,7 @@ border: 1px solid rgba(147, 41, 235, 0.18);
 
 }
 
-.blockDisplay {
+#blockDisplay {
     border: 3px solid rgb(179, 255, 0);   
     z-index: 1; 
     position:absolute;
@@ -307,7 +305,7 @@ border: 1px solid rgba(147, 41, 235, 0.18);
 
     #glassDisplay {
         border: 0px solid rgb(179, 255, 0);   
-        z-index: 1; 
+        z-index: 13; 
         position:absolute;
         top: 17%;  
         left: 5%; 
@@ -341,7 +339,7 @@ border: 1px solid rgba(147, 41, 235, 0.18);
       
         }
 
-        .blockDisplay {
+        #blockDisplay {
             border: 3px solid rgb(179, 255, 0);   
             z-index: 1; 
             position:absolute;

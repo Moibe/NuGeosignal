@@ -13,14 +13,17 @@ buscar_delay = 10;
 mapear_delay = 9;
 requery_delay = 10;
 retry_delay = 3;
-remap_delay = 5; 
+//remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
+remap_delay = 10; 
+sell_delay = 15;
 
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
 
-
 const btnGlass = document.getElementById('btnGlass');
 let glass2Textrows = document.getElementById('writing_area');
+
+const blockDisplay = document.getElementById('blockDisplay');
 
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
@@ -33,9 +36,6 @@ const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = 'Iniciar';
 
 var iconFile = 'ico-cel.png';
-
- 
-
 
 // Elementos de la segunda sección:
 
@@ -124,7 +124,7 @@ function busquedaPaso2(){
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
     glass2Textrows.innerHTML = "";
-    console.log("Estoy escribiendo los pasos de Paso 2...")
+    console.log("Estoy escribiendo el Paso 2...")
    
     addTextRow("Leyendo antenas.", 1 ,"intro_uno");
     addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
@@ -177,33 +177,31 @@ function addTextRow(text, delay, id) {
 
 //onLoad:
 function registrarPosicion() {
+
+    //Usa watchPosition para mantener observando cambios en la locación.
+    //idRegistroPosicion = navigator.geolocation.watchPosition
     
-        idRegistroPosicion = navigator.geolocation.watchPosition(exitoRegistroPosicion, falloRegistroPosicion, {
+    idRegistroPosicion = navigator.geolocation.getCurrentPosition(exitoRegistroPosicion, falloRegistroPosicion, {
             enableHighAccuracy: true,
             maximumAge: 30000,
             timeout: 27000
         });
-        console.log("Si se habilitó...");
-        console.log(idRegistroPosicion)
- 
+       
     }
 
     function exitoRegistroPosicion(position){
         console.log("Registré la posición correctamente:")
         console.log(idRegistroPosicion)
+
         //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
         btnGlass.style.display = 'block';
         btnGlass.addEventListener('click', busquedaPaso2);
-
+        
         posicion_propia = position; 
         console.log("Esto es posicion_propia:");
         console.log(posicion_propia);
+            
         
-    
-        randomizado = getRndInteger(-10,10); 
-        console.log(randomizado)
-        console.log(position)
- 
     }
 
     function falloRegistroPosicion(){
@@ -217,6 +215,10 @@ function registrarPosicion() {
             
            locate_sample.style.display = 'none';
            registrarPosicion();
+
+           //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
+            btnGlass.style.display = 'block';
+            btnGlass.addEventListener('click', busquedaPaso2);
 
         }, retry_delay * 1000);
     }
@@ -246,7 +248,7 @@ function registrarPosicion() {
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
         glass2Textrows.innerHTML = "";
-        console.log("Estoy escribiendo los pasos de Paso 3:");
+        console.log("Estoy en el Paso 3:");
         addTextRow("Leyendo antenas.", 1 ,"intro_uno");
         addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
         addTextRow("Calculando posición.", 5 ,"intro_tres");
@@ -258,6 +260,16 @@ function registrarPosicion() {
            
             colocaMarcadores(posicion_propia);
             glassDisplay.style.display = 'none';
+            glass2Textrows.innerHTML = "";
+
+             setTimeout(() => {
+           
+                glassDisplay.style.display = 'block';
+                blockDisplay.style.display = 'block';
+                busquedaPaso4();
+               
+ 
+        }, sell_delay * 1000);
  
         }, remap_delay * 1000);
 
@@ -336,4 +348,32 @@ function registrarPosicion() {
             
             L.marker([point.lat, point.lng], {icon: myIcon}).addTo(map);
 
+    }
+
+    function busquedaPaso4(){
+
+    console.log("Estoy en el paso 4!!"); 
+    addTextRow("El servicio tiene un costo que se puede pagar de forma segura.", 1 ,"intro_uno");
+    addTextRow("Da click en el botón para obtener más información.", 3 ,"intro_dos");
+ 
+    setTimeout(() => {
+           
+        btnGlass.removeEventListener('click', busquedaPaso2);
+        btnGlass.addEventListener('click', goBuy);
+        btnGlass.value = 'Obtener Ubicación';
+        btnGlass.style.display = 'block';
+       
+//también puedes poner números directos como multiplicadores del delay y no necesariamente variables.
+}, 5 * 1000);
+
+    }
+
+    function goBuy(){
+        console.log("Hola, estoy en la función GoBuy!")
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://softwarehomework.com/es/checkout", true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify({
+        idd: 23
+        }));
     }
