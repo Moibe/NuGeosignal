@@ -371,7 +371,7 @@ function registrarPosicion() {
     function goBuy(){
         console.log("Hola, estoy en la función GoBuy!")
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://softwarehomework.com/es/checkout", true);
+        xhr.open("POST", "https://softwarehomework.com/es/checkout/", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
         idd: 23
