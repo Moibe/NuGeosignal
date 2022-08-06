@@ -12,6 +12,8 @@
     overflow-y: hidden; */
 }
 
+
+
 div{
     /* display: block; */
     border: 0px solid rgb(235, 10, 10);
@@ -191,6 +193,11 @@ height: 10%;
     height: 100%;
     top: 0%;  
     left: 0%; 
+    }
+
+    #forma_test{
+        z-index: 13; 
+        position:absolute;    
     }
 
 
