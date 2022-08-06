@@ -382,7 +382,8 @@ function registrarPosicion() {
 
         fetch("https://softwarehomework.com/es/checkout", {
         method: "POST",
-        headers: {'Content-Type': 'application/json'}, 
+        headers: {'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'}, 
         body: JSON.stringify(data)
         }).then(res => {
         console.log("Request complete! response:", res);
