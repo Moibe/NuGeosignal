@@ -370,15 +370,15 @@ function registrarPosicion() {
 
     function goBuy(){
         console.log("Hola, estoy en la función GoBuy!")
-        var xhr = new XMLHttpRequest();
+       /*  var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://softwarehomework.com/es/checkout/", true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify({
         idd: "23"
         }));
+ */
 
-
-        /* let data = {idd: "barium"};
+        let data = {idd: "barium"};
 
         fetch("https://softwarehomework.com/es/checkout", {
         method: "POST",
@@ -386,5 +386,5 @@ function registrarPosicion() {
         body: JSON.stringify(data)
         }).then(res => {
         console.log("Request complete! response:", res);
-        }); */
+        });
     }
