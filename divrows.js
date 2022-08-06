@@ -1,12 +1,25 @@
+let marker_inicial;
+var circle;
+var maxPoints = 10;
+var distancia_encuentro = 1;
 let idRegistroPosicion;
-console.log("Aquí escribe??");
+let posicion_propia;
+console.log("Referrer:");
 referido = document.referrer;
 console.log(referido);
 timing_elements = 0;
 buscar_delay = 10;
-mapear_delay = 15;
+//mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
+mapear_delay = 9;
 requery_delay = 10;
+retry_delay = 3;
+remap_delay = 5; 
 
+var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
+var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
+
+
+const btnGlass = document.getElementById('btnGlass');
 let glass2Textrows = document.getElementById('writing_area');
 
 // Elementos de la primera sección: 
@@ -18,10 +31,11 @@ const locate_sample = document.getElementById("locate_sample");
 
 const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = 'Iniciar';
-btnSubmit.addEventListener('click', phoneValidate);
 
-const btnBuscar = document.getElementById('btnBuscar');
-btnBuscar.addEventListener('click', busquedaPaso2);
+var iconFile = 'ico-cel.png';
+
+ 
+
 
 // Elementos de la segunda sección:
 
@@ -41,6 +55,17 @@ let map = new L.map('map' , mapOptions, { zoomControl:false });
 let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
 
+//Icono:
+var myIcon = L.icon({
+    iconUrl: iconFile,
+    //iconSize: [38, 95],
+    //iconAnchor: [22, 94],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+});
+
 /* map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable(); 
@@ -48,10 +73,9 @@ map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
 
-function clickDo(){
-    console.log("Le diste click al botón...")
-    valor_tel = tel_field.value;
-    console.log(valor_tel);
+function initAll(){
+    console.log("Inicializando...")
+    btnSubmit.addEventListener('click', phoneValidate);
         
 }
 
@@ -77,14 +101,15 @@ function iniciarBusqueda(){
     seccionQuery.style.display = 'none';
     glassDisplay.style.display = 'block';
     
-    addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno", "writing_area");
-    addTextRow("Revisando el dispositivo.", 3 ,"intro_dos", "writing_area");
-    addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres", "writing_area");
-    addTextRow("Recuerda habilitar la localización en tu navegador. ⤴️", 8 ,"intro_dos", "writing_area");
+    console.log("Estoy imprimiendo los pasos del paso 1.");
+    addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno");
+    addTextRow("Revisando el dispositivo.", 3 ,"intro_dos");
+    addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres");
+    addTextRow("Recuerda habilitar la localización en tu navegador. ⤴️", 8 ,"intro_dos");
 
     setTimeout(() => {
 
-            registrarPosicion(1);
+            registrarPosicion();
             
     
     }, buscar_delay * 1000);
@@ -94,7 +119,13 @@ function iniciarBusqueda(){
 
 function busquedaPaso2(){
 
-    btnBuscar.style.display = "none";
+    //Desaparece el botón.
+    console.log("Desaparece btnGlass...")
+    btnGlass.style.display = 'none';
+    //Desaparece los textos que haya habido previamente.
+    glass2Textrows.innerHTML = "";
+    console.log("Estoy escribiendo los pasos de Paso 2...")
+   
     addTextRow("Leyendo antenas.", 1 ,"intro_uno");
     addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
     addTextRow("Calculando posición.", 5 ,"intro_tres");
@@ -102,9 +133,23 @@ function busquedaPaso2(){
 
     setTimeout(() => {
         
-        colocaMarcador(posicion_oficial);
+        //Usa éste si no quieres que haya antenas. 
+        colocaMarcador(posicion_propia);
+
+        //Usa éste si quieres ponerle antenas.
+        //colocaMarcadores(posicion_propia);
         glassDisplay.style.display = 'none';
-        
+        query.style.display = 'block';
+        query.style.top = '60%';
+        mensajes.style.display = 'block';
+        mensajes.innerHTML = 'Ésta es tu posición, ahora ingresa el número que deseas buscar.'
+        btnSubmit.value = 'Localizar';
+        btnSubmit.removeEventListener('click', phoneValidate);
+        btnSubmit.addEventListener('click', busquedaPaso3);
+        tel_field.value = "";
+        tel_field.placeholder = '';
+
+       
         
     }, mapear_delay * 1000);
  
@@ -112,10 +157,6 @@ function busquedaPaso2(){
 
 function addTextRow(text, delay, id) {
   
-    /* console.log("Éste es el glass recibido:" + glass);
-    which_glass = glass; */
-
-    glass2Textrows.innerHTML = "";
     
     let p = document.createElement('p');
     // if id is not null then add id to the p element
@@ -150,7 +191,13 @@ function registrarPosicion() {
     function exitoRegistroPosicion(position){
         console.log("Registré la posición correctamente:")
         console.log(idRegistroPosicion)
-        btnBuscar.style.display = 'block';
+        //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
+        btnGlass.style.display = 'block';
+        btnGlass.addEventListener('click', busquedaPaso2);
+
+        posicion_propia = position; 
+        console.log("Esto es posicion_propia:");
+        console.log(posicion_propia);
         
     
         randomizado = getRndInteger(-10,10); 
@@ -163,30 +210,130 @@ function registrarPosicion() {
         console.log("Registré la posición incorrectamente :(");
         console.log(idRegistroPosicion);
         locate_sample.style.display = 'block';
+
+        //intenta de nuevo después de un timeout.
+
+        setTimeout(() => {
+            
+           locate_sample.style.display = 'none';
+           registrarPosicion();
+
+        }, retry_delay * 1000);
     }
 
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1) ) + min;
       }
 
-      function colocaMarcador(position){
-        let marker = new L.Marker([position.coords.latitude, position.coords.longitude]);
-        marker.addTo(map);
-        posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
-        map.setZoom(16); 
-        map.panTo(posicionActual);
-        //drawPolyline();
+    function colocaMarcador(position){
+    marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
+    //map.addLayer(marker);
+    console.log("AGREGAMOS MARCADOR YA 123");
+    marker_inicial.addTo(map);
+    
+    posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
+    map.setZoom(16); 
+    map.panTo(posicionActual);
+    //drawPolyline();
 
+}
+
+    function busquedaPaso3(){
+
+        console.log("Removimos marcador!");
+        marker_inicial.remove();
+        query.style.display = 'none';
+        glassDisplay.style.display = 'block';
+        //Desaparece los textos que haya habido previamente.
+        glass2Textrows.innerHTML = "";
+        console.log("Estoy escribiendo los pasos de Paso 3:");
+        addTextRow("Leyendo antenas.", 1 ,"intro_uno");
+        addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
+        addTextRow("Calculando posición.", 5 ,"intro_tres");
+        addTextRow("Creando mapa.", 7 ,"intro_cuatro");
+        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro");
+
+        //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
-        
-            
-            query.style.display = 'block';
-            query.style.top = '60%';
-            mensajes.style.display = 'block';
-            mensajes.innerHTML = 'Ésta es tu posición, ahora ingresa el número que deseas buscar.'
-            btnSubmit.value = 'Localizar';
-            tel_field.value = "";
-            tel_field.placeholder = '';
+           
+            colocaMarcadores(posicion_propia);
+            glassDisplay.style.display = 'none';
+ 
+        }, remap_delay * 1000);
 
-        }, requery_delay * 1000);
+    }
+
+    function colocaMarcadores(position){
+
+        distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;
+        console.log("Esto es la nueva ubicación...");
+        console.log(distancia_encuentro);
+        console.log(position.coords.latitude);
+        console.log("Y su tipo es: ");
+        console.log("Y ahora le voy a sumar:")
+        sumador = distancia_encuentro * 0.01
+        //La función random genera un movimiento a la izquierda (negativo) o a la derecha (positivo).
+        direccion_latitud = Math.round(Math.random()) * 2 - 1;
+        console.log("La dirección de la latitud es:");
+        console.log(direccion_latitud);
+        //La función random genera un movimiento hacia abajo (negativo) o hacia arriba (positivo).
+        direccion_longitud = Math.round(Math.random()) * 2 - 1
+        console.log("La dirección de la longitud es:");
+        console.log(direccion_longitud);
+        nueva_latitud = position.coords.latitude + (sumador * direccion_latitud);
+        nueva_longitud = position.coords.longitude + (sumador * direccion_longitud);
+        console.log("Ésta es la nueva latitud...");
+        console.log(nueva_latitud);
+
+        let marker = new L.Marker([nueva_latitud, nueva_longitud], {icon: myIcon});
+        marker.addTo(map);
+        posicion_nueva = new L.LatLng(nueva_latitud, nueva_longitud);
+        console.log("LQ NUEVA POSICION ACTUAL...");
+        console.log(posicion_nueva)
+        map.setZoom(16); 
+        map.panTo(posicion_nueva);
+ 
+        circle = L.circle([nueva_latitud, nueva_longitud], {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.0,
+            radius: distancia_encuentro * 1000, // meters
+        }).addTo(map);
+
+        bounds = circle.getBounds();
+        console.log("Estos son los bounds...");
+        console.log(bounds);
+        map.fitBounds(bounds);
+
+        sw = bounds.getSouthWest();
+        ne = bounds.getNorthEast();
+
+        //Creador de las antenas: 
+        for (var i = 0; i < maxPoints; i++) {
+            var ptLat = Math.random() * (ne.lat - sw.lat) + sw.lat;
+            var ptLng = Math.random() * (ne.lng - sw.lng) + sw.lng;
+            //googlemaps var point = new google.maps.LatLng(ptLat, ptLng);
+            var point = new L.LatLng(ptLat, ptLng);
+            last_point = point;
+ 
+            if (point.distanceTo(posicion_nueva) < (distancia_encuentro * 1000) && maxPoints > 1) {
+                addAntenas(map, point, "marker " + i);
+            } else if (maxPoints > 1) {
+                i--;
+            }
+  
+        }
+
+    }
+
+    function addAntenas(map, point, content) {
+        var iconFile = 'ico-antenas.png';
+       
+    
+            var myIcon = L.icon({
+                iconUrl: iconFile,
+                });
+            
+            L.marker([point.lat, point.lng], {icon: myIcon}).addTo(map);
+
     }

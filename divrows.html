@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
        
     </head>
-        <body>
+        <body onload="initAll()">
             <div class="todo">
                 <div class="encabezado">
                     <h1><img src="geosignal_logo.png" style="float:left; height:42px;">GeoSignal</h1>
@@ -29,7 +29,7 @@
 
                     <div id="glassDisplay" style="display: none;">
                         <div id="writing_area"></div>
-                        <input type="button" id="btnBuscar" value="Buscar" style="display: none;" />
+                        <input type="button" id="btnGlass" value="Buscar" style="display: none;" />
                         <img id="locate_sample" src="locate_sample.png" style="display: none;">
                     </div>
                     
