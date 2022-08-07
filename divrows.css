@@ -77,14 +77,13 @@ h1{
     border: 1px solid rgba(147, 41, 235, 0.18);
     }
 
-#writing_area{
+.fuentes{
     /* Fuente */
 font-size: 1rem;
 font-weight: bold;
 font-family: 'Roboto', sans-serif;
 letter-spacing: 1px;
 color: rgb(20, 8, 92);
-
 }
 
 input[type=text]{
@@ -125,11 +124,29 @@ input[type=text]{
         float: center;
     }
 
-    #btnGlass{
+    input[type=submit]{
+        background-color: #9a26dd;
+        width: 30%; 
+        text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 3px;
+        color: #fff;
+        border:none;
+        padding-top: 5px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        float: center;
+    }
+
+    .btnGlass{
         justify-content: center;
         align-items: center;
         margin-left: 33%;
-        
         }
        
 
@@ -195,10 +212,10 @@ height: 10%;
     left: 0%; 
     }
 
-    #forma_test{
-        z-index: 13; 
-        position:absolute;    
-    }
+/* #forma_test{
+    z-index: 13; 
+    position:absolute;    
+} */
 
 
 @media screen and (max-width: 767px) {
@@ -223,7 +240,7 @@ height: 10%;
 }
 
 #glassDisplay {
-border: 3px solid rgb(179, 255, 0);   
+border: 10px solid rgb(30, 130, 245);   
 z-index: 13; 
 position:absolute;
 top: 10%;  
@@ -290,28 +307,9 @@ border: 1px solid rgba(147, 41, 235, 0.18);
 @media screen and (min-width: 767px) {
 
     /* Para escritorio:  */
-
-    input[type=submit]{
-        background-color: #9a26dd;
-        width: 10%; 
-        text-align: center;
-        font-size: 1rem;
-        font-weight: bold;
-        font-family: 'Roboto', sans-serif;
-        letter-spacing: 3px;
-        color: #fff;
-        border:none;
-        padding-top: 5px;
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 5px;
-        border-radius: 4px;
-        cursor: pointer;
-        float: center;
-    }
-
+   
     #glassDisplay {
-        border: 0px solid rgb(179, 255, 0);   
+        border: 0px solid rgb(231, 38, 119);   
         z-index: 13; 
         position:absolute;
         top: 17%;  

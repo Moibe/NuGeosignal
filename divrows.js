@@ -21,7 +21,8 @@ var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distanc
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
 
 const btnGlass = document.getElementById('btnGlass');
-let glass2Textrows = document.getElementById('writing_area');
+let writingGlass = document.getElementById('writingGlass');
+let formaPago = document.getElementById('formaPago');
 
 const blockDisplay = document.getElementById('blockDisplay');
 
@@ -102,10 +103,10 @@ function iniciarBusqueda(){
     glassDisplay.style.display = 'block';
     
     console.log("Estoy imprimiendo los pasos del paso 1.");
-    addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno");
-    addTextRow("Revisando el dispositivo.", 3 ,"intro_dos");
-    addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres");
-    addTextRow("Recuerda habilitar la localización en tu navegador. ⤴️", 8 ,"intro_dos");
+    addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno", writingGlass);
+    addTextRow("Revisando el dispositivo.", 3 ,"intro_dos", writingGlass);
+    addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres", writingGlass);
+    addTextRow("Recuerda habilitar la localización en tu navegador. ⤴️", 8 ,"intro_dos", writingGlass);
 
     setTimeout(() => {
 
@@ -123,13 +124,14 @@ function busquedaPaso2(){
     console.log("Desaparece btnGlass...")
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
-    glass2Textrows.innerHTML = "";
+    textRowArea.innerHTML = "";
     console.log("Estoy escribiendo el Paso 2...")
    
-    addTextRow("Leyendo antenas.", 1 ,"intro_uno");
-    addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
-    addTextRow("Calculando posición.", 5 ,"intro_tres");
-    addTextRow("Creando mapa.", 7 ,"intro_cuatro");
+    addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
+    addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
+    addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
+    addTextRow("Calculando posición.", 5 ,"intro_tres", writingGlass);
+    addTextRow("Creando mapa.", 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
         
@@ -155,8 +157,9 @@ function busquedaPaso2(){
  
 }
 
-function addTextRow(text, delay, id) {
+function addTextRow(text, delay, id, writing_area) {
   
+    textRowArea = writing_area;
     
     let p = document.createElement('p');
     // if id is not null then add id to the p element
@@ -168,10 +171,10 @@ function addTextRow(text, delay, id) {
     // if delay is not 0 then add delay to the p element
     if (delay != 0) {
         setTimeout(() => {
-            glass2Textrows.appendChild(p);
+            textRowArea.appendChild(p);
         }, (timing_elements + delay) * 1000);
     } else {
-        glass2Textrows.appendChild(p);
+        textRowArea.appendChild(p);
     }
 }
 
@@ -247,20 +250,20 @@ function registrarPosicion() {
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
-        glass2Textrows.innerHTML = "";
+        textRowArea.innerHTML = "";
         console.log("Estoy en el Paso 3:");
-        addTextRow("Leyendo antenas.", 1 ,"intro_uno");
-        addTextRow("Leyendo frecuencia.", 3 ,"intro_dos");
-        addTextRow("Calculando posición.", 5 ,"intro_tres");
-        addTextRow("Creando mapa.", 7 ,"intro_cuatro");
-        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro");
+        addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
+        addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
+        addTextRow("Calculando posición.", 5 ,"intro_tres", writingGlass);
+        addTextRow("Creando mapa.", 7 ,"intro_cuatro", writingGlass);
+        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro", writingGlass);
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
            
             colocaMarcadores(posicion_propia);
             glassDisplay.style.display = 'none';
-            glass2Textrows.innerHTML = "";
+            textRowArea.innerHTML = "";
 
              setTimeout(() => {
            
@@ -353,15 +356,16 @@ function registrarPosicion() {
     function busquedaPaso4(){
 
     console.log("Estoy en el paso 4!!"); 
-    addTextRow("El servicio tiene un costo que se puede pagar de forma segura.", 1 ,"intro_uno");
-    addTextRow("Da click en el botón para obtener más información.", 3 ,"intro_dos");
+    formaPago.style.display = 'block';
+   
  
     setTimeout(() => {
            
-        btnGlass.removeEventListener('click', busquedaPaso2);
+        //Como todo lo hace la forma. Ya no necesitas reformatear éste botón.
+        /* btnGlass.removeEventListener('click', busquedaPaso2);
         btnGlass.addEventListener('click', goBuy);
         btnGlass.value = 'Obtener Ubicación';
-        btnGlass.style.display = 'block';
+        btnGlass.style.display = 'block'; */
        
 //también puedes poner números directos como multiplicadores del delay y no necesariamente variables.
 }, 5 * 1000);
