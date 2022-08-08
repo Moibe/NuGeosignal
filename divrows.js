@@ -4,6 +4,8 @@ let marker_inicial;
 var circle;
 var maxPoints = 10;
 var distancia_encuentro = 1;
+let nueva_latitud;
+let nueva_longitud;
 let idRegistroPosicion;
 let posicion_propia;
 console.log("Referrer:");
@@ -35,8 +37,10 @@ tel_field.placeholder = 'Escribe tu número para localizarte.';
 const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
+//Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = 'Iniciar';
+btnSubmit.addEventListener('click', startProcess);
 
 var iconFile = 'ico-cel.png';
 
@@ -78,35 +82,48 @@ map.zoomControl.disable(); */
 
 function initAll(){
     console.log("Inicializando...")
-    btnSubmit.addEventListener('click', phoneValidate);
-        
+}
+
+function startProcess(){
+    console.log("Estamos iniciando el proceso...");
+    if (phoneValidate() == true){
+        console.log("El teléfono fue válido...");
+        busquedaPaso1();
+    }
+    else{
+        console.log("El teléfono no fue válido...");
+    }
+
+   /*  if (paso == 1){
+        busquedaPaso1();
+    }
+    else{
+        busquedaPaso3();
+    } */
 }
 
 function phoneValidate(){
     
+    //Expresión regular que vamos a validar...
     var regExp = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+    //Obtención del teléfono del campo de teléfono.
     var phone = tel_field.value;
+
+    //Compara ambos...
     if (regExp.test(phone)){ 
-        
         mensajes.innerText= "Número válido";
-        console.log("Paso es...");
-        console.log(paso);
-        
-        if (paso == 1){
-            iniciarBusqueda();
-        }
-        else{
-            busquedaPaso3();
-        }
-        }
-      else{ 
+        console.log("El número es válido...");
+        return true;
+    }
+    else{ 
       mensajes.style.display = 'block';
-      mensajes.innerText= "Número NO válido"; 
+      mensajes.innerText= "Número no válido"; 
+      return false;
     }
   }
 
 
-function iniciarBusqueda(){
+function busquedaPaso1(){
    
     seccionQuery.style.display = 'none';
     glassDisplay.style.display = 'block';
@@ -126,9 +143,7 @@ function iniciarBusqueda(){
 }
 
 function busquedaPaso2(){
-
-    //Desaparece el botón.
-    console.log("Desaparece btnGlass...")
+    
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
     textRowArea.innerHTML = "";
@@ -145,7 +160,7 @@ function busquedaPaso2(){
         colocaMarcador(posicion_propia);
 
         //Usa éste si quieres ponerle antenas.
-        //colocaMarcadores(posicion_propia);
+        creaMapa(posicion_propia);
         glassDisplay.style.display = 'none';
         query.style.display = 'block';
         query.style.top = '60%';
@@ -184,75 +199,12 @@ function addTextRow(text, delay, id, writing_area) {
     }
 }
 
-//onLoad:
-function registrarPosicion() {
 
-    //Usa watchPosition para mantener observando cambios en la locación.
-    //idRegistroPosicion = navigator.geolocation.watchPosition
-    
-    idRegistroPosicion = navigator.geolocation.getCurrentPosition(exitoRegistroPosicion, falloRegistroPosicion, {
-            enableHighAccuracy: true,
-            maximumAge: 30000,
-            timeout: 27000
-        });
-       
-    }
-
-    function exitoRegistroPosicion(position){
-        console.log("Registré la posición correctamente:")
-        console.log(idRegistroPosicion)
-
-        //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
-        btnGlass.style.display = 'block';
-        btnGlass.addEventListener('click', busquedaPaso2);
-        
-        posicion_propia = position; 
-        console.log("Esto es posicion_propia:");
-        console.log(posicion_propia);
-            
-        
-    }
-
-    function falloRegistroPosicion(){
-        console.log("Registré la posición incorrectamente :(");
-        console.log(idRegistroPosicion);
-        locate_sample.style.display = 'block';
-
-        //intenta de nuevo después de un timeout.
-
-        setTimeout(() => {
-            
-           locate_sample.style.display = 'none';
-           registrarPosicion();
-
-           //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
-            btnGlass.style.display = 'block';
-            btnGlass.addEventListener('click', busquedaPaso2);
-
-        }, retry_delay * 1000);
-    }
-
-    function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
-      }
-
-    function colocaMarcador(position){
-    marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
-    //map.addLayer(marker);
-    console.log("AGREGAMOS MARCADOR YA 123");
-    marker_inicial.addTo(map);
-    
-    posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
-    map.setZoom(16); 
-    map.panTo(posicionActual);
-    //drawPolyline();
-
-}
 
     function busquedaPaso3(){
 
-        console.log("Removimos marcador!");
-        marker_inicial.remove();
+        console.log("Removiamos marcador!");
+        //marker_inicial.remove();
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
@@ -268,7 +220,7 @@ function registrarPosicion() {
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
            
-            colocaMarcadores(posicion_propia);
+            creaMapa(posicion_propia);
             glassDisplay.style.display = 'none';
             textRowArea.innerHTML = "";
 
@@ -285,8 +237,9 @@ function registrarPosicion() {
 
     }
 
-    function colocaMarcadores(position){
+    function encuentraNuevaPosicionDispositivo(position){
 
+        console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...")
         distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;
         console.log("Esto es la nueva ubicación...");
         console.log(distancia_encuentro);
@@ -306,20 +259,46 @@ function registrarPosicion() {
         nueva_longitud = position.coords.longitude + (sumador * direccion_longitud);
         console.log("Ésta es la nueva latitud...");
         console.log(nueva_latitud);
+    }
 
-        let marker = new L.Marker([nueva_latitud, nueva_longitud], {icon: myIcon});
-        marker.addTo(map);
-        posicion_nueva = new L.LatLng(nueva_latitud, nueva_longitud);
-        console.log("LQ NUEVA POSICION ACTUAL...");
-        console.log(posicion_nueva)
+    function creaMapa(position){
+
+        console.log("Estamos usando position, que es esto:");
+        console.log(position);
+        console.log("Position es el tipo:");
+        console.log(typeof position);
+        console.log("El paso es igual a:");
+        console.log(paso);
+        console.log("Y estamos ejecutando el IF de paso...");
+        
+        /* if (paso == 3){
+            console.log("Si entreamos al IF...");
+            encuentraNuevaPosicionDispositivo(position);
+            let marker_inicial = new L.Marker([nueva_latitud, nueva_longitud], {icon: myIcon});
+            marker_inicial.addTo(map);
+            posicion_nueva = new L.LatLng(nueva_latitud, nueva_longitud);
+            console.log("LQ NUEVA POSICION ACTUAL...");
+            console.log(posicion_nueva)
+            map.setZoom(16); 
+            map.panTo(posicion_nueva);
+        } */
+
+        marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
+        //map.addLayer(marker);
+        console.log("AGREGAMOS MARCADOR YA 123");
+        marker_inicial.addTo(map);
+        
+        posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
         map.setZoom(16); 
-        map.panTo(posicion_nueva);
+        map.panTo(posicionActual);
+  
  
-        circle = L.circle([nueva_latitud, nueva_longitud], {
+        circle = L.circle([position.coords.latitude, position.coords.longitude], {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.0,
-            radius: distancia_encuentro * 1000, // meters
+            //radius: distancia_encuentro * 1000, // meters
+            radius: 1 * 1000, // meters
         }).addTo(map);
 
         bounds = circle.getBounds();
@@ -338,7 +317,7 @@ function registrarPosicion() {
             var point = new L.LatLng(ptLat, ptLng);
             last_point = point;
  
-            if (point.distanceTo(posicion_nueva) < (distancia_encuentro * 1000) && maxPoints > 1) {
+            if (point.distanceTo(position) < (1 * 1000) && maxPoints > 1) {
                 addAntenas(map, point, "marker " + i);
             } else if (maxPoints > 1) {
                 i--;
