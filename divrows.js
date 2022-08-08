@@ -1,3 +1,5 @@
+//Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
+let paso = 1; 
 let marker_inicial;
 var circle;
 var maxPoints = 10;
@@ -87,13 +89,20 @@ function phoneValidate(){
     if (regExp.test(phone)){ 
         
         mensajes.innerText= "Número válido";
-        console.log("Imprimiendo referer...")
-        console.log(document.referrer); 
-        iniciarBusqueda();
+        console.log("Paso es...");
+        console.log(paso);
+        
+        if (paso == 1){
+            iniciarBusqueda();
         }
-      else 
+        else{
+            busquedaPaso3();
+        }
+        }
+      else{ 
       mensajes.style.display = 'block';
       mensajes.innerText= "Número NO válido"; 
+    }
   }
 
 
@@ -111,10 +120,8 @@ function iniciarBusqueda(){
     setTimeout(() => {
 
             registrarPosicion();
-            
-    
+ 
     }, buscar_delay * 1000);
-
 
 }
 
@@ -127,7 +134,6 @@ function busquedaPaso2(){
     textRowArea.innerHTML = "";
     console.log("Estoy escribiendo el Paso 2...")
    
-    addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
     addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
     addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
     addTextRow("Calculando posición.", 5 ,"intro_tres", writingGlass);
@@ -146,13 +152,13 @@ function busquedaPaso2(){
         mensajes.style.display = 'block';
         mensajes.innerHTML = 'Ésta es tu posición, ahora ingresa el número que deseas buscar.'
         btnSubmit.value = 'Localizar';
-        btnSubmit.removeEventListener('click', phoneValidate);
-        btnSubmit.addEventListener('click', busquedaPaso3);
+        //Ahora el paso a ejecutar está dictado por 'paso', ya no se necesita remover phoneValidate ni agregar paso3.
+        paso = 3;
+        //btnSubmit.removeEventListener('click', phoneValidate);
+        //btnSubmit.addEventListener('click', busquedaPaso3);
         tel_field.value = "";
         tel_field.placeholder = '';
 
-       
-        
     }, mapear_delay * 1000);
  
 }
@@ -250,6 +256,7 @@ function registrarPosicion() {
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
+        console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
         textRowArea.innerHTML = "";
         console.log("Estoy en el Paso 3:");
         addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
