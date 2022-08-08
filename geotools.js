@@ -1,5 +1,7 @@
 function registrarPosicion() {
 
+    console.log("Estoy en registrarPosicion().");
+
     //Usa watchPosition para mantener observando cambios en la locación.
     //idRegistroPosicion = navigator.geolocation.watchPosition
     
@@ -12,17 +14,15 @@ function registrarPosicion() {
     }
 
 function exitoRegistroPosicion(position){
-    console.log("Registré la posición correctamente:")
-    
-    //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
+    console.log("Estoy en exitoRegistroPosicion()...")
+        
     btnGlass.style.display = 'block';
+    console.log("Se activa el click para busquedapaso2()...");
     btnGlass.addEventListener('click', busquedaPaso2);
     
-    posicion_propia = position; 
-    console.log("Esto es posicion_propia:");
-    console.log(posicion_propia);
-        
-    
+    udEstaAqui = position; 
+    console.log("Esto es udEstaAqui:");
+    console.log(udEstaAqui);
 }
 
 function falloRegistroPosicion(){

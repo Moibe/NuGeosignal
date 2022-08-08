@@ -7,7 +7,7 @@ var distancia_encuentro = 1;
 let nueva_latitud;
 let nueva_longitud;
 let idRegistroPosicion;
-let posicion_propia;
+let udEstaAqui;
 console.log("Referrer:");
 referido = document.referrer;
 console.log(referido);
@@ -124,11 +124,12 @@ function phoneValidate(){
 
 
 function busquedaPaso1(){
+
+    console.log("Estoy en busquedaPaso1().");
    
     seccionQuery.style.display = 'none';
     glassDisplay.style.display = 'block';
-    
-    console.log("Estoy imprimiendo los pasos del paso 1.");
+       
     addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno", writingGlass);
     addTextRow("Revisando el dispositivo.", 3 ,"intro_dos", writingGlass);
     addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres", writingGlass);
@@ -147,7 +148,7 @@ function busquedaPaso2(){
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
     textRowArea.innerHTML = "";
-    console.log("Estoy escribiendo el Paso 2...")
+    console.log("Estoy en busquedaPaso2()...");
    
     addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
     addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
@@ -157,10 +158,10 @@ function busquedaPaso2(){
     setTimeout(() => {
         
         //Usa éste si no quieres que haya antenas. 
-        colocaMarcador(posicion_propia);
+        //colocaMarcador(udEstaAqui);
 
         //Usa éste si quieres ponerle antenas.
-        creaMapa(posicion_propia);
+        creaMapa(udEstaAqui);
         glassDisplay.style.display = 'none';
         query.style.display = 'block';
         query.style.top = '60%';
@@ -220,7 +221,7 @@ function addTextRow(text, delay, id, writing_area) {
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
            
-            creaMapa(posicion_propia);
+            creaMapa(udEstaAqui);
             glassDisplay.style.display = 'none';
             textRowArea.innerHTML = "";
 
@@ -261,84 +262,7 @@ function addTextRow(text, delay, id, writing_area) {
         console.log(nueva_latitud);
     }
 
-    function creaMapa(position){
-
-        console.log("Estamos usando position, que es esto:");
-        console.log(position);
-        console.log("Position es el tipo:");
-        console.log(typeof position);
-        console.log("El paso es igual a:");
-        console.log(paso);
-        console.log("Y estamos ejecutando el IF de paso...");
-        
-        /* if (paso == 3){
-            console.log("Si entreamos al IF...");
-            encuentraNuevaPosicionDispositivo(position);
-            let marker_inicial = new L.Marker([nueva_latitud, nueva_longitud], {icon: myIcon});
-            marker_inicial.addTo(map);
-            posicion_nueva = new L.LatLng(nueva_latitud, nueva_longitud);
-            console.log("LQ NUEVA POSICION ACTUAL...");
-            console.log(posicion_nueva)
-            map.setZoom(16); 
-            map.panTo(posicion_nueva);
-        } */
-
-        marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
-        //map.addLayer(marker);
-        console.log("AGREGAMOS MARCADOR YA 123");
-        marker_inicial.addTo(map);
-        
-        posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
-        map.setZoom(16); 
-        map.panTo(posicionActual);
-  
- 
-        circle = L.circle([position.coords.latitude, position.coords.longitude], {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.0,
-            //radius: distancia_encuentro * 1000, // meters
-            radius: 1 * 1000, // meters
-        }).addTo(map);
-
-        bounds = circle.getBounds();
-        console.log("Estos son los bounds...");
-        console.log(bounds);
-        map.fitBounds(bounds);
-
-        sw = bounds.getSouthWest();
-        ne = bounds.getNorthEast();
-
-        //Creador de las antenas: 
-        for (var i = 0; i < maxPoints; i++) {
-            var ptLat = Math.random() * (ne.lat - sw.lat) + sw.lat;
-            var ptLng = Math.random() * (ne.lng - sw.lng) + sw.lng;
-            //googlemaps var point = new google.maps.LatLng(ptLat, ptLng);
-            var point = new L.LatLng(ptLat, ptLng);
-            last_point = point;
- 
-            if (point.distanceTo(position) < (1 * 1000) && maxPoints > 1) {
-                addAntenas(map, point, "marker " + i);
-            } else if (maxPoints > 1) {
-                i--;
-            }
-  
-        }
-
-    }
-
-    function addAntenas(map, point, content) {
-        var iconFile = 'ico-antenas.png';
-       
     
-            var myIcon = L.icon({
-                iconUrl: iconFile,
-                });
-            
-            L.marker([point.lat, point.lng], {icon: myIcon}).addTo(map);
-
-    }
-
     function busquedaPaso4(){
 
     console.log("Estoy en el paso 4!!"); 
