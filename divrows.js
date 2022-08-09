@@ -18,7 +18,7 @@ mapear_delay = 9;
 requery_delay = 10;
 retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
-remap_delay = 10; 
+remap_delay = 13; 
 sell_delay = 15;
 
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
@@ -87,7 +87,7 @@ function initAll(){
 function startProcess(){
     console.log("Estamos iniciando el proceso...");
     if (phoneValidate() == true){
-        console.log("El teléfono fue válido...");
+        
         busquedaPaso1();
     }
     else{
@@ -170,8 +170,8 @@ function busquedaPaso2(){
         btnSubmit.value = 'Localizar';
         //Ahora el paso a ejecutar está dictado por 'paso', ya no se necesita remover phoneValidate ni agregar paso3.
         paso = 3;
-        //btnSubmit.removeEventListener('click', phoneValidate);
-        //btnSubmit.addEventListener('click', busquedaPaso3);
+        btnSubmit.removeEventListener('click', startProcess);
+        btnSubmit.addEventListener('click', busquedaPaso3);
         tel_field.value = "";
         tel_field.placeholder = '';
 
@@ -200,11 +200,8 @@ function addTextRow(text, delay, id, writing_area) {
     }
 }
 
-
-
     function busquedaPaso3(){
-
-        console.log("Removiamos marcador!");
+        //console.log("Removiamos marcador!");
         //marker_inicial.remove();
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
@@ -212,18 +209,19 @@ function addTextRow(text, delay, id, writing_area) {
         console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
         textRowArea.innerHTML = "";
         console.log("Estoy en el Paso 3:");
-        addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
-        addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
-        addTextRow("Calculando posición.", 5 ,"intro_tres", writingGlass);
-        addTextRow("Creando mapa.", 7 ,"intro_cuatro", writingGlass);
-        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro", writingGlass);
+        addTextRow("Buescando el nuevo dispositivo.", 1 ,"intro_cerp", writingGlass);
+        addTextRow("Leyendo antenas.", 3 ,"intro_uno", writingGlass);
+        addTextRow("Leyendo frecuencia.", 5 ,"intro_dos", writingGlass);
+        addTextRow("Calculando posición.", 7 ,"intro_tres", writingGlass);
+        addTextRow("Creando mapa.", 9 ,"intro_cuatro", writingGlass);
+        addTextRow("Dispositivo Localizado.", 11 ,"intro_cuatro", writingGlass);
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
-           
-            creaMapa(udEstaAqui);
-            glassDisplay.style.display = 'none';
-            textRowArea.innerHTML = "";
+  
+        creaMapa(udEstaAqui);
+        glassDisplay.style.display = 'none';
+        textRowArea.innerHTML = "";
 
              setTimeout(() => {
            
@@ -237,32 +235,7 @@ function addTextRow(text, delay, id, writing_area) {
         }, remap_delay * 1000);
 
     }
-
-    function encuentraNuevaPosicionDispositivo(position){
-
-        console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...")
-        distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;
-        console.log("Esto es la nueva ubicación...");
-        console.log(distancia_encuentro);
-        console.log(position.coords.latitude);
-        console.log("Y su tipo es: ");
-        console.log("Y ahora le voy a sumar:")
-        sumador = distancia_encuentro * 0.01
-        //La función random genera un movimiento a la izquierda (negativo) o a la derecha (positivo).
-        direccion_latitud = Math.round(Math.random()) * 2 - 1;
-        console.log("La dirección de la latitud es:");
-        console.log(direccion_latitud);
-        //La función random genera un movimiento hacia abajo (negativo) o hacia arriba (positivo).
-        direccion_longitud = Math.round(Math.random()) * 2 - 1
-        console.log("La dirección de la longitud es:");
-        console.log(direccion_longitud);
-        nueva_latitud = position.coords.latitude + (sumador * direccion_latitud);
-        nueva_longitud = position.coords.longitude + (sumador * direccion_longitud);
-        console.log("Ésta es la nueva latitud...");
-        console.log(nueva_latitud);
-    }
-
-    
+   
     function busquedaPaso4(){
 
     console.log("Estoy en el paso 4!!"); 

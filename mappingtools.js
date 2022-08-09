@@ -1,36 +1,32 @@
-function creaMapa(position){
-
-    console.log("Estamos usando position, que es esto:");
-    console.log(position);
-    console.log("Position es el tipo:");
-    console.log(typeof position);
+function creaMapa(posicionInicial){
+    console.log("ESTAMOS EN CREAMAPA()...")
+    console.log("Estamos usando posicionInicial, que es esto:");
+    console.log(posicionInicial);
+    console.log("posicionInicial es el tipo:");
+    console.log(typeof posicionInicial);
     console.log("El paso es igual a:");
     console.log(paso);
-    console.log("Y estamos ejecutando el IF de paso...");
-    
-    /* if (paso == 3){
-        console.log("Si entreamos al IF...");
-        encuentraNuevaPosicionDispositivo(position);
-        let marker_inicial = new L.Marker([nueva_latitud, nueva_longitud], {icon: myIcon});
-        marker_inicial.addTo(map);
-        posicion_nueva = new L.LatLng(nueva_latitud, nueva_longitud);
-        console.log("LQ NUEVA POSICION ACTUAL...");
-        console.log(posicion_nueva)
-        map.setZoom(16); 
-        map.panTo(posicion_nueva);
-    } */
 
-    marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
-    //map.addLayer(marker);
-    console.log("AGREGAMOS MARCADOR YA 123");
+    if(paso == 1){
+        console.log("Entré al paso 1.");
+        latitud = posicionInicial.coords.latitude;
+        longitud = posicionInicial.coords.longitude;
+    }
+    else{
+        console.log("Entré al paso 3.");
+        encuentraNuevaPosicionDispositivo(udEstaAqui);
+        latitud = nueva_latitud;
+        longitud = nueva_longitud;
+    }
+
+    posicion = new L.LatLng(latitud, longitud);
+        
+    marker_inicial = new L.Marker([latitud, longitud], {icon: myIcon});
     marker_inicial.addTo(map);
-    
-    posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
     map.setZoom(16); 
-    map.panTo(posicionActual);
+    map.panTo(posicion);
 
-
-    circle = L.circle([position.coords.latitude, position.coords.longitude], {
+    circle = L.circle([latitud, longitud], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.0,
@@ -54,7 +50,7 @@ function creaMapa(position){
         var point = new L.LatLng(ptLat, ptLng);
         last_point = point;
 
-        if (point.distanceTo(position) < (1 * 1000) && maxPoints > 1) {
+        if (point.distanceTo(posicion) < (1 * 1000) && maxPoints > 1) {
             addAntenas(map, point, "marker " + i);
         } else if (maxPoints > 1) {
             i--;
@@ -66,7 +62,6 @@ function creaMapa(position){
 
 function addAntenas(map, point, content) {
     var iconFile = 'ico-antenas.png';
-   
 
         var myIcon = L.icon({
             iconUrl: iconFile,

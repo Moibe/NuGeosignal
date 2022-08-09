@@ -44,18 +44,43 @@ function falloRegistroPosicion(){
     }, retry_delay * 1000);
 }
 
-    function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
-      }
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
 
-    function colocaMarcador(position){
-    marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
-    //map.addLayer(marker);
-    console.log("AGREGAMOS MARCADOR YA 123");
-    marker_inicial.addTo(map);
-    
-    posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
-    map.setZoom(16); 
-    map.panTo(posicionActual);
-    //drawPolyline();
+function colocaMarcador(position){
+marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
+//map.addLayer(marker);
+console.log("AGREGAMOS MARCADOR YA 123");
+marker_inicial.addTo(map);
+
+posicionActual = new L.LatLng(position.coords.latitude, position.coords.longitude);
+map.setZoom(16); 
+map.panTo(posicionActual);
+//drawPolyline();
+}
+
+function encuentraNuevaPosicionDispositivo(position){
+
+    console.log("Estamos dentro de encuentraNuevaPosicionDispositivo()");
+    console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...");
+    distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;
+    console.log("Esto es la nueva ubicación...");
+    console.log(distancia_encuentro);
+    console.log(position.coords.latitude);
+    console.log("Y su tipo es: ");
+    console.log("Y ahora le voy a sumar:")
+    sumador = distancia_encuentro * 0.01
+    //La función random genera un movimiento a la izquierda (negativo) o a la derecha (positivo).
+    direccion_latitud = Math.round(Math.random()) * 2 - 1;
+    console.log("La dirección de la latitud es:");
+    console.log(direccion_latitud);
+    //La función random genera un movimiento hacia abajo (negativo) o hacia arriba (positivo).
+    direccion_longitud = Math.round(Math.random()) * 2 - 1
+    console.log("La dirección de la longitud es:");
+    console.log(direccion_longitud);
+    nueva_latitud = position.coords.latitude + (sumador * direccion_latitud);
+    nueva_longitud = position.coords.longitude + (sumador * direccion_longitud);
+    console.log("Ésta es la nueva latitud...");
+    console.log(nueva_latitud);
 }
