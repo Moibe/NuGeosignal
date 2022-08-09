@@ -61,15 +61,12 @@ map.panTo(posicionActual);
 }
 
 function encuentraNuevaPosicionDispositivo(position){
-
-    console.log("Estamos dentro de encuentraNuevaPosicionDispositivo()");
+    
     console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...");
     distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;
     console.log("Esto es la nueva ubicación...");
     console.log(distancia_encuentro);
-    console.log(position.coords.latitude);
-    console.log("Y su tipo es: ");
-    console.log("Y ahora le voy a sumar:")
+    
     sumador = distancia_encuentro * 0.01
     //La función random genera un movimiento a la izquierda (negativo) o a la derecha (positivo).
     direccion_latitud = Math.round(Math.random()) * 2 - 1;
@@ -83,4 +80,8 @@ function encuentraNuevaPosicionDispositivo(position){
     nueva_longitud = position.coords.longitude + (sumador * direccion_longitud);
     console.log("Ésta es la nueva latitud...");
     console.log(nueva_latitud);
+    console.log("Ésta es la nueva longitud...");
+    console.log(nueva_longitud);
+
+    return 1;
 }

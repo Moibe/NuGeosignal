@@ -18,7 +18,7 @@ mapear_delay = 9;
 requery_delay = 10;
 retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
-remap_delay = 13; 
+remap_delay = 14; 
 sell_delay = 15;
 
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
@@ -179,42 +179,21 @@ function busquedaPaso2(){
  
 }
 
-function addTextRow(text, delay, id, writing_area) {
-  
-    textRowArea = writing_area;
-    
-    let p = document.createElement('p');
-    // if id is not null then add id to the p element
-    if (id != "") {
-        p.id = id;
-    }
-    p.innerHTML = text;
-   
-    // if delay is not 0 then add delay to the p element
-    if (delay != 0) {
-        setTimeout(() => {
-            textRowArea.appendChild(p);
-        }, (timing_elements + delay) * 1000);
-    } else {
-        textRowArea.appendChild(p);
-    }
-}
 
     function busquedaPaso3(){
-        //console.log("Removiamos marcador!");
-        //marker_inicial.remove();
+       
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
         console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
         textRowArea.innerHTML = "";
         console.log("Estoy en el Paso 3:");
-        addTextRow("Buescando el nuevo dispositivo.", 1 ,"intro_cerp", writingGlass);
+        addTextRow("Buscando el nuevo dispositivo.", 1 ,"intro_cerp", writingGlass);
         addTextRow("Leyendo antenas.", 3 ,"intro_uno", writingGlass);
         addTextRow("Leyendo frecuencia.", 5 ,"intro_dos", writingGlass);
         addTextRow("Calculando posición.", 7 ,"intro_tres", writingGlass);
-        addTextRow("Creando mapa.", 9 ,"intro_cuatro", writingGlass);
-        addTextRow("Dispositivo Localizado.", 11 ,"intro_cuatro", writingGlass);
+        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro", writingGlass);
+        addTextRow("Creando mapa.", 12 ,"intro_cuatro", writingGlass);
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
@@ -225,15 +204,13 @@ function addTextRow(text, delay, id, writing_area) {
 
              setTimeout(() => {
            
-                glassDisplay.style.display = 'block';
+                /* glassDisplay.style.display = 'block';
                 blockDisplay.style.display = 'block';
-                busquedaPaso4();
-               
- 
+                busquedaPaso4(); */
+
         }, sell_delay * 1000);
  
         }, remap_delay * 1000);
-
     }
    
     function busquedaPaso4(){
