@@ -29,6 +29,9 @@ var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de me
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
 let formaPago = document.getElementById('formaPago');
+let btnForm = document.getElementById('btnForm');
+let venta1 = document.getElementById('venta1_text1');
+let venta2 = document.getElementById('venta1_text2');
 
 const blockDisplay = document.getElementById('blockDisplay');
 
@@ -167,8 +170,8 @@ function busquedaPaso2(){
         query.style.display = 'block';
         query.style.top = '60%';
         mensajes.style.display = 'block';
-        mensajes.innerHTML = 'Ésta es tu posición, ahora ingresa el número que deseas buscar.'
-        btnSubmit.value = 'Localizar';
+        mensajes.innerHTML = mensajes_glass;
+        btnSubmit.value = btnSubmit2_text;
         //Ahora el paso a ejecutar está dictado por 'paso', ya no se necesita remover phoneValidate ni agregar paso3.
         paso = 3;
         btnSubmit.removeEventListener('click', startProcess);
@@ -189,12 +192,12 @@ function busquedaPaso2(){
         console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
         textRowArea.innerHTML = "";
         console.log("Estoy en el Paso 3:");
-        addTextRow("Buscando el nuevo dispositivo.", 1 ,"intro_cerp", writingGlass);
-        addTextRow("Leyendo antenas.", 3 ,"intro_uno", writingGlass);
-        addTextRow("Leyendo frecuencia.", 5 ,"intro_dos", writingGlass);
-        addTextRow("Calculando posición.", 7 ,"intro_tres", writingGlass);
-        addTextRow("Dispositivo Localizado.", 9 ,"intro_cuatro", writingGlass);
-        addTextRow("Creando mapa.", 12 ,"intro_cuatro", writingGlass);
+        addTextRow(glass3_text1, 1 ,"intro_cerp", writingGlass);
+        addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
+        addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
+        addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
+        addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
+        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass);
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
@@ -205,9 +208,9 @@ function busquedaPaso2(){
 
              setTimeout(() => {
            
-                /* glassDisplay.style.display = 'block';
+                glassDisplay.style.display = 'block';
                 blockDisplay.style.display = 'block';
-                busquedaPaso4(); */
+                busquedaPaso4();
 
         }, sell_delay * 1000);
  
@@ -218,15 +221,15 @@ function busquedaPaso2(){
 
     console.log("Estoy en el paso 4!!"); 
     formaPago.style.display = 'block';
+    btnForm.value = btnForm_text;
+    venta1.innerHTML = venta1_text1;
+    venta2.innerHTML = venta1_text2;
+    
+
    
  
     setTimeout(() => {
-           
-        //Como todo lo hace la forma. Ya no necesitas reformatear éste botón.
-        /* btnGlass.removeEventListener('click', busquedaPaso2);
-        btnGlass.addEventListener('click', goBuy);
-        btnGlass.value = 'Obtener Ubicación';
-        btnGlass.style.display = 'block'; */
+
        
 //también puedes poner números directos como multiplicadores del delay y no necesariamente variables.
 }, 5 * 1000);

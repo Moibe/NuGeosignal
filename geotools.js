@@ -17,6 +17,7 @@ function exitoRegistroPosicion(position){
     console.log("Estoy en exitoRegistroPosicion()...")
         
     btnGlass.style.display = 'block';
+    btnGlass.value = btnGlass_text;
     console.log("Se activa el click para busquedapaso2()...");
     btnGlass.addEventListener('click', busquedaPaso2);
     
