@@ -1,6 +1,6 @@
 traducciones = 
 `{
-    "spanish":
+    "es":
     {
     "titulo_text": "Localizador de Móviles 🌎",
     "placeholder_text": "Escribe tu número para localizarte.",
@@ -27,7 +27,7 @@ traducciones =
     "btnForm_text": "Obtener tu Ubicación"
      },
 
-    "english":
+    "en":
    {
     "titulo_text": "Mobile Phone Locator 🌎",
     "placeholder_text": "Write your number to locate you.",

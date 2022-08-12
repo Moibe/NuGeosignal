@@ -1,5 +1,23 @@
 //Idioma
-let idioma = 'spanish';
+let idioma = "es";
+console.log(idioma);
+
+const hostname = window.location.hostname;
+console.log("Esto es hostname:");
+console.log(hostname);
+if(hostname == "127.0.0.1"){
+    console.log("Estamos en local...");
+    idioma = "es";
+}
+else{
+    //Si estamos en producción el idioma lo definimos desde la url.
+    console.log("Entramos a chequeo de path...")
+    const pathname = window.location.pathname;
+    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
+    console.log("Esto es pathcut" + pathcut);
+    idioma = pathcut;
+}
+
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
 
