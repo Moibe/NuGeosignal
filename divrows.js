@@ -151,10 +151,10 @@ function busquedaPaso2(){
     textRowArea.innerHTML = "";
     console.log("Estoy en busquedaPaso2()...");
    
-    addTextRow("Leyendo antenas.", 1 ,"intro_uno", writingGlass);
-    addTextRow("Leyendo frecuencia.", 3 ,"intro_dos", writingGlass);
-    addTextRow("Calculando posición.", 5 ,"intro_tres", writingGlass);
-    addTextRow("Creando mapa.", 7 ,"intro_cuatro", writingGlass);
+    addTextRow(glass1_text1, 1 ,"intro_uno", writingGlass);
+    addTextRow(glass1_text2, 3 ,"intro_dos", writingGlass);
+    addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
+    addTextRow(glass1_text4, 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
         

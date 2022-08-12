@@ -8,9 +8,12 @@ traducciones =
     "glass1_text1" : "Evaluación de dispositivo y navegador.",
     "glass1_text2" : "Revisando el dispositivo.",
     "glass1_text3" : "Su dispositivo y navegador cumplen con los requerimientos necesarios.",
-    "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️"
-    
-    },
+    "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️",
+    "glass2_text1" : "Leyendo antenas.",
+    "glass2_text2" : "Leyendo frecuencia.",
+    "glass2_text3" : "Calculando posición.",
+    "glass2_text4" : "Creando mapa."
+     },
 
     "english":
    {
@@ -20,9 +23,12 @@ traducciones =
     "glass1_text1" : "Evaluating device and web browser.",
     "glass1_text2" : "Reviewing Device.",
     "glass1_text3" : "Your device and browser meet the requirements.",
-    "glass1_text4" : "Remember to allow location in your web browser. ⤴️"    
-     
-    }
+    "glass1_text4" : "Remember to allow location in your web browser. ⤴️",
+    "glass2_text1" : "Aerials lookup.",
+    "glass2_text2" : "Reading frequency.",
+    "glass2_text3" : "Writing position.",
+    "glass2_text4" : "Creating map."
+     }
 }`
 
    
