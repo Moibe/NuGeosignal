@@ -1,7 +1,4 @@
 //Idioma
-let idioma = "es";
-console.log(idioma);
-
 const hostname = window.location.hostname;
 console.log("Esto es hostname:");
 console.log(hostname);

@@ -1,4 +1,3 @@
-
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
 let paso = 1; 
 let marker_inicial;
