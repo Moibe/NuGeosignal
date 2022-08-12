@@ -16,7 +16,9 @@ else{
     let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
     if (pathcut == ""){
         console.log("pathcut está vacío...");
-        
+        //Si no hay patchcut entonces el idioma default será inglés.
+        //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
+        idioma = "en";
     }
     console.log("Esto es pathcut: " + pathcut);
     idioma = pathcut;
