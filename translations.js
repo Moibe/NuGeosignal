@@ -19,9 +19,10 @@ else{
         //Si no hay patchcut entonces el idioma default será inglés.
         //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
         idioma = "en";
+    }else{
+        console.log("Esto es pathcut: " + pathcut);
+        idioma = pathcut;
     }
-    console.log("Esto es pathcut: " + pathcut);
-    idioma = pathcut;
 }
 
 //Declaramos el json con las variables de idioma.
