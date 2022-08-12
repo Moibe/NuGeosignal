@@ -1,0 +1,28 @@
+traducciones = 
+`{
+    "spanish":
+    {
+    "titulo_text": "Localizador de Móviles 🌎",
+    "placeholder_text": "Escribe tu número para localizarte.",
+    "btnSubmit_text": "Iniciar",
+    "glass1_text1" : "Evaluación de dispositivo y navegador.",
+    "glass1_text2" : "Revisando el dispositivo.",
+    "glass1_text3" : "Su dispositivo y navegador cumplen con los requerimientos necesarios.",
+    "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️"
+    
+    },
+
+    "english":
+   {
+    "titulo_text": "Mobile Phone Locator 🌎",
+    "placeholder_text": "Write your number to locate you.",
+    "btnSubmit_text": "Start",
+    "glass1_text1" : "Evaluating device and web browser.",
+    "glass1_text2" : "Reviewing Device.",
+    "glass1_text3" : "Your device and browser meet the requirements.",
+    "glass1_text4" : "Remember to allow location in your web browser. ⤴️"    
+     
+    }
+}`
+
+   

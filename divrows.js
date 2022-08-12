@@ -1,3 +1,4 @@
+
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
 let paso = 1; 
 let marker_inicial;
@@ -20,6 +21,7 @@ retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
 remap_delay = 14; 
 sell_delay = 15;
+paneo_delay = 4;
 
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
@@ -33,13 +35,13 @@ const blockDisplay = document.getElementById('blockDisplay');
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
-tel_field.placeholder = 'Escribe tu número para localizarte.';
+tel_field.placeholder = placeholder_text;
 const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
-btnSubmit.value = 'Iniciar';
+btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
 
 var iconFile = 'ico-cel.png';
@@ -122,7 +124,6 @@ function phoneValidate(){
     }
   }
 
-
 function busquedaPaso1(){
 
     console.log("Estoy en busquedaPaso1().");
@@ -130,10 +131,10 @@ function busquedaPaso1(){
     seccionQuery.style.display = 'none';
     glassDisplay.style.display = 'block';
        
-    addTextRow("Evaluación de dispositivo y navegador.", 1 ,"intro_uno", writingGlass);
-    addTextRow("Revisando el dispositivo.", 3 ,"intro_dos", writingGlass);
-    addTextRow("Su dispositivo y navegador cumplen con los requerimientos necesarios.", 5 ,"intro_tres", writingGlass);
-    addTextRow("Recuerda habilitar la localización en tu navegador. ⤴️", 8 ,"intro_dos", writingGlass);
+    addTextRow(glass1_text1, 1 ,"intro_uno", writingGlass);
+    addTextRow(glass1_text2, 3 ,"intro_dos", writingGlass);
+    addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
+    addTextRow(glass1_text4, 8 ,"intro_dos", writingGlass);
 
     setTimeout(() => {
 

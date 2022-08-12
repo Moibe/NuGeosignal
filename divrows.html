@@ -25,7 +25,7 @@
                         <input id="tel_field" type="text" name="telefono" class="required internationalPhone" minlength="8" maxlength="15" autocomplete="off" />
                         <p id="mensajes" style="display: none;">Hola, esto es un mensaje estándar.</p>
                         <br>
-                        <input type="button" id="btnSubmit"/>
+                        <input id="btnSubmit" type="button" />
                     </div>
 
                     <div id="glassDisplay" style="display: none;">
@@ -55,24 +55,22 @@
                    
                         
                 </div>
-                     
-
-                    
-
+  
                 </div>
                 
                 <div class="pie">2022©️
-
 
                 </div>
             </div>
            
         </body>
-
+        <!-- Puse el json hasta arriba porque el orden de lectura si importa! -->
+        <script type="text/javascript" src="traducciones.json"></script>
+        <script src="./translations.js"></script>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script src="./divrows.js"></script>
         <script src="./geotools.js"></script>
         <script src="./mappingtools.js"></script>
         <script src="./tools.js"></script>
-      
+       
         </html>

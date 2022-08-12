@@ -5,6 +5,7 @@ function creaMapa(posicionInicial){
     console.log("El paso es igual a:");
     console.log(paso);
 
+    //DEFINICION DE LAS COORDENADAS PARA CADA DETERMINADO MOMENTO.
     if(paso == 1){
         console.log("Entré al IF del paso 1.");
         latitud = posicionInicial.coords.latitude;
@@ -24,9 +25,13 @@ function creaMapa(posicionInicial){
 
     posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
     console.log("Estoy escribiendo la nueva posición oficial...");
+    console.log("Que en la primer vuelta sería la misma que la posición actual....");
     posicion = new L.LatLng(latitud, longitud);
     console.log(posicion);
-        
+
+    //FIN DE LA DEFINICIÓN.
+
+    //INICIO DE TRAZADO EN MAPA.
     marker_inicial = new L.Marker([latitud, longitud], {icon: myIcon});
     console.log("Esto es el marker_inicial:");
     console.log(marker_inicial);
@@ -37,6 +42,7 @@ function creaMapa(posicionInicial){
     map.panTo(posicion_original);
     console.log("Ya panee a la original...");
 
+    //El círculo y las antenas esperaran un momento para ser creadas.
     setTimeout(() => {
         circle = L.circle([latitud, longitud], {
             color: 'red',
@@ -47,8 +53,9 @@ function creaMapa(posicionInicial){
         }).addTo(map);
     
         bounds = circle.getBounds();
-        console.log("Estos son los bounds...");
+        console.log("Estos son los BOUNDS...");
         console.log(bounds);
+        console.log("Fitteando el mapa dentro de los BOUNDS...");
         map.fitBounds(bounds);
     
         sw = bounds.getSouthWest();
@@ -77,7 +84,7 @@ function creaMapa(posicionInicial){
         console.log("Ya panee a la nueva...");
         
 
-    }, mapear_delay * 1000);
+    }, paneo_delay * 1000);
   
 }
 
