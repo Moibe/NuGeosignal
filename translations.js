@@ -14,7 +14,7 @@ else{
     console.log("Entramos a chequeo de path...")
     const pathname = window.location.pathname;
     let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
-    console.log("Esto es pathcut" + pathcut);
+    console.log("Esto es pathcut: " + pathcut);
     idioma = pathcut;
 }
 

@@ -2,33 +2,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
     <head>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="glass.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="divrows.css">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+       
     </head>
-    <body onload="registrarPosicion(1)">
-    <div id="todo">
+        <body onload="initAll()">
 
-        <div id="title">
-            <p>Localizador de Móviles</p>
-        </div>
+            <div class="todo">
+                <div class="encabezado">
+                    <h1><img src="geosignal_logo.png" style="float:left; height:42px;">GeoSignal</h1>
+                </div>
+                <div class="cuerpo">
 
-        <div class="main_row">
-            <div id="glassIntro" class="glass2 container animate__animated">
-                <div class="containerGlassDisplay wSm50" id="glassIntro_textrows">
-                    <h1>Hola GlassWindow, éste texto ahora es más largo.</h1>
+                    <div id="titulo" class="main_row">
+                        Localizador de Móviles
+                    </div>
+                 
+                    <div id="map"></div>
+
+                    <div id="query" style="display: block;">
+                        <input id="tel_field" type="text" name="telefono" class="required internationalPhone" minlength="8" maxlength="15" autocomplete="off" />
+                        <p id="mensajes" style="display: none;">Hola, esto es un mensaje estándar.</p>
+                        <br>
+                        <input id="btnSubmit" type="button" />
+                    </div>
+
+                    <div id="glassDisplay" style="display: none;">
+                        <div id="writingGlass" class="fuentes"></div>
+                        <input type="button" id="btnGlass" class="btnGlass" value="Buscar" style="display: none;" />
+                        <img id="locate_sample" src="locate_sample.png" style="display: none;">
+                                            
+                        <form id="formaPago" style="display: none;" class="fuentes" action="https://www.campus-code.app/es/checkout" method="post" target="_top">
+                            <input type="hidden" name="idd" value="2">
+                            <input type="hidden" id="gclod" name="gclid" value="">
+                            <!-- <script>document.getElementById("gclod").value = gclid;</script> -->
+                            <input type="hidden" id="param1" name="param1" value="">
+                            <!-- <script>document.getElementById("param1").value = param1;</script> -->
+                            <p id="venta1_text1">El servicio tiene un costo que se puede pagar de forma segura.</p>
+                            <p id="textotest"></p>
+                            <p id="venta1_text2">Da click en el botón para obtener más información.</p> 
+                            <input id="btnForm" type="submit" class="btnGlass" value="Obtener tu Ubicación">
+                        </form>   
+                       
+                    
+                    
+                    </div>
+                    
+            
+                    <div id="blockDisplay" style="display: none;">
+
+                   
+                        
+                </div>
+  
+                </div>
+                
+                <div class="pie">2022©️
+
                 </div>
             </div>
-        </div>
-    </div>  
-    </body>
-    <div id="map"></div>
-  
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <script src=" https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    
-   
-    <script src="./index.js"></script>
-</html>
-
+           
+        </body>
+        <!-- Puse el json hasta arriba porque el orden de lectura si importa! -->
+       
+        <script type="text/javascript" src="traducciones.json"></script>
+        <script src="./translations.js"></script>
+        
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script src="./divrows.js"></script>
+        <script src="./geotools.js"></script>
+        <script src="./mappingtools.js"></script>
+        <script src="./tools.js"></script>
+       
+        </html>
