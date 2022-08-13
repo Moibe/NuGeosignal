@@ -22,6 +22,9 @@ function initAll(){
         //idioma = "en";
     }else{
         console.log("Esto es pathcut: " + pathcut);
+        asignacion = pathcut + "/divrows.html";
+        console.log("Esto es asignación:")
+        console.log(asignacion);
     }
     //window.location.assign(pathcut + "/divrows.html");
     //window.location.assign("/divrows.html");
