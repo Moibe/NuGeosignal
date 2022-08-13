@@ -29,7 +29,7 @@ function initAll(){
     let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
     if (pathcut == ""){
         console.log("pathcut está vacío...");
-        asignacion = protocol + "/" + hostname + ":" + port +  "/divrows.html";
+        asignacion = protocol + "//" + hostname + ":" + port +  "/divrows.html";
         console.log("Ésto es la asignación cuando no hay patchcut...");
         console.log(typeof asignacion);
         console.log(asignacion)
@@ -37,14 +37,14 @@ function initAll(){
     }else{
        
         console.log("Esto es pathcut: " + pathcut);
-        asignacion = protocol + "/" + hostname + ":" + port + "/" + pathcut + "/divrows.html";
+        asignacion = protocol + "//" + hostname + ":" + port + "/" + pathcut + "/divrows.html";
         console.log("Esto es asignación cuando si hay pathcut:")
         console.log(typeof asignacion);
         console.log(asignacion);
         
     }
     
-    //window.location.assign(asignacion);
+    window.location.assign(asignacion);
     //newDoc("/divrows.html");
 
  }
