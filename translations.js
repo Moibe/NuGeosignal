@@ -39,7 +39,7 @@ try {
 
 //Elementos de la página.
 //Título
-
+titulo_text = jsonTranslations[idioma].titulo_text;
 const titulo = document.getElementById('titulo');
 titulo.innerHTML = titulo_text;
 
