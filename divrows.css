@@ -16,7 +16,7 @@
 
 div{
     /* display: block; */
-    border: 0px solid rgb(235, 10, 10);
+    border: 0px solid rgb(235, 10, 141);
    /*  align-items: center !important;
     justify-content: center !important; */
     }
@@ -60,7 +60,11 @@ h1{
 
 #mensajes{
     width: 50%; 
-    left: 25%;
+    /* left: 25%; */
+    z-index: 1; 
+    position:absolute;
+    top: 70%;  
+    left: 0%; 
     margin-left: 25%;
     text-align: center;
     font-size: 1rem;

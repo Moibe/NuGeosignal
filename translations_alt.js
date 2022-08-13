@@ -67,8 +67,12 @@ glass2_text4 = jsonTranslations[idioma].glass2_text4;
 //Texto glass mensajes:
 mensajes_glass = jsonTranslations[idioma].mensajes_glass;
 
-//Botón Submit Otra Vez
-btnSubmit2_text = jsonTranslations[idioma].btnSubmit2_text;
+//Botón Glass Otra Vez
+btnGlass2_text = jsonTranslations[idioma].btnGlass2_text;
+
+//Glass de Mensajes
+message1_text1 = jsonTranslations[idioma].message1_text1;
+mensajes.innerText = message1_text1;
 
 //Textos de la Glass Window Paso 3:
 glass3_text1 = jsonTranslations[idioma].glass3_text1;

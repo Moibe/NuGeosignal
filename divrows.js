@@ -12,18 +12,20 @@ console.log("Referrer:");
 referido = document.referrer;
 console.log(referido);
 timing_elements = 0;
-buscar_delay = 10;
+buscar_delay = 5;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
-mapear_delay = 9;
+mapear_delay = 4;
 requery_delay = 10;
 retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
 remap_delay = 14; 
-sell_delay = 15;
+sell_delay = 5;
 paneo_delay = 4;
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
-
+console.log("Getting elemento Mensajes...");
+const mensajes = document.getElementById("mensajes");
+console.log(mensajes);
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
 
@@ -33,7 +35,6 @@ const blockDisplay = document.getElementById('blockDisplay');
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
-const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
 //Inicialiación del botón Principal.
@@ -118,10 +119,10 @@ function busquedaPaso2(){
     textRowArea.innerHTML = "";
     console.log("Estoy en busquedaPaso2()...");
    
-    addTextRow(glass1_text1, 1 ,"intro_uno", writingGlass);
-    addTextRow(glass1_text2, 3 ,"intro_dos", writingGlass);
-    addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
-    addTextRow(glass1_text4, 7 ,"intro_cuatro", writingGlass);
+    addTextRow(glass2_text1, 1 ,"intro_uno", writingGlass);
+    addTextRow(glass2_text2, 3 ,"intro_dos", writingGlass);
+    addTextRow(glass2_text3, 5 ,"intro_tres", writingGlass);
+    addTextRow(glass2_text4, 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
         
@@ -129,53 +130,60 @@ function busquedaPaso2(){
         //colocaMarcador(udEstaAqui);
 
         //Usa éste si quieres ponerle antenas.
-        creaMapa(udEstaAqui);
-        glassDisplay.style.display = 'none';
-        query.style.display = 'block';
-        query.style.top = '60%';
-        mensajes.style.display = 'block';
-        mensajes.innerHTML = mensajes_glass;
-        btnSubmit.value = btnSubmit2_text;
+        //creaMapa(udEstaAqui);
+        //glassDisplay.style.display = 'none';
+        btnGlass.style.display = 'block';
+        //query.style.display = 'block';
+        //query.style.top = '60%';
+        
+        //mensajes.innerHTML = mensajes_glass;
+        //btnSubmit.value = btnSubmit2_text;
         //Ahora el paso a ejecutar está dictado por 'paso', ya no se necesita remover phoneValidate ni agregar paso3.
-        paso = 3;
-        btnSubmit.removeEventListener('click', startProcess);
-        btnSubmit.addEventListener('click', busquedaPaso3);
-        tel_field.value = "";
-        tel_field.placeholder = '';
+        //paso = 3;
+        btnGlass.value = btnGlass2_text;
+        btnGlass.removeEventListener('click', busquedaPaso2);
+        btnGlass.addEventListener('click', busquedaPaso3);
+        //tel_field.value = "";
+        //tel_field.placeholder = '';
 
     }, mapear_delay * 1000);
  
 }
 
-
     function busquedaPaso3(){
        
-        query.style.display = 'none';
-        glassDisplay.style.display = 'block';
+        btnGlass.style.display = 'none';
+        glassDisplay.style.display = 'none';
+        mensajes.style.display = 'block';
+        console.log("ESTO ES MENSAJES 182:...");
+        console.log(mensajes);
+        //query.style.display = 'none';
+        //glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
-        console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
+        console.log("Estoy en busquedaPaso3, desapareciendo los textos anteriores.");
         textRowArea.innerHTML = "";
-        console.log("Estoy en el Paso 3:");
-        addTextRow(glass3_text1, 1 ,"intro_cerp", writingGlass);
-        addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
+        //addTextRow(glass3_text1, 1 ,"intro_cero", writingGlass);
+        /* addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
         addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
         addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
         addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
-        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass);
+        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
   
         creaMapa(udEstaAqui);
-        glassDisplay.style.display = 'none';
-        textRowArea.innerHTML = "";
+        
+        //textRowArea.innerHTML = "";
 
              setTimeout(() => {
            
-                glassDisplay.style.display = 'block';
-                blockDisplay.style.display = 'block';
-                busquedaPaso4();
-
+                //btnGlass.style.display = 'block';
+                //glassDisplay.style.display = 'block';
+                //blockDisplay.style.display = 'block';
+                //busquedaPaso4();
+               
+ 
         }, sell_delay * 1000);
  
         }, remap_delay * 1000);
