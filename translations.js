@@ -21,10 +21,8 @@ else{
         idioma = pathcut;
     }
 }
-
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
-
 try {
     titulo_text = jsonTranslations[idioma].titulo_text;
   } catch (error) {

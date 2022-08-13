@@ -200,27 +200,4 @@ function busquedaPaso2(){
        
 //también puedes poner números directos como multiplicadores del delay y no necesariamente variables.
 }, 5 * 1000);
-
-    }
-
-    function goBuy(){
-        console.log("Hola, estoy en la función GoBuy!")
-       /*  var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://softwarehomework.com/es/checkout/", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
-        idd: "23"
-        }));
- */
-
-        let data = {idd: "barium"};
-
-        fetch("https://softwarehomework.com/es/checkout", {
-        method: "POST",
-        headers: {'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'}, 
-        body: JSON.stringify(data)
-        }).then(res => {
-        console.log("Request complete! response:", res);
-        });
     }
