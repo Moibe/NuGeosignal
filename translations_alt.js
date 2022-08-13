@@ -85,6 +85,8 @@ glass3_text6 = jsonTranslations[idioma].glass3_text6;
 //Ventana venta
 venta1_text1 = jsonTranslations[idioma].venta1_text1;
 venta1_text2 = jsonTranslations[idioma].venta1_text2;
+venta1_text3 = jsonTranslations[idioma].venta1_text3;
+venta1_text4 = jsonTranslations[idioma].venta1_text4;
 
 //Botón Form
 btnForm_text = jsonTranslations[idioma].btnForm_text;

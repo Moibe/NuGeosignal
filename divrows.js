@@ -17,6 +17,7 @@ buscar_delay = 5;
 mapear_delay = 9;
 requery_delay = 10;
 retry_delay = 3;
+sell_delay = 10;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
 message_delay = 5; 
 map_delay = 1;
@@ -163,20 +164,22 @@ function busquedaPaso2(){
         addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
         addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
         addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
-
-        //y ahora hacemos tiempo para que despliegue el nuevo mapa.
+       
         setTimeout(() => {
 
             mensajes.style.display = 'block';
-            console.log("ESTO ES MENSAJES 182:...");
-            console.log(mensajes);
-  
+              
              setTimeout(() => {
 
                 creaMapa(udEstaAqui);
+
+                setTimeout(() => {
+                    //Tip: El timeout más interno se ejecuta al final. 
+                    busquedaPaso4(udEstaAqui);
+                   
+             }, sell_delay * 1000);
                
- 
-        }, map_delay * 1000);
+         }, map_delay * 1000);
  
         }, message_delay * 1000);
     }
@@ -184,14 +187,14 @@ function busquedaPaso2(){
     function busquedaPaso4(){
 
     console.log("Estoy en el paso 4!!"); 
+    glassDisplay.style.display = 'block';
     formaPago.style.display = 'block';
     btnForm.value = btnForm_text;
     venta1.innerHTML = venta1_text1;
     venta2.innerHTML = venta1_text2;
+    venta3.innerHTML = venta1_text3;
+    venta4.innerHTML = venta1_text4;
     
-
-   
- 
     setTimeout(() => {
 
        

@@ -9,10 +9,15 @@ traducciones =
     "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️",
     "btnGlass_text" : "¡Intentalo!",
     "glass2_text1" : "Tus coordenadas son:",
-        "glass2_text3" : "Esta posición numérica está representada en el sistema de coordenadas UTM, mismo estándar utilizado por los sistemas de posicionamiento global (GPS).",
+    "glass2_text3" : "Esta posición numérica está representada en el sistema de coordenadas UTM, mismo estándar utilizado por los sistemas de posicionamiento global (GPS).",
     "glass2_text4" : "Ahora, el siguiente paso es ubicar éstas coordenadas en un mapa.",
     "btnGlass2_text": "Siguiente Paso",
-    "message1_text1" : "La API de Mapas de OpenStreetMap te permite mapear cualquier lugar del mundo."
+    "message1_text1" : "La API de Mapas de OpenStreetMap te permite mapear cualquier lugar del mundo.",
+    "btnForm_text" : "Obtener tu Ubicación",
+    "venta1_text1" : "Como puedes ver, ahora tienes un mapa de tu localización.",
+    "venta1_text2" : "Esto es muy fácil de implementar con un poco de líneas de código.",
+    "venta1_text3" : "Puedes obtener el código completo para implementarlo fácil y rápidamente.",
+    "venta1_text4" : "Para más información sobre el costo y contenido de la implementación del código da click en el botón."
     },
 
     "en":
@@ -27,7 +32,12 @@ traducciones =
     "glass2_text3" : "This numeric position is represented in the coordinates system UTM, the same standard used by global positioning system (GPS).",
     "glass2_text4" : "Now the next step is to put the coordinates in a map.",
     "btnGlass2_text": "Next Step",
-    "message1_text1" : "OpenStreetMap's API allows you to map any place in the world."
+    "message1_text1" : "OpenStreetMap's API allows you to map any place in the world.",
+    "btnForm_text" : "More info",
+    "venta1_text1" : "As you can see, now you have a map with your location.",
+    "venta1_text2" : "This is really easy to deploy with some simple lines of code.",
+    "venta1_text3" : "You can get the complete source code to deploy it fast ans easily.",
+    "venta1_text4" : "For more information about the cost and contents of the implementation pdf click for More Info."
      }
 }`
 
