@@ -14,12 +14,12 @@ console.log(referido);
 timing_elements = 0;
 buscar_delay = 5;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
-mapear_delay = 4;
+mapear_delay = 9;
 requery_delay = 10;
 retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
-remap_delay = 14; 
-sell_delay = 5;
+message_delay = 5; 
+map_delay = 1;
 paneo_delay = 4;
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
@@ -28,8 +28,6 @@ const mensajes = document.getElementById("mensajes");
 console.log(mensajes);
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
-
-
 const blockDisplay = document.getElementById('blockDisplay');
 
 // Elementos de la primera sección: 
@@ -153,9 +151,7 @@ function busquedaPaso2(){
        
         btnGlass.style.display = 'none';
         glassDisplay.style.display = 'none';
-        mensajes.style.display = 'block';
-        console.log("ESTO ES MENSAJES 182:...");
-        console.log(mensajes);
+        
         //query.style.display = 'none';
         //glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
@@ -170,22 +166,19 @@ function busquedaPaso2(){
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
-  
-        creaMapa(udEstaAqui);
-        
-        //textRowArea.innerHTML = "";
 
+            mensajes.style.display = 'block';
+            console.log("ESTO ES MENSAJES 182:...");
+            console.log(mensajes);
+  
              setTimeout(() => {
-           
-                //btnGlass.style.display = 'block';
-                //glassDisplay.style.display = 'block';
-                //blockDisplay.style.display = 'block';
-                //busquedaPaso4();
+
+                creaMapa(udEstaAqui);
                
  
-        }, sell_delay * 1000);
+        }, map_delay * 1000);
  
-        }, remap_delay * 1000);
+        }, message_delay * 1000);
     }
    
     function busquedaPaso4(){

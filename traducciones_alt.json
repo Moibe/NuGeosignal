@@ -25,7 +25,7 @@ traducciones =
     "btnGlass_text" : "Try it!",
     "glass2_text1" : "Your coordinates:",
     "glass2_text3" : "This numeric position is represented in the coordinates system UTM, the same standard used by global positioning system (GPS).",
-    "glass2_text4" : "Now the next step is tu put the coordinates in a map.",
+    "glass2_text4" : "Now the next step is to put the coordinates in a map.",
     "btnGlass2_text": "Next Step",
     "message1_text1" : "OpenStreetMap's API allows you to map any place in the world."
      }

@@ -1,14 +1,21 @@
-console.log("Referrer:");
-referido = document.referrer;
-console.log(referido);
+const todo = document.getElementById('todo');
 
-if (referido ==""){
-    console.log("Referido está vacío...");
-    initAll();
-}else{
-    console.log("Referido es:");
-    console.log(referido);
+function firstCheck(){
+    referido = document.referrer;
+
+    if (referido ==""){
+        console.log("Referido está vacío...");
+        initAll();
+    }else{
+        console.log("Referido es:");
+        console.log(referido);
+    }
+
+    todo.style.display = 'block';
+
+
 }
+
 
 function newDoc(asignacion) {
     window.location.assign(asignacion)
