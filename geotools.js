@@ -4,7 +4,6 @@ function registrarPosicion() {
 
     //Usa watchPosition para mantener observando cambios en la locación.
     //idRegistroPosicion = navigator.geolocation.watchPosition
-    
     navigator.geolocation.getCurrentPosition(exitoRegistroPosicion, falloRegistroPosicion, {
             enableHighAccuracy: true,
             maximumAge: 30000,

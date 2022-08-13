@@ -21,7 +21,6 @@ retry_delay = 3;
 remap_delay = 14; 
 sell_delay = 15;
 paneo_delay = 4;
-
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
 
@@ -34,7 +33,6 @@ const blockDisplay = document.getElementById('blockDisplay');
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
-tel_field.placeholder = placeholder_text;
 const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
@@ -91,43 +89,10 @@ function initAll(){
 }
 
 function startProcess(){
-    console.log("Estamos iniciando el proceso...");
-    if (phoneValidate() == true){
-        
+    console.log("Estamos iniciando el proceso alterno...");
         busquedaPaso1();
     }
-    else{
-        console.log("El teléfono no fue válido...");
-    }
-
-   /*  if (paso == 1){
-        busquedaPaso1();
-    }
-    else{
-        busquedaPaso3();
-    } */
-}
-
-function phoneValidate(){
     
-    //Expresión regular que vamos a validar...
-    var regExp = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
-    //Obtención del teléfono del campo de teléfono.
-    var phone = tel_field.value;
-
-    //Compara ambos...
-    if (regExp.test(phone)){ 
-        mensajes.innerText= "Número válido";
-        console.log("El número es válido...");
-        return true;
-    }
-    else{ 
-      mensajes.style.display = 'block';
-      mensajes.innerText= "Número no válido"; 
-      return false;
-    }
-  }
-
 function busquedaPaso1(){
 
     console.log("Estoy en busquedaPaso1().");
@@ -136,9 +101,7 @@ function busquedaPaso1(){
     glassDisplay.style.display = 'block';
        
     addTextRow(glass1_text1, 1 ,"intro_uno", writingGlass);
-    addTextRow(glass1_text2, 3 ,"intro_dos", writingGlass);
-    addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
-    addTextRow(glass1_text4, 8 ,"intro_dos", writingGlass);
+    addTextRow(glass1_text4, 3 ,"intro_dos", writingGlass);
 
     setTimeout(() => {
 

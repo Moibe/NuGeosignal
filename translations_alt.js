@@ -4,7 +4,7 @@ console.log("Esto es hostname:");
 console.log(hostname);
 if(hostname == "127.0.0.1"){
     console.log("Estamos en local...");
-    idioma = "en";
+    idioma = "es";
 }
 else{
     //Si estamos en producción el idioma lo definimos desde la url.
