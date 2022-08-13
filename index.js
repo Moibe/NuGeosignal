@@ -155,10 +155,10 @@ function busquedaPaso2(){
     textRowArea.innerHTML = "";
     console.log("Estoy en busquedaPaso2()...");
    
-    addTextRow(glass1_text1, 1 ,"intro_uno", writingGlass);
-    addTextRow(glass1_text2, 3 ,"intro_dos", writingGlass);
-    addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
-    addTextRow(glass1_text4, 7 ,"intro_cuatro", writingGlass);
+    addTextRow(glass2_text1, 1 ,"intro_uno", writingGlass);
+    addTextRow(glass2_text2, 3 ,"intro_dos", writingGlass);
+    addTextRow(glass2_text3, 5 ,"intro_tres", writingGlass);
+    addTextRow(glass2_text4, 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
         
