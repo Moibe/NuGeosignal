@@ -27,10 +27,7 @@ var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de me
 
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
-let formaPago = document.getElementById('formaPago');
-let btnForm = document.getElementById('btnForm');
-let venta1 = document.getElementById('venta1_text1');
-let venta2 = document.getElementById('venta1_text2');
+
 
 const blockDisplay = document.getElementById('blockDisplay');
 

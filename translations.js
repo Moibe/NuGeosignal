@@ -25,9 +25,17 @@ else{
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
 
+try {
+    titulo_text = jsonTranslations[idioma].titulo_text;
+  } catch (error) {
+    console.error(error);
+    // expected output: ReferenceError: nonExistentFunction is not defined
+    // Note - error messages will vary depending on browser
+  }
+
 //Elementos de la página.
 //Título
-titulo_text = jsonTranslations[idioma].titulo_text;
+
 const titulo = document.getElementById('titulo');
 titulo.innerHTML = titulo_text;
 
