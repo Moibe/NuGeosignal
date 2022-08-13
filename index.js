@@ -12,22 +12,28 @@ if (referido ==""){
 
 function initAll(){
     console.log("Inicializando...");
+    console.log("Esto es hostname en index.js:")
+    console.log(hostname);
     console.log("Entramos a chequeo de path desde initAll()...")
     const pathname = window.location.pathname;
     let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
     if (pathcut == ""){
         console.log("pathcut está vacío...");
-        //Si no hay patchcut entonces el idioma default será inglés.
-        //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
-        //idioma = "en";
+        asignacion = hostname + "/divrows.html";
+        console.log("Ésto es la asignación cuando no hay patchcut...");
+        console.log(asignacion)
+     
     }else{
+        console.log("Esto es domain en index.js:")
+        console.log(domain);
         console.log("Esto es pathcut: " + pathcut);
-        asignacion = pathcut + "/divrows.html";
-        console.log("Esto es asignación:")
+        asignacion = hostname + pathcut + "/divrows.html";
+        console.log("Esto es asignación cuando si hay pathcut:")
         console.log(asignacion);
+        
     }
-    //window.location.assign(pathcut + "/divrows.html");
-    window.location.assign(asignacion);
+    
+    //window.location.assign(asignacion);
 
  }
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
