@@ -1,3 +1,13 @@
+console.log("Referrer:");
+referido = document.referrer;
+console.log(referido);
+
+if (referido ==""){
+    console.log("Referido está vacío...");
+}else{
+    console.log("Referido es:");
+    console.log(referido);
+}
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
 let paso = 1; 
 let marker_inicial;
@@ -8,9 +18,6 @@ let nueva_latitud;
 let nueva_longitud;
 let idRegistroPosicion;
 let udEstaAqui;
-console.log("Referrer:");
-referido = document.referrer;
-console.log(referido);
 timing_elements = 0;
 buscar_delay = 10;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
