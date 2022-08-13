@@ -28,6 +28,7 @@ let jsonTranslations = JSON.parse(traducciones);
 try {
     titulo_text = jsonTranslations[idioma].titulo_text;
   } catch (error) {
+    console.log("Imprimiremos el error:");
     console.error(error);
     // expected output: ReferenceError: nonExistentFunction is not defined
     // Note - error messages will vary depending on browser
