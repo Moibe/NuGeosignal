@@ -1,0 +1,58 @@
+traducciones = 
+`{
+    "es":
+    {
+    "titulo_text": "Implementación de localización vía HTML5 & Google Maps 🌎",
+    "placeholder_text": "Escribe tu número para localizarte.",
+    "btnSubmit_text": "Iniciar",
+    "glass1_text1" : "Evaluación de dispositivo y navegador.",
+    "glass1_text2" : "Revisando el dispositivo.",
+    "glass1_text3" : "Su dispositivo y navegador cumplen con los requerimientos necesarios.",
+    "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️",
+    "btnGlass_text" : "Buscar",
+    "glass2_text1" : "Leyendo antenas.",
+    "glass2_text2" : "Leyendo frecuencia.",
+    "glass2_text3" : "Calculando posición.",
+    "glass2_text4" : "Creando mapa.",
+    "mensajes_glass" : "Ésta es tu posición, ahora ingresa el número que deseas buscar.",
+    "btnSubmit2_text": "Localizar",
+    "glass3_text1" : "Buscando el nuevo dispositivo.",
+    "glass3_text2" : "Leyendo antenas.",
+    "glass3_text3" : "Leyendo frecuencia.",
+    "glass3_text4" : "Calculando posición.",
+    "glass3_text5" : "Dispositivo Localizado.",
+    "glass3_text6" : "Creando mapa.",
+    "venta1_text1" : "El servicio tiene un costo que se puede pagar de forma segura.",
+    "venta1_text2" : "Da click en el botón para obtener más información.",
+    "btnForm_text": "Obtener tu Ubicación"
+     },
+
+    "en":
+   {
+    "titulo_text": "Location via HTML5 & Google Maps 🌎",
+    "placeholder_text": "Write your number to locate you.",
+    "btnSubmit_text": "Start",
+    "glass1_text1" : "Evaluating device and web browser.",
+    "glass1_text2" : "Reviewing Device.",
+    "glass1_text3" : "Your device and browser meet the requirements.",
+    "glass1_text4" : "Remember to allow location in your web browser. ⤴️",
+    "btnGlass_text" : "Search",
+    "glass2_text1" : "Aerials lookup.",
+    "glass2_text2" : "Reading frequency.",
+    "glass2_text3" : "Writing position.",
+    "glass2_text4" : "Creating map.",
+    "mensajes_glass" : "This is your location, now type the phone number you want to find.",
+    "btnSubmit2_text": "Search",
+    "glass3_text1" : "Looking for the new device.",
+    "glass3_text2" : "Aerials lookup.",
+    "glass3_text3" : "Reading frequency.",
+    "glass3_text4" : "Writing position.",
+    "glass3_text5" : "Device located.",
+    "glass3_text6" : "Creating map.",
+    "venta1_text1" : "The service can be paid using secure gateway.",
+    "venta1_text2" : "Click on the button to read detailed information.",
+    "btnForm_text": "Get Location"
+     }
+}`
+
+   

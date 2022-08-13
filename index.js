@@ -83,7 +83,7 @@ map.zoomControl.disable(); */
 
 function initAll(){
     console.log("Inicializando...");
-    //window.location.assign("/implement.html");
+    //window.location.assign("/divrows.html");
     /* const cuerpo = document.getElementById('cuerpo');
     //cuerpo.innerHTML = "Hello World!";
     cuerpo.innerHTML = "<object style=\"overflow:hidden; width: 99.25%; height: 101%\" width=\"100%\" height=\"101%\" data=\'implement.html'></object>"
