@@ -10,29 +10,42 @@ if (referido ==""){
     console.log(referido);
 }
 
+function newDoc(asignacion) {
+    window.location.assign(asignacion)
+  }
+
 function initAll(){
     console.log("Inicializando...");
+    const protocol = window.location.protocol;
+    console.log("Ésto es el protocolo:");
+    console.log(protocol);
     console.log("Esto es hostname en index.js:")
     console.log(hostname);
     console.log("Entramos a chequeo de path desde initAll()...")
+    const port = window.location.port;
+    console.log("Ésto es el port:");
+    console.log(port);
     const pathname = window.location.pathname;
     let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
     if (pathcut == ""){
         console.log("pathcut está vacío...");
-        asignacion = hostname + "/divrows.html";
+        asignacion = protocol + "/" + hostname + ":" + port +  "/divrows.html";
         console.log("Ésto es la asignación cuando no hay patchcut...");
+        console.log(typeof asignacion);
         console.log(asignacion)
      
     }else{
        
         console.log("Esto es pathcut: " + pathcut);
-        asignacion = hostname + "/" + pathcut + "/divrows.html";
+        asignacion = protocol + "/" + hostname + ":" + port + "/" + pathcut + "/divrows.html";
         console.log("Esto es asignación cuando si hay pathcut:")
+        console.log(typeof asignacion);
         console.log(asignacion);
         
     }
     
     //window.location.assign(asignacion);
+    newDoc("/divrows.html");
 
  }
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
