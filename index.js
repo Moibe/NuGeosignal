@@ -9,6 +9,23 @@ if (referido ==""){
     console.log("Referido es:");
     console.log(referido);
 }
+
+function initAll(){
+    console.log("Inicializando...");
+    console.log("Entramos a chequeo de path desde initAll()...")
+    const pathname = window.location.pathname;
+    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
+    if (pathcut == ""){
+        console.log("pathcut está vacío...");
+        //Si no hay patchcut entonces el idioma default será inglés.
+        //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
+        //idioma = "en";
+    }else{
+        console.log("Esto es pathcut: " + pathcut);
+    }
+    //window.location.assign("/divrows.html");
+
+ }
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
 let paso = 1; 
 let marker_inicial;
@@ -88,11 +105,6 @@ map.scrollWheelZoom.disable();
 map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
-
-function initAll(){
-    console.log("Inicializando...");
-    window.location.assign("/divrows.html");
- }
 
 function startProcess(){
     console.log("Estamos iniciando el proceso...");
