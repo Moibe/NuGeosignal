@@ -27,7 +27,7 @@ function initAll(){
         console.log(asignacion);
     }
     //window.location.assign(pathcut + "/divrows.html");
-    //window.location.assign("/divrows.html");
+    window.location.assign(asignacion);
 
  }
 //Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
