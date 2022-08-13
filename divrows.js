@@ -82,11 +82,7 @@ map.zoomControl.disable(); */
 
 function initAll(){
     console.log("Inicializando...");
-    //window.location.assign("/implement.html");
-    /* const cuerpo = document.getElementById('cuerpo');
-    //cuerpo.innerHTML = "Hello World!";
-    cuerpo.innerHTML = "<object style=\"overflow:hidden; width: 99.25%; height: 101%\" width=\"100%\" height=\"101%\" data=\'implement.html'></object>"
- */
+    
 }
 
 function startProcess(){
@@ -118,6 +114,9 @@ function busquedaPaso2(){
     //Desaparece los textos que haya habido previamente.
     textRowArea.innerHTML = "";
     console.log("Estoy en busquedaPaso2()...");
+
+    glass2_text2 = "(" + udEstaAqui.coords.latitude + " , " + udEstaAqui.coords.longitude + ")";
+    
    
     addTextRow(glass2_text1, 1 ,"intro_uno", writingGlass);
     addTextRow(glass2_text2, 3 ,"intro_dos", writingGlass);

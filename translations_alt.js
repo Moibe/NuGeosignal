@@ -4,7 +4,7 @@ console.log("Esto es hostname:");
 console.log(hostname);
 if(hostname == "127.0.0.1"){
     console.log("Estamos en local...");
-    idioma = "es";
+    idioma = "en";
 }
 else{
     //Si estamos en producción el idioma lo definimos desde la url.
@@ -60,7 +60,7 @@ btnGlass_text = jsonTranslations[idioma].btnGlass_text;
 
 //Textos de la Glass Window Paso 2:
 glass2_text1 = jsonTranslations[idioma].glass2_text1;
-glass2_text2 = jsonTranslations[idioma].glass2_text2;
+//glass2_text2 = jsonTranslations[idioma].glass2_text2;
 glass2_text3 = jsonTranslations[idioma].glass2_text3;
 glass2_text4 = jsonTranslations[idioma].glass2_text4;
 

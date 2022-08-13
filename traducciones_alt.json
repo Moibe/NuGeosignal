@@ -2,54 +2,32 @@ traducciones =
 `{
     "es":
     {
-    "titulo_text": "Implementación de localización vía HTML5 & Google Maps 🌎",
+    "titulo_text": "Implementación de localización vía HTML5 & OpenStreetMap 🌎",
     "placeholder_text": "Escribe tu número para localizarte.",
     "btnSubmit_text": "Iniciar",
     "glass1_text1" : "A través de HTML5 puedes ubicar las coordenadas del dispositivo que estas usando.",
     "glass1_text4" : "Recuerda habilitar la localización en tu navegador. ⤴️",
     "btnGlass_text" : "¡Intentalo!",
     "glass2_text1" : "Tus coordenadas son:",
-    "glass2_text2" : "(19.5290804, -99.1929407)",
-    "glass2_text3" : "Esta posición numérica está representada en el sistema de coordenadas UTM, mismo estándar utilizado por los sistemas de posicionamiento global (GPS).",
+        "glass2_text3" : "Esta posición numérica está representada en el sistema de coordenadas UTM, mismo estándar utilizado por los sistemas de posicionamiento global (GPS).",
     "glass2_text4" : "Ahora, el siguiente paso es ubicar éstas coordenadas en un mapa.",
-    "mensajes_glass" : "Ésta es tu posición, ahora ingresa el número que deseas buscar.",
     "btnGlass2_text": "Siguiente Paso",
-    "message1_text1" : "La API de Mapas de OpenStreetMap te permite mapear cualquier lugar del mundo.",
-    "glass3_text2" : "Leyendo antenas.",
-    "glass3_text3" : "Leyendo frecuencia.",
-    "glass3_text4" : "Calculando posición.",
-    "glass3_text5" : "Dispositivo Localizado.",
-    "glass3_text6" : "Creando mapa.",
-    "venta1_text1" : "El servicio tiene un costo que se puede pagar de forma segura.",
-    "venta1_text2" : "Da click en el botón para obtener más información.",
-    "btnForm_text": "Obtener tu Ubicación"
-     },
+    "message1_text1" : "La API de Mapas de OpenStreetMap te permite mapear cualquier lugar del mundo."
+    },
 
     "en":
    {
-    "titulo_text": "Location via HTML5 & Google Maps 🌎",
+    "titulo_text": "Location via HTML5 & OpenStreetMap 🌎",
     "placeholder_text": "Write your number to locate you.",
-    "btnSubmit_text": "Start",
-    "glass1_text1" : "Evaluating device and web browser.",
-    "glass1_text2" : "Reviewing Device.",
-    "glass1_text3" : "Your device and browser meet the requirements.",
+    "btnSubmit_text": "Start", 
+    "glass1_text1" : "You can get the coordinates of your device using HTML5.",
     "glass1_text4" : "Remember to allow location in your web browser. ⤴️",
-    "btnGlass_text" : "Search",
-    "glass2_text1" : "Aerials lookup.",
-    "glass2_text2" : "Reading frequency.",
-    "glass2_text3" : "Writing position.",
-    "glass2_text4" : "Creating map.",
-    "mensajes_glass" : "This is your location, now type the phone number you want to find.",
-    "btnSubmit2_text": "Search",
-    "glass3_text1" : "Looking for the new device.",
-    "glass3_text2" : "Aerials lookup.",
-    "glass3_text3" : "Reading frequency.",
-    "glass3_text4" : "Writing position.",
-    "glass3_text5" : "Device located.",
-    "glass3_text6" : "Creating map.",
-    "venta1_text1" : "The service can be paid using secure gateway.",
-    "venta1_text2" : "Click on the button to read detailed information.",
-    "btnForm_text": "Get Location"
+    "btnGlass_text" : "Try it!",
+    "glass2_text1" : "Your coordinates:",
+    "glass2_text3" : "This numeric position is represented in the coordinates system UTM, the same standard used by global positioning system (GPS).",
+    "glass2_text4" : "Now the next step is tu put the coordinates in a map.",
+    "btnGlass2_text": "Next Step",
+    "message1_text1" : "OpenStreetMap's API allows you to map any place in the world."
      }
 }`
 
