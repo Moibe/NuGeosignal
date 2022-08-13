@@ -4,6 +4,7 @@ console.log(referido);
 
 if (referido ==""){
     console.log("Referido está vacío...");
+    initAll();
 }else{
     console.log("Referido es:");
     console.log(referido);
@@ -90,12 +91,8 @@ map.zoomControl.disable(); */
 
 function initAll(){
     console.log("Inicializando...");
-    //window.location.assign("/divrows.html");
-    /* const cuerpo = document.getElementById('cuerpo');
-    //cuerpo.innerHTML = "Hello World!";
-    cuerpo.innerHTML = "<object style=\"overflow:hidden; width: 99.25%; height: 101%\" width=\"100%\" height=\"101%\" data=\'implement.html'></object>"
- */
-}
+    window.location.assign("/divrows.html");
+ }
 
 function startProcess(){
     console.log("Estamos iniciando el proceso...");
