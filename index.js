@@ -24,10 +24,9 @@ function initAll(){
         console.log(asignacion)
      
     }else{
-        console.log("Esto es domain en index.js:")
-        console.log(domain);
+       
         console.log("Esto es pathcut: " + pathcut);
-        asignacion = hostname + pathcut + "/divrows.html";
+        asignacion = hostname + "/" + pathcut + "/divrows.html";
         console.log("Esto es asignación cuando si hay pathcut:")
         console.log(asignacion);
         
