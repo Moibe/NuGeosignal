@@ -4,7 +4,7 @@ domain = "https://www.campus-code.app/";
 path = "/checkout";
 //El idd debe depender del idioma:
 //es:
-idd = 2; 
+//idd = 2; 
 //nl:
 //idd = 5;
 //pt:
