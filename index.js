@@ -6,6 +6,40 @@ const hostname = window.location.hostname;
 const pathname = window.location.pathname;
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
 
+
+let paso = 1; 
+let marker_inicial;
+var circle;
+var maxPoints = 10;
+var distancia_encuentro = 1;
+let nueva_latitud;
+let nueva_longitud;
+let idRegistroPosicion;
+let udEstaAqui;
+
+
+
+var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
+var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
+
+const btnGlass = document.getElementById('btnGlass');
+let writingGlass = document.getElementById('writingGlass');
+
+
+const blockDisplay = document.getElementById('blockDisplay');
+
+// Elementos de la primera sección: 
+const seccionQuery = document.getElementById('query');
+const tel_field = document.getElementById('tel_field');
+const mensajes = document.getElementById("mensajes");
+const locate_sample = document.getElementById("locate_sample");
+
+var iconFile = 'ico-cel.png';
+
+// Elementos de la segunda sección:
+
+const glassDisplay = document.getElementById('glassDisplay');
+
 function iniciar(){
     setIdiomaProducto();
 
@@ -86,36 +120,36 @@ function setPrecios(){
 
 }
 
-    function setSellButton(){
+function setSellButton(){
 
-        //En el futuro haz que el dominio dependa de ...
-        domain = "https://www.campus-code.app/";
-        
-        path = "/checkout";
-        
-        
-        console.log("Esto es domain:");
-        console.log(domain);
-        
-        console.log("Esto es path:");
-        console.log(path);
-        
-        direccion = domain + idioma + path; 
-        console.log("Esto es dirección...");
-        console.log(direccion);
-        
-        let formaPago = document.getElementById('formaPago');
-        let btnForm = document.getElementById('btnForm');
-        let venta1 = document.getElementById('venta1_text1');
-        let venta2 = document.getElementById('venta1_text2');
-        let venta3 = document.getElementById('venta1_text3');
-        let venta4 = document.getElementById('venta1_text4');
-        let id_product = document.getElementById('id_product');
-        
-        formaPago.action = direccion; 
-        id_product.value = "2";
-        
-        }
+    //En el futuro haz que el dominio dependa de ...
+    domain = "https://www.campus-code.app/";
+    
+    path = "/checkout";
+    
+    
+    console.log("Esto es domain:");
+    console.log(domain);
+    
+    console.log("Esto es path:");
+    console.log(path);
+    
+    direccion = domain + idioma + path; 
+    console.log("Esto es dirección...");
+    console.log(direccion);
+    
+    let formaPago = document.getElementById('formaPago');
+    let btnForm = document.getElementById('btnForm');
+    let venta1 = document.getElementById('venta1_text1');
+    let venta2 = document.getElementById('venta1_text2');
+    let venta3 = document.getElementById('venta1_text3');
+    let venta4 = document.getElementById('venta1_text4');
+    let id_product = document.getElementById('id_product');
+    
+    formaPago.action = direccion; 
+    id_product.value = "2";
+    
+    }
 
 function getReferrer(){
     referido = document.referrer;
@@ -166,15 +200,6 @@ function redireccionador(){
 function variables_index(){
 translations();
 
-let paso = 1; 
-let marker_inicial;
-var circle;
-var maxPoints = 10;
-var distancia_encuentro = 1;
-let nueva_latitud;
-let nueva_longitud;
-let idRegistroPosicion;
-let udEstaAqui;
 timing_elements = 0;
 buscar_delay = 10;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
@@ -185,27 +210,6 @@ retry_delay = 3;
 remap_delay = 14; 
 sell_delay = 15;
 paneo_delay = 4;
-
-var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
-var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
-
-const btnGlass = document.getElementById('btnGlass');
-let writingGlass = document.getElementById('writingGlass');
-
-
-const blockDisplay = document.getElementById('blockDisplay');
-
-// Elementos de la primera sección: 
-const seccionQuery = document.getElementById('query');
-const tel_field = document.getElementById('tel_field');
-const mensajes = document.getElementById("mensajes");
-const locate_sample = document.getElementById("locate_sample");
-
-var iconFile = 'ico-cel.png';
-
-// Elementos de la segunda sección:
-
-const glassDisplay = document.getElementById('glassDisplay');
 tel_field.placeholder = placeholder_text;
 
 // Opciones del mapa

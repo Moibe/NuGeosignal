@@ -2,12 +2,6 @@
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
 const locate_sample = document.getElementById("locate_sample");
-
-function variables_divrows(){
-
-//Aquí se harán las traducciones pero para alt.
-translations_alt();
-    
 let paso = 1; 
 let marker_inicial;
 var circle;
@@ -17,6 +11,20 @@ let nueva_latitud;
 let nueva_longitud;
 let idRegistroPosicion;
 let udEstaAqui;
+var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
+var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
+const mensajes = document.getElementById("mensajes");
+const btnGlass = document.getElementById('btnGlass');
+let writingGlass = document.getElementById('writingGlass');
+const blockDisplay = document.getElementById('blockDisplay');
+const glassDisplay = document.getElementById('glassDisplay');
+
+function variables_divrows(){
+
+//Aquí se harán las traducciones pero para alt.
+translations_alt();
+
+
 timing_elements = 0;
 buscar_delay = 5;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
@@ -28,13 +36,6 @@ sell_delay = 10;
 message_delay = 5; 
 map_delay = 1;
 paneo_delay = 4;
-var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
-var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
-
-const mensajes = document.getElementById("mensajes");
-const btnGlass = document.getElementById('btnGlass');
-let writingGlass = document.getElementById('writingGlass');
-const blockDisplay = document.getElementById('blockDisplay');
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
@@ -43,11 +44,6 @@ btnSubmit.addEventListener('click', startProcess);
 
 var iconFile = 'ico-cel.png';
 
-// Elementos de la segunda sección:
-
-const glassDisplay = document.getElementById('glassDisplay');
-
-// Opciones del mapa
 let mapOptions = {
     center:[51.505, -0.09],
     zoom:10,
