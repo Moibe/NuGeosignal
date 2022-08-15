@@ -1,5 +1,7 @@
 console.log("Ejecutando inicializador();");
 inicializador();
+console.log("Ejecutabdo variables_iniciales();")
+variables_iniciales();
 
 const todo = document.getElementById('todo');
 
@@ -54,8 +56,10 @@ function redireccionador(){
     //newDoc("/divrows.html");
 
  }
-//Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
-let paso = 1; 
+
+function variables_iniciales(){
+
+    let paso = 1; 
 let marker_inicial;
 var circle;
 var maxPoints = 10;
@@ -87,7 +91,6 @@ const blockDisplay = document.getElementById('blockDisplay');
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
-tel_field.placeholder = placeholder_text;
 const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
@@ -101,6 +104,7 @@ var iconFile = 'ico-cel.png';
 // Elementos de la segunda sección:
 
 const glassDisplay = document.getElementById('glassDisplay');
+tel_field.placeholder = placeholder_text;
 
 // Opciones del mapa
 let mapOptions = {
@@ -134,6 +138,10 @@ map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
 
+
+
+}
+ 
 function startProcess(){
     console.log("Estamos iniciando el proceso...");
     if (phoneValidate() == true){
