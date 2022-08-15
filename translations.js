@@ -6,7 +6,8 @@ try {
     titulo_text = jsonTranslations[idioma].titulo_text;
   } catch (error) {
     console.log("Imprimiremos el error:");
-    console.error(error);
+    //El error si debe suceder, lo dejo comentado para que no afecte la developer console.
+    //console.error(error);
     idioma = "en";
     console.log("Como marcó error, ya que ese idioma no existe, idioma será:");
     console.log(idioma);
