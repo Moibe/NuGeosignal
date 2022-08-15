@@ -1,6 +1,6 @@
 //Idioma
-const idioma = "uno"; 
-const producto = "uno";
+let idioma; 
+let producto;
 const hostname = window.location.hostname;
 
 const pathname = window.location.pathname;
