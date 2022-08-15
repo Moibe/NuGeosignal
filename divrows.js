@@ -19,6 +19,10 @@ let writingGlass = document.getElementById('writingGlass');
 const blockDisplay = document.getElementById('blockDisplay');
 const glassDisplay = document.getElementById('glassDisplay');
 
+let btnForm = document.getElementById('btnForm');
+let venta1 = document.getElementById('venta1_text1');
+let venta2 = document.getElementById('venta1_text2');
+
 let mapOptions = {
     center:[51.505, -0.09],
     zoom:10,
