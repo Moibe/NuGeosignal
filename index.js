@@ -53,8 +53,8 @@ function inicializador(){
         }
     }
     
-    console.log("Ejecutando traducciones...");
-    translations();
+  
+    
     
     }
     
@@ -111,7 +111,7 @@ function redireccionador(){
  }
 
 function variables_iniciales(){
-
+translations();
 const todo = document.getElementById('todo');
 let paso = 1; 
 let marker_inicial;
