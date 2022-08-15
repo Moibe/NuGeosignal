@@ -42,8 +42,6 @@ const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
 
-var iconFile = 'ico-cel.png';
-
 let mapOptions = {
     center:[51.505, -0.09],
     zoom:10,

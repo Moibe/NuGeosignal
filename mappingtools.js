@@ -29,8 +29,7 @@ function creaMapa(posicionInicial){
     posicion = new L.LatLng(latitud, longitud);
     console.log(posicion);
 
-    //FIN DE LA DEFINICIÓN.
-
+    var iconFile = 'ico-cel.png';
     //Icono:
     var myIcon = L.icon({
         iconUrl: iconFile,
@@ -93,7 +92,6 @@ function creaMapa(posicionInicial){
         console.log(posicion);
         map.panTo(posicion);
         console.log("Ya panee a la nueva...");
-        
 
     }, paneo_delay * 1000);
   
