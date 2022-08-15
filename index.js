@@ -1,6 +1,7 @@
 //Idioma
 let idioma; 
 let producto;
+const hostname = window.location.hostname;
 
 function iniciar(){
     setIdiomaProducto();
@@ -32,8 +33,9 @@ function setIdiomaProducto(){
     let producto_default = "en";
     console.log("El producto default es:" + producto_default);
     
-    //Se revisa el hostname para saber si estamos en local o online.
-    const hostname = window.location.hostname;
+    //Se cambia hostname hacia arriba para que sea global.
+    /* //Se revisa el hostname para saber si estamos en local o online.
+    const hostname = window.location.hostname; */
     console.log("Esto es hostname:");
     console.log(hostname);
     if(hostname == "127.0.0.1"){
@@ -66,9 +68,7 @@ function setIdiomaProducto(){
             console.log("El producto será:" + producto);
         }
     }
-
     const todo = document.getElementById('todo');
-    
  
     }
 
