@@ -31,10 +31,12 @@ const tel_field = document.getElementById('tel_field');
 const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
+// Elementos de la segunda sección:
+
+const glassDisplay = document.getElementById('glassDisplay');
+
+//Elementos del mapa:
 var iconFile = 'ico-cel.png';
-
-
-// Opciones del mapa
 let mapOptions = {
     center:[51.505, -0.09],
     zoom:10,
@@ -43,7 +45,6 @@ let mapOptions = {
 }
 
 let map = new L.map('map' , mapOptions, { zoomControl:false });
-
 
 let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
@@ -64,10 +65,6 @@ map.scrollWheelZoom.disable();
 map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
-
-// Elementos de la segunda sección:
-
-const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
     setIdiomaProducto();
