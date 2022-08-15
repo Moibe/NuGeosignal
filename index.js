@@ -5,6 +5,7 @@ function iniciar(){
 setTimeout(() => {
 
     setPrecios();
+    setSellButton();
     getReferrer();
 
     setTimeout(() => {
@@ -73,6 +74,51 @@ function setIdiomaProducto(){
     
  
     }
+
+    function setPrecios(){
+
+        //Declaramos el json con las variables de idioma.
+        let jsonPrecios = JSON.parse(precios);
+        //Idioma viene cortado de la url, es decir que por ejemplo EU aunque no es un idioma si nos ayuda a definir...
+        //el precio de Europa porque esa es la URL que viene en la Campaña.
+        idd_product = jsonPrecios[idioma].idd;
+        console.log("El idd reportado desde precios.js es:");
+        console.log(idd_product);
+    
+    }
+
+    function setSellButton(){
+
+        //En el futuro haz que el dominio dependa de ...
+        domain = "https://www.campus-code.app/";
+        
+        path = "/checkout";
+        
+        
+        console.log("Esto es domain:");
+        console.log(domain);
+        
+        console.log("Esto es path:");
+        console.log(path);
+        
+        direccion = domain + idioma + path; 
+        console.log("Esto es dirección...");
+        console.log(direccion);
+        
+        let formaPago = document.getElementById('formaPago');
+        let btnForm = document.getElementById('btnForm');
+        let venta1 = document.getElementById('venta1_text1');
+        let venta2 = document.getElementById('venta1_text2');
+        let venta3 = document.getElementById('venta1_text3');
+        let venta4 = document.getElementById('venta1_text4');
+        let id_product = document.getElementById('id_product');
+        
+        formaPago.action = direccion; 
+        id_product.value = "2";
+        
+        }
+
+
 
 function getReferrer(){
     referido = document.referrer;
