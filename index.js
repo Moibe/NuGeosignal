@@ -6,6 +6,37 @@ const hostname = window.location.hostname;
 const pathname = window.location.pathname;
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
 
+//Elementos del mapa:
+var iconFile = 'ico-cel.png';
+let mapOptions = {
+    center:[51.505, -0.09],
+    zoom:10,
+    minZoom: 9,
+    maxZoom: 20,
+}
+
+let map = new L.map('map' , mapOptions, { zoomControl:false });
+
+let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+//Icono:
+var myIcon = L.icon({
+    iconUrl: iconFile,
+    //iconSize: [38, 95],
+    //iconAnchor: [22, 94],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+});
+/* map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable(); 
+map.boxZoom.disable();
+map.keyboard.disable();
+map.zoomControl.disable(); */
+
 //Sell elements now global, check if serve to divrows too.
 let btnForm = document.getElementById('btnForm');
 let venta1 = document.getElementById('venta1_text1');
@@ -42,36 +73,7 @@ const locate_sample = document.getElementById("locate_sample");
 
 const glassDisplay = document.getElementById('glassDisplay');
 
-//Elementos del mapa:
-var iconFile = 'ico-cel.png';
-let mapOptions = {
-    center:[51.505, -0.09],
-    zoom:10,
-    minZoom: 9,
-    maxZoom: 20,
-}
 
-let map = new L.map('map' , mapOptions, { zoomControl:false });
-
-let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-//Icono:
-var myIcon = L.icon({
-    iconUrl: iconFile,
-    //iconSize: [38, 95],
-    //iconAnchor: [22, 94],
-    //popupAnchor: [-3, -76],
-    //shadowUrl: 'my-icon-shadow.png',
-    //shadowSize: [68, 95],
-    //shadowAnchor: [22, 94]
-});
-/* map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable(); 
-map.boxZoom.disable();
-map.keyboard.disable();
-map.zoomControl.disable(); */
 
 function iniciar(){
     setIdiomaProducto();
