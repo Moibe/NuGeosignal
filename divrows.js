@@ -45,10 +45,8 @@ map.keyboard.disable();
 map.zoomControl.disable(); */
 
 function variables_divrows(){
-
 //Aquí se harán las traducciones pero para alt.
 translations_alt();
-
 
 timing_elements = 0;
 buscar_delay = 5;
@@ -66,7 +64,6 @@ paneo_delay = 4;
 const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
-
 
 }
 
@@ -101,21 +98,14 @@ function busquedaPaso2(){
     console.log("Estoy en busquedaPaso2()...");
 
     glass2_text2 = "(" + udEstaAqui.coords.latitude + " , " + udEstaAqui.coords.longitude + ")";
-    
-   
+  
     addTextRow(glass2_text1, 1 ,"intro_uno", writingGlass);
     addTextRow(glass2_text2, 3 ,"intro_dos", writingGlass);
     addTextRow(glass2_text3, 5 ,"intro_tres", writingGlass);
     addTextRow(glass2_text4, 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
-        
-        //Usa éste si no quieres que haya antenas. 
-        //colocaMarcador(udEstaAqui);
-
-        //Usa éste si quieres ponerle antenas.
-        //creaMapa(udEstaAqui);
-        //glassDisplay.style.display = 'none';
+              
         btnGlass.style.display = 'block';
         //query.style.display = 'block';
         //query.style.top = '60%';
@@ -138,10 +128,7 @@ function busquedaPaso3(){
     
     btnGlass.style.display = 'none';
     glassDisplay.style.display = 'none';
-    
-    //query.style.display = 'none';
-    //glassDisplay.style.display = 'block';
-    //Desaparece los textos que haya habido previamente.
+   
     console.log("Estoy en busquedaPaso3, desapareciendo los textos anteriores.");
     textRowArea.innerHTML = "";
     //addTextRow(glass3_text1, 1 ,"intro_cero", writingGlass);
