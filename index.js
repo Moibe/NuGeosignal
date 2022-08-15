@@ -2,14 +2,13 @@ function iniciar(){
     setIdiomaProducto();
 
 setTimeout(() => {
-
-    setPrecios();
+  
     setSellButton();
     getReferrer();
 
     setTimeout(() => {
      
-        console.log("Ejecutando variables_iniciales(); 182182182182")
+        setPrecios();
         variables_iniciales();
     
     }, 10 * 1000);
