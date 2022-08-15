@@ -16,9 +16,6 @@ let nueva_latitud;
 let nueva_longitud;
 let idRegistroPosicion;
 let udEstaAqui;
-
-
-
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
 
@@ -35,6 +32,38 @@ const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
 var iconFile = 'ico-cel.png';
+
+
+// Opciones del mapa
+let mapOptions = {
+    center:[51.505, -0.09],
+    zoom:10,
+    minZoom: 9,
+    maxZoom: 20,
+}
+
+let map = new L.map('map' , mapOptions, { zoomControl:false });
+
+
+let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+//Icono:
+var myIcon = L.icon({
+    iconUrl: iconFile,
+    //iconSize: [38, 95],
+    //iconAnchor: [22, 94],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+});
+/* map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable(); 
+map.boxZoom.disable();
+map.keyboard.disable();
+map.zoomControl.disable(); */
 
 // Elementos de la segunda sección:
 
@@ -126,8 +155,7 @@ function setSellButton(){
     domain = "https://www.campus-code.app/";
     
     path = "/checkout";
-    
-    
+  
     console.log("Esto es domain:");
     console.log(domain);
     
@@ -191,7 +219,6 @@ function redireccionador(){
         console.log("Esto es asignación cuando si hay pathcut:")
         console.log(typeof asignacion);
         console.log(asignacion);
-        
     }
     
     window.location.assign(asignacion);
@@ -212,37 +239,6 @@ sell_delay = 15;
 paneo_delay = 4;
 tel_field.placeholder = placeholder_text;
 
-// Opciones del mapa
-let mapOptions = {
-    center:[51.505, -0.09],
-    zoom:10,
-    minZoom: 9,
-    maxZoom: 20,
-}
-
-let map = new L.map('map' , mapOptions, { zoomControl:false });
-
-
-let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-//Icono:
-var myIcon = L.icon({
-    iconUrl: iconFile,
-    //iconSize: [38, 95],
-    //iconAnchor: [22, 94],
-    //popupAnchor: [-3, -76],
-    //shadowUrl: 'my-icon-shadow.png',
-    //shadowSize: [68, 95],
-    //shadowAnchor: [22, 94]
-});
-
-/* map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable(); 
-map.boxZoom.disable();
-map.keyboard.disable();
-map.zoomControl.disable(); */
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');

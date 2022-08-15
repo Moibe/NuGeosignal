@@ -19,6 +19,26 @@ let writingGlass = document.getElementById('writingGlass');
 const blockDisplay = document.getElementById('blockDisplay');
 const glassDisplay = document.getElementById('glassDisplay');
 
+let mapOptions = {
+    center:[51.505, -0.09],
+    zoom:10,
+    minZoom: 9,
+    maxZoom: 20,
+}
+
+let map = new L.map('map' , mapOptions, { zoomControl:false });
+
+
+let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+map.addLayer(layer);
+
+/* map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable(); 
+map.boxZoom.disable();
+map.keyboard.disable();
+map.zoomControl.disable(); */
+
 function variables_divrows(){
 
 //Aquí se harán las traducciones pero para alt.
@@ -42,25 +62,6 @@ const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
 
-let mapOptions = {
-    center:[51.505, -0.09],
-    zoom:10,
-    minZoom: 9,
-    maxZoom: 20,
-}
-
-let map = new L.map('map' , mapOptions, { zoomControl:false });
-
-
-let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-/* map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable(); 
-map.boxZoom.disable();
-map.keyboard.disable();
-map.zoomControl.disable(); */
 
 }
 
