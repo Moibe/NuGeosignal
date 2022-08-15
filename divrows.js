@@ -1,4 +1,6 @@
-//Ésta variable marca si el phoneValidate es del paso 1 o del paso 3.
+function variables_divrows(){
+
+    
 let paso = 1; 
 let marker_inicial;
 var circle;
@@ -78,6 +80,10 @@ map.scrollWheelZoom.disable();
 map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
+
+
+}
+
 
 function startProcess(){
     console.log("Estamos iniciando el proceso alterno...");

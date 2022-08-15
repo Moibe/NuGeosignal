@@ -1,6 +1,6 @@
 //Idioma
-let idioma; 
-let producto;
+const idioma = "uno"; 
+const producto = "uno";
 const hostname = window.location.hostname;
 
 const pathname = window.location.pathname;
@@ -17,7 +17,7 @@ setTimeout(() => {
     setTimeout(() => {
      
         setPrecios();
-        variables_iniciales();
+        variables_index();
     
     }, 10 * 1000);
  
@@ -166,7 +166,7 @@ function redireccionador(){
 
  }
 
-function variables_iniciales(){
+function variables_index(){
 translations();
 
 let paso = 1; 
