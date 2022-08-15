@@ -8,7 +8,7 @@ function firstCheck(){
 
     if (referido ==""){
         console.log("Referido está vacío...");
-        initAll();
+        redireccionador();
     }else{
         console.log("Referido es:");
         console.log(referido);
@@ -18,25 +18,21 @@ function firstCheck(){
 
 
 }
-/* 
 
-function newDoc(asignacion) {
-    window.location.assign(asignacion)
-  }
- */
-function initAll(){
+function redireccionador(){
     console.log("Inicializando...");
     const protocol = window.location.protocol;
     console.log("Ésto es el protocolo:");
     console.log(protocol);
-    console.log("Esto es hostname en index.js:")
+    console.log("Esto es hostname en index.js:");
     console.log(hostname);
-    console.log("Entramos a chequeo de path desde initAll()...")
     const port = window.location.port;
     console.log("Ésto es el port:");
     console.log(port);
-    const pathname = window.location.pathname;
-    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
+    //Ya no se necesita crear pathcut, porque eso se hace en init.
+    /* const pathname = window.location.pathname;
+    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string */
+     
     if (pathcut == ""){
         console.log("pathcut está vacío...");
         asignacion = protocol + "//" + hostname + ":" + port +  "/divrows.html";

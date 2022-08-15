@@ -79,11 +79,6 @@ map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
 
-function initAll(){
-    console.log("Inicializando...");
-    
-}
-
 function startProcess(){
     console.log("Estamos iniciando el proceso alterno...");
         busquedaPaso1();
