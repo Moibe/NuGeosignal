@@ -1,15 +1,26 @@
-console.log("Ejecutando inicializador();");
-firstCheck();
+function iniciar(){
+    setIdiomaProducto();
+
 
 setTimeout(() => {
-        
-    console.log("Ejecutando variables_iniciales();")
-    variables_iniciales();
 
-}, mapear_delay * 1000);
+    //Get referer llamará al redireccionador si es necesario.
+    getReferrer();
+
+    setTimeout(() => {
+     
+        console.log("Ejecutando variables_iniciales(); 182182182182")
+        variables_iniciales();
+    
+    }, 10 * 1000);
+ 
+
+}, 10 * 1000);
+
+}
 
 
-function inicializador(){
+function setIdiomaProducto(){
 
     //Idioma
     let idioma; 
@@ -57,12 +68,12 @@ function inicializador(){
             console.log("El producto será:" + producto);
         }
     }
-    
 
+    const todo = document.getElementById('todo');
+ 
     }
-    
 
-function firstCheck(){
+function getReferrer(){
     referido = document.referrer;
 
     if (referido ==""){
@@ -75,11 +86,10 @@ function firstCheck(){
 
     todo.style.display = 'block';
 
-
 }
 
 function redireccionador(){
-    console.log("Inicializando...");
+    
     const protocol = window.location.protocol;
     console.log("Ésto es el protocolo:");
     console.log(protocol);
@@ -88,10 +98,7 @@ function redireccionador(){
     const port = window.location.port;
     console.log("Ésto es el port:");
     console.log(port);
-    //Ya no se necesita crear pathcut, porque eso se hace en init.
-    /* const pathname = window.location.pathname;
-    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string */
-     
+         
     if (pathcut == ""){
         console.log("pathcut está vacío...");
         asignacion = protocol + "//" + hostname + ":" + port +  "/divrows.html";
@@ -115,7 +122,7 @@ function redireccionador(){
 
 function variables_iniciales(){
 translations();
-const todo = document.getElementById('todo');
+
 let paso = 1; 
 let marker_inicial;
 var circle;
