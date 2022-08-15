@@ -1,3 +1,7 @@
+//Idioma
+let idioma; 
+let producto;
+
 function iniciar(){
     setIdiomaProducto();
 
@@ -20,10 +24,6 @@ setTimeout(() => {
 
 function setIdiomaProducto(){
 
-    //Idioma
-    let idioma; 
-    let producto;
-    
     //El idioma defualt es el idioma que tendremos en local 127.0.0.1 porque no hay un subdominio que lo designe.
     let idioma_default = "en";
     console.log("El idioma default es:" + idioma_default);
