@@ -1,10 +1,8 @@
 console.log("Ejecutando inicializador();");
 inicializador();
-console.log("Ejecutando traducciones...");
-translations();
+
 console.log("Ejecutando variables_iniciales();")
 variables_iniciales();
-
 
 function inicializador(){
 
@@ -55,6 +53,8 @@ function inicializador(){
         }
     }
     
+    console.log("Ejecutando traducciones...");
+    translations();
     
     }
     
