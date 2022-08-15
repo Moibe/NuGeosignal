@@ -133,41 +133,41 @@ function busquedaPaso2(){
  
 }
 
-    function busquedaPaso3(){
-       
-        btnGlass.style.display = 'none';
-        glassDisplay.style.display = 'none';
-        
-        //query.style.display = 'none';
-        //glassDisplay.style.display = 'block';
-        //Desaparece los textos que haya habido previamente.
-        console.log("Estoy en busquedaPaso3, desapareciendo los textos anteriores.");
-        textRowArea.innerHTML = "";
-        //addTextRow(glass3_text1, 1 ,"intro_cero", writingGlass);
-        /* addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
-        addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
-        addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
-        addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
-        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
-       
-        setTimeout(() => {
+function busquedaPaso3(){
+    
+    btnGlass.style.display = 'none';
+    glassDisplay.style.display = 'none';
+    
+    //query.style.display = 'none';
+    //glassDisplay.style.display = 'block';
+    //Desaparece los textos que haya habido previamente.
+    console.log("Estoy en busquedaPaso3, desapareciendo los textos anteriores.");
+    textRowArea.innerHTML = "";
+    //addTextRow(glass3_text1, 1 ,"intro_cero", writingGlass);
+    /* addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
+    addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
+    addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
+    addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
+    addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
+    
+    setTimeout(() => {
 
-            mensajes.style.display = 'block';
-              
-             setTimeout(() => {
+        mensajes.style.display = 'block';
+            
+            setTimeout(() => {
 
-                creaMapa(udEstaAqui);
+            creaMapa(udEstaAqui);
 
-                setTimeout(() => {
-                    //Tip: El timeout más interno se ejecuta al final. 
-                    busquedaPaso4(udEstaAqui);
-                   
-             }, sell_delay * 1000);
-               
-         }, map_delay * 1000);
- 
-        }, message_delay * 1000);
-    }
+            setTimeout(() => {
+                //Tip: El timeout más interno se ejecuta al final. 
+                busquedaPaso4(udEstaAqui);
+                
+            }, sell_delay * 1000);
+            
+        }, map_delay * 1000);
+
+    }, message_delay * 1000);
+}
    
     function busquedaPaso4(){
 
@@ -177,12 +177,8 @@ function busquedaPaso2(){
     btnForm.value = btnForm_text;
     venta1.innerHTML = venta1_text1;
     venta2.innerHTML = venta1_text2;
-    venta3.innerHTML = venta1_text3;
-    venta4.innerHTML = venta1_text4;
-    
+       
     setTimeout(() => {
 
-       
-//también puedes poner números directos como multiplicadores del delay y no necesariamente variables.
 }, 5 * 1000);
     }
