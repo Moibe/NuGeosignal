@@ -3,6 +3,9 @@ let idioma;
 let producto;
 const hostname = window.location.hostname;
 
+const pathname = window.location.pathname;
+let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
+
 function iniciar(){
     setIdiomaProducto();
 
@@ -48,8 +51,7 @@ function setIdiomaProducto(){
     else{
         //Si estamos en producción el idioma lo definimos desde la url.
         console.log("Entramos a chequeo de path...");
-        const pathname = window.location.pathname;
-        let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
+        
         if (pathcut == ""){
             console.log("pathcut está vacío...");
             //Si no hay patchcut entonces el idioma default será inglés.
