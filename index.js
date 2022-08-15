@@ -16,6 +16,7 @@ let mapOptions = {
 }
 
 let map = new L.map('map' , mapOptions, { zoomControl:false });
+console.log("Éste es el MAPA... 182");
 
 let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
