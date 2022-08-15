@@ -1,8 +1,13 @@
 console.log("Ejecutando inicializador();");
-inicializador();
+firstCheck();
 
-console.log("Ejecutando variables_iniciales();")
-variables_iniciales();
+setTimeout(() => {
+        
+    console.log("Ejecutando variables_iniciales();")
+    variables_iniciales();
+
+}, mapear_delay * 1000);
+
 
 function inicializador(){
 
@@ -53,9 +58,7 @@ function inicializador(){
         }
     }
     
-  
-    
-    
+
     }
     
 
@@ -203,13 +206,7 @@ function startProcess(){
         console.log("El teléfono no fue válido...");
     }
 
-   /*  if (paso == 1){
-        busquedaPaso1();
-    }
-    else{
-        busquedaPaso3();
-    } */
-}
+  }
 
 function phoneValidate(){
     
@@ -287,8 +284,7 @@ function busquedaPaso2(){
  
 }
 
-
-    function busquedaPaso3(){
+function busquedaPaso3(){
        
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
