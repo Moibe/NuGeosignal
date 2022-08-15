@@ -1,6 +1,4 @@
-function translations_alt{
-
-  
+function translations_alt(){
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
 
@@ -69,6 +67,5 @@ venta1_text4 = jsonTranslations[idioma].venta1_text4;
 
 //Botón Form
 btnForm_text = jsonTranslations[idioma].btnForm_text;
-
 
 }
