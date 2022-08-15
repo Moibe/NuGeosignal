@@ -57,17 +57,6 @@ let map = new L.map('map' , mapOptions, { zoomControl:false });
 let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
 
-//Icono:
-var myIcon = L.icon({
-    iconUrl: iconFile,
-    //iconSize: [38, 95],
-    //iconAnchor: [22, 94],
-    //popupAnchor: [-3, -76],
-    //shadowUrl: 'my-icon-shadow.png',
-    //shadowSize: [68, 95],
-    //shadowAnchor: [22, 94]
-});
-
 /* map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable(); 

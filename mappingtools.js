@@ -31,6 +31,17 @@ function creaMapa(posicionInicial){
 
     //FIN DE LA DEFINICIÓN.
 
+    //Icono:
+    var myIcon = L.icon({
+        iconUrl: iconFile,
+    //iconSize: [38, 95],
+    //iconAnchor: [22, 94],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+});
+
     //INICIO DE TRAZADO EN MAPA.
     marker_inicial = new L.Marker([latitud, longitud], {icon: myIcon});
     console.log("Esto es el marker_inicial:");
