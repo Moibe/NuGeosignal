@@ -1,26 +1,3 @@
-//Idioma
-const hostname = window.location.hostname;
-console.log("Esto es hostname:");
-console.log(hostname);
-if(hostname == "127.0.0.1"){
-    console.log("Estamos en local...");
-    idioma = "en";
-}
-else{
-    //Si estamos en producción el idioma lo definimos desde la url.
-    console.log("Entramos a chequeo de path...")
-    const pathname = window.location.pathname;
-    let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
-    if (pathcut == ""){
-        console.log("pathcut está vacío...");
-        //Si no hay patchcut entonces el idioma default será inglés.
-        //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
-        idioma = "en";
-    }else{
-        console.log("Esto es pathcut: " + pathcut);
-        idioma = pathcut;
-    }
-}
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
 try {
