@@ -117,8 +117,6 @@ function setPrecios(){
         
         }
 
-
-
 function getReferrer(){
     referido = document.referrer;
 
@@ -163,7 +161,6 @@ function redireccionador(){
     }
     
     window.location.assign(asignacion);
-
  }
 
 function variables_index(){

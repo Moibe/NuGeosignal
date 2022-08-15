@@ -1,5 +1,7 @@
 function variables_divrows(){
 
+//Aquí se harán las traducciones pero para alt.
+translations_alt();
     
 let paso = 1; 
 let marker_inicial;
@@ -26,9 +28,8 @@ map_delay = 1;
 paneo_delay = 4;
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
-console.log("Getting elemento Mensajes...");
+
 const mensajes = document.getElementById("mensajes");
-console.log(mensajes);
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
 const blockDisplay = document.getElementById('blockDisplay');
