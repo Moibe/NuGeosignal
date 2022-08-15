@@ -1,6 +1,8 @@
 console.log("Ejecutando inicializador();");
 inicializador();
-console.log("Ejecutabdo variables_iniciales();")
+console.log("Ejecutando traducciones...");
+translations();
+console.log("Ejecutando variables_iniciales();")
 variables_iniciales();
 
 
