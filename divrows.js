@@ -1,3 +1,8 @@
+// Elementos de la primera sección: 
+const seccionQuery = document.getElementById('query');
+const tel_field = document.getElementById('tel_field');
+const locate_sample = document.getElementById("locate_sample");
+
 function variables_divrows(){
 
 //Aquí se harán las traducciones pero para alt.
@@ -12,9 +17,6 @@ let nueva_latitud;
 let nueva_longitud;
 let idRegistroPosicion;
 let udEstaAqui;
-console.log("Referrer:");
-referido = document.referrer;
-console.log(referido);
 timing_elements = 0;
 buscar_delay = 5;
 //mapear_delay: Requiere de por lo menos 7 segundos para que salgan todos los textos previos.
@@ -33,11 +35,6 @@ const mensajes = document.getElementById("mensajes");
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
 const blockDisplay = document.getElementById('blockDisplay');
-
-// Elementos de la primera sección: 
-const seccionQuery = document.getElementById('query');
-const tel_field = document.getElementById('tel_field');
-const locate_sample = document.getElementById("locate_sample");
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
@@ -82,15 +79,13 @@ map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
 
-
 }
-
 
 function startProcess(){
     console.log("Estamos iniciando el proceso alterno...");
         busquedaPaso1();
     }
-    
+   
 function busquedaPaso1(){
 
     console.log("Estoy en busquedaPaso1().");
