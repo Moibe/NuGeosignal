@@ -1,4 +1,4 @@
-inicializador(){
+function inicializador(){
 
 //Idioma
 let idioma; 
