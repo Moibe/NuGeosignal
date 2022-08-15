@@ -1,3 +1,6 @@
+console.log("Ejecutando inicializador();");
+inicializador();
+
 const todo = document.getElementById('todo');
 
 function firstCheck(){
@@ -15,12 +18,12 @@ function firstCheck(){
 
 
 }
-
+/* 
 
 function newDoc(asignacion) {
     window.location.assign(asignacion)
   }
-
+ */
 function initAll(){
     console.log("Inicializando...");
     const protocol = window.location.protocol;

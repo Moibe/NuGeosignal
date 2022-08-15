@@ -1,3 +1,5 @@
+inicializador(){
+
 //Idioma
 let idioma; 
 let producto;
@@ -43,4 +45,7 @@ else{
         producto = pathcut;
         console.log("El producto será:" + producto);
     }
+}
+
+
 }
