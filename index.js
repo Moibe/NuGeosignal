@@ -6,6 +6,13 @@ const hostname = window.location.hostname;
 const pathname = window.location.pathname;
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
 
+//Sell elements now global, check if serve to divrows too.
+let btnForm = document.getElementById('btnForm');
+let venta1 = document.getElementById('venta1_text1');
+let venta2 = document.getElementById('venta1_text2');
+let venta3 = document.getElementById('venta1_text3');
+let venta4 = document.getElementById('venta1_text4');
+
 
 let paso = 1; 
 let marker_inicial;
@@ -164,11 +171,7 @@ function setSellButton(){
     console.log(direccion);
     
     let formaPago = document.getElementById('formaPago');
-    let btnForm = document.getElementById('btnForm');
-    let venta1 = document.getElementById('venta1_text1');
-    let venta2 = document.getElementById('venta1_text2');
-    let venta3 = document.getElementById('venta1_text3');
-    let venta4 = document.getElementById('venta1_text4');
+    
     let id_product = document.getElementById('id_product');
     
     formaPago.action = direccion; 
