@@ -4,7 +4,7 @@ function iniciar(){
 
 setTimeout(() => {
 
-    //Get referer llamará al redireccionador si es necesario.
+    setPrecios();
     getReferrer();
 
     setTimeout(() => {
@@ -70,6 +70,7 @@ function setIdiomaProducto(){
     }
 
     const todo = document.getElementById('todo');
+    
  
     }
 
