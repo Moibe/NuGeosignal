@@ -1,3 +1,5 @@
+let map;
+
 //Idioma
 let idioma; 
 let producto;
@@ -82,9 +84,7 @@ function primerMapa(){
     maxZoom: 20,
     }
 
-let map = new L.map('map' , mapOptions, { zoomControl:false });
-
-
+map = new L.map('map' , mapOptions, { zoomControl:false });
 
 map.addLayer(layer);
 
@@ -382,8 +382,6 @@ function busquedaPaso3(){
     venta1.innerHTML = venta1_text1;
     venta2.innerHTML = venta1_text2;
     
-
-   
  
     setTimeout(() => {
 
