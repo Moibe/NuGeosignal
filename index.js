@@ -183,6 +183,11 @@ function setSellButton(){
     }
 
 function getReferrer(){
+
+    console.log("Estoy en getReferrer...");
+    console.log("Y el hostname, antes de checar el referer es:");
+    console.log(hostname);
+    console.log("OJK");
     referido = document.referrer;
 
     if (referido ==""){
@@ -194,11 +199,9 @@ function getReferrer(){
     }
 
     todo.style.display = 'block';
-
 }
 
 function redireccionador(){
-    
     const protocol = window.location.protocol;
     console.log("Ésto es el protocolo:");
     console.log(protocol);
@@ -241,7 +244,6 @@ remap_delay = 14;
 sell_delay = 15;
 paneo_delay = 4;
 tel_field.placeholder = placeholder_text;
-
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
