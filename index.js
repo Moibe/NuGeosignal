@@ -81,12 +81,13 @@ function iniciar(){
 
 setTimeout(() => {
   
-    setSellButton();
+    setPrecios();
+    
     getReferrer();
 
     setTimeout(() => {
      
-        setPrecios();
+        setSellButton();
         variables_index();
     
     }, 5 * 1000);
