@@ -2,41 +2,8 @@
 let idioma; 
 let producto;
 const hostname = window.location.hostname;
-
 const pathname = window.location.pathname;
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
-
-//Elementos del mapa:
-var iconFile = 'ico-cel.png';
-let mapOptions = {
-    center:[51.505, -0.09],
-    zoom:10,
-    minZoom: 9,
-    maxZoom: 20,
-}
-
-let map = new L.map('map' , mapOptions, { zoomControl:false });
-console.log("Éste es el MAPA... 182");
-
-let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-map.addLayer(layer);
-
-//Icono:
-var myIcon = L.icon({
-    iconUrl: iconFile,
-    //iconSize: [38, 95],
-    //iconAnchor: [22, 94],
-    //popupAnchor: [-3, -76],
-    //shadowUrl: 'my-icon-shadow.png',
-    //shadowSize: [68, 95],
-    //shadowAnchor: [22, 94]
-});
-/* map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable(); 
-map.boxZoom.disable();
-map.keyboard.disable();
-map.zoomControl.disable(); */
 
 //Sell elements now global, check if serve to divrows too.
 let btnForm = document.getElementById('btnForm');
@@ -45,8 +12,8 @@ let venta2 = document.getElementById('venta1_text2');
 let venta3 = document.getElementById('venta1_text3');
 let venta4 = document.getElementById('venta1_text4');
 
-
 let paso = 1; 
+
 let marker_inicial;
 var circle;
 var maxPoints = 10;
@@ -57,6 +24,16 @@ let idRegistroPosicion;
 let udEstaAqui;
 var kmRadius1 = {'min': 5, 'max': 10}; //Estará de 5 a 10 kilometros de distancia. 
 var kmRadius2 = {'min': 0.5, 'max': 1}; //y las antenas estarán separadas de medio a un kilometro.
+var iconFile = 'ico-cel.png';
+var myIcon = L.icon({
+    iconUrl: iconFile,
+    //iconSize: [38, 95],
+    //iconAnchor: [22, 94],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+});
 
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
@@ -71,29 +48,52 @@ const mensajes = document.getElementById("mensajes");
 const locate_sample = document.getElementById("locate_sample");
 
 // Elementos de la segunda sección:
-
 const glassDisplay = document.getElementById('glassDisplay');
 
-
-
 function iniciar(){
-    setIdiomaProducto();
+
+    primerMapa();
 
 setTimeout(() => {
   
+    setIdiomaProducto();
     setPrecios();
-    
     getReferrer();
-
     setTimeout(() => {
      
+        
         setSellButton();
         variables_index();
     
     }, 5 * 1000);
  
+}, 3 * 1000);
+}
 
-}, 5 * 1000);
+function primerMapa(){
+
+    let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+    console.log("Creando el mapa inicial");
+    let mapOptions = {
+    center:[51.505, -0.09],
+    zoom:10,
+    minZoom: 9,
+    maxZoom: 20,
+    }
+
+let map = new L.map('map' , mapOptions, { zoomControl:false });
+
+
+
+map.addLayer(layer);
+
+/* map.touchZoom.disable();
+map.doubleClickZoom.disable();
+map.scrollWheelZoom.disable(); 
+map.boxZoom.disable();
+map.keyboard.disable();
+map.zoomControl.disable(); */
 
 }
 
@@ -198,10 +198,9 @@ function getReferrer(){
             console.log("Referido es:");
             console.log(referido);
         }
-
     }
  
-    todo.style.display = 'block';
+    //todo.style.display = 'block';
 }
 
 function redireccionador(){

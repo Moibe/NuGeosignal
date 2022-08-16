@@ -5,12 +5,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="stylesheet" href="index.css">
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
        
     </head>
         <body onload="iniciar()">
 
-            <div id="todo" class="todo" style="display: none;">
+            <div id="todo" class="todo" style="display: block;">
                 <div class="encabezado">
                     <h1><img src="geosignal_logo.png" style="float:left; height:42px;">GeoSignal</h1>
                 </div>
@@ -56,12 +57,11 @@
             </div>
          </body>
         <!-- Puse el json hasta arriba porque el orden de lectura si importa! -->
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        
         <script src="./index.js"></script>
         <script type="text/javascript" src="traducciones.json"></script>
         <script src="./translations.js"></script>
         <script type="text/javascript" src="precios.json"></script>
-        
         <script src="./geotools.js"></script>
         <script src="./mappingtools.js"></script>
         <script src="./tools.js"></script>
