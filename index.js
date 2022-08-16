@@ -65,9 +65,9 @@ setTimeout(() => {
         setSellButton();
         variables_index();
     
-    }, 5 * 1000);
+    }, 3 * 1000);
  
-}, 3 * 1000);
+}, 2 * 1000);
 }
 
 function primerMapa(){
