@@ -89,7 +89,7 @@ setTimeout(() => {
         setPrecios();
         variables_index();
     
-    }, 10 * 1000);
+    }, 5 * 1000);
  
 
 }, 5 * 1000);
@@ -165,20 +165,17 @@ function setSellButton(){
   
     console.log("Esto es domain:");
     console.log(domain);
-    
     console.log("Esto es path:");
     console.log(path);
-    
     direccion = domain + idioma + path; 
     console.log("Esto es dirección...");
     console.log(direccion);
     
     let formaPago = document.getElementById('formaPago');
-    
     let id_product = document.getElementById('id_product');
     
     formaPago.action = direccion; 
-    id_product.value = "2";
+    id_product.value = idd_product;
     
     }
 
@@ -187,17 +184,22 @@ function getReferrer(){
     console.log("Estoy en getReferrer...");
     console.log("Y el hostname, antes de checar el referer es:");
     console.log(hostname);
-    console.log("OJK");
     referido = document.referrer;
 
-    if (referido ==""){
-        console.log("Referido está vacío...");
-        redireccionador();
+    if(hostname == "127.0.0.1"){
+        console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
     }else{
-        console.log("Referido es:");
-        console.log(referido);
-    }
 
+        if (referido ==""){
+            console.log("Referido está vacío...");
+            redireccionador();
+        }else{
+            console.log("Referido es:");
+            console.log(referido);
+        }
+
+    }
+ 
     todo.style.display = 'block';
 }
 
