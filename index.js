@@ -161,6 +161,9 @@ function setPrecios(){
       } catch (ex) {
         console.log("Estamos en el catch de product idd...")
         console.error('inner', ex.message);
+        //como el subdominio no existe como producto, entonces usarás el producto estándar: 
+        idd_product = 6;
+
       } finally {
         console.log('finally');
                 }
