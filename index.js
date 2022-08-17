@@ -165,7 +165,9 @@ function setPrecios(){
         idd_product = 6;
 
       } finally {
-        console.log('finally');
+        
+        console.log("Éste es el idd_product finalmente:");
+        console.log(idd_product);
                 }
             }
 
