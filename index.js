@@ -1,4 +1,6 @@
+let permiso;
 let map;
+let window_aceptar_permiso = true;
 
 //Idioma
 let idioma; 
@@ -297,9 +299,32 @@ function busquedaPaso1(){
     addTextRow(glass1_text3, 5 ,"intro_tres", writingGlass);
     addTextRow(glass1_text4, 8 ,"intro_dos", writingGlass);
 
+    //Antes de buscar la posición, manejaremos sus permisos: 
+    console.log("Aquí está por escribir la función handlePermission...");
+    handlePermission();
+    
     setTimeout(() => {
 
+        
+
+        if(permiso == "granted" || permiso == "prompt"){
+            console.log("El permiso es granted o prompt...");
+            console.log(permiso)
             registrarPosicion();
+        }else{
+            console.log("El permiso NO es granted...");
+            console.log("window permission:");
+            console.log(window_aceptar_permiso);
+            if(window_aceptar_permiso == true){
+                locate_sample.style.display = 'block';
+            }else{
+                console.log("No haré nada respecto al permiso porque estoy fuera de la ventana de acptación...");
+            }
+            
+        }
+
+
+        
  
     }, buscar_delay * 1000);
 
@@ -307,6 +332,7 @@ function busquedaPaso1(){
 
 function busquedaPaso2(){
     
+    window_aceptar_permiso = false;
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
     textRowArea.innerHTML = "";

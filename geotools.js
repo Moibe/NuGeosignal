@@ -28,20 +28,8 @@ function exitoRegistroPosicion(position){
 function falloRegistroPosicion(){
     console.log("Registré la posición incorrectamente :(");
     console.log(idRegistroPosicion);
-    locate_sample.style.display = 'block';
-
-    //intenta de nuevo después de un timeout.
-
-    setTimeout(() => {
-        
-        locate_sample.style.display = 'none';
-        registrarPosicion();
-
-        //Aparece el botón que hará lo siguiente y se le da la habilidad de dar el Paso2.
-        btnGlass.style.display = 'block';
-        btnGlass.addEventListener('click', busquedaPaso2);
-
-    }, retry_delay * 1000);
+   
+  
 }
 
 function getRndInteger(min, max) {
