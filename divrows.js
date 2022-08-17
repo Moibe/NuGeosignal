@@ -1,7 +1,7 @@
 // Elementos de la primera sección: 
 const seccionQuery = document.getElementById('query');
 const tel_field = document.getElementById('tel_field');
-const locate_sample = document.getElementById("locate_sample");
+let locate_sample = document.getElementById("locate_sample");
 let paso = 1; 
 let marker_inicial;
 var circle;

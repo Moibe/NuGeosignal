@@ -3,7 +3,7 @@ function handlePermission() {
       if (result.state === 'granted') {
         report(result.state);
         permiso = result.state;
-        locate_sample.style.display = 'block';
+        locate_sample.style.display = 'none';
       } else if (result.state === 'prompt') {
         report(result.state);
         permiso = result.state;
