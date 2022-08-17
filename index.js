@@ -76,8 +76,10 @@ setTimeout(() => {
 
 function primerMapa(){
 
-    let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
-
+    //let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+    //let layer = new L.TileLayer('https://api.mapbox.com/styles/v1/moibe182/cl6xbyefa003k14mtpk5o2u5a/wmts?access_token=pk.eyJ1IjoibW9pYmUxODIiLCJhIjoiY2w2eDkyNmdtMG1odTNvazB6dTNkM2QzZyJ9.HXBa-K4RB1lnPRkNKuu9mA');
+    let layer = new L.TileLayer('https://api.mapbox.com/styles/v1/moibe182/cl6xa5l49004r14n0857xyqxu/wmts?access_token=pk.eyJ1IjoibW9pYmUxODIiLCJhIjoiY2w2eDkyNmdtMG1odTNvazB6dTNkM2QzZyJ9.HXBa-K4RB1lnPRkNKuu9mA');
+    
     console.log("Creando el mapa inicial");
     let mapOptions = {
     center:[51.505, -0.09],
