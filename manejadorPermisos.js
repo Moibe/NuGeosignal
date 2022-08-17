@@ -18,6 +18,7 @@ function handlePermission() {
         report(result.state);
         permiso = result.state;
         if(window_aceptar_permiso == true && permiso == "granted"){
+            locate_sample.style.display = 'none';
             registrarPosicion();
         }else{
             console.log("No haré nada ante el cambio de permiso...");
