@@ -163,9 +163,8 @@ function setPrecios(){
         console.error('inner', ex.message);
       } finally {
         console.log('finally');
-
-
-}
+                }
+            }
 
 function setSellButton(){
 
