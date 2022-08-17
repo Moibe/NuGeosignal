@@ -159,6 +159,7 @@ function setPrecios(){
         console.log("El idd reportado desde precios.js es:");
         console.log(idd_product);
       } catch (ex) {
+        console.log("Estamos en el catch de product idd...")
         console.error('inner', ex.message);
       } finally {
         console.log('finally');
