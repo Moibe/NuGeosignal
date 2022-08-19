@@ -63,19 +63,19 @@ setTimeout(() => {
     setIdiomaProducto();
     setPrecios();
     getReferrer();
+    variables_index();
     setTimeout(() => {
-     
+ 
         
         setSellButton();
-        variables_index();
+        
     
-    }, 3 * 1000);
+    }, 2 * 1000);
  
 }, 2 * 1000);
 }
 
 function primerMapa(){
-
     
     console.log("Creando el mapa inicial");
     let mapOptions = {
@@ -270,7 +270,7 @@ retry_delay = 3;
 //remap_delay: Requiere de por lo menos 9 segundos para poder acabar de escribir todo.
 remap_delay = 14; 
 sell_delay = 15;
-paneo_delay = 4;
+paneo_delay = 2;
 tel_field.placeholder = placeholder_text;
 
 //Inicialiación del botón Principal.
@@ -291,13 +291,30 @@ function startProcess(){
 
   }
 
+function keepProcess(){
+    console.log("Continuamos el proceso...");
+    if (phoneValidate() == true){
+        
+        busquedaPaso3();
+    }
+    else{
+        console.log("El teléfono no fue válido...");
+    }
+}
+
 function phoneValidate(){
     
-    //Expresión regular que vamos a validar...
-    var regExp = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
     //Obtención del teléfono del campo de teléfono.
     var phone = tel_field.value;
 
+    if (phone == ""){
+        mensajes.style.display = 'block';
+        mensajes.innerText= mensajeTelVacio;
+    }else{
+  
+    //Expresión regular que vamos a validar...
+    var regExp = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/;
+ 
     //Compara ambos...
     if (regExp.test(phone)){ 
         mensajes.innerText= "Número válido";
@@ -306,10 +323,20 @@ function phoneValidate(){
     }
     else{ 
       mensajes.style.display = 'block';
-      mensajes.innerText= "Número no válido"; 
+      mensajes.innerText= "Validating phone number to worldwide carriers dbs..."; 
+      
+      setTimeout(() => {
+
+      mensajes.innerText= mensajeTelIncorrecto; 
       return false;
+
+    }, 2 * 1000);
+
+
     }
   }
+
+}
 
 function busquedaPaso1(){
 
@@ -329,8 +356,6 @@ function busquedaPaso1(){
     
     setTimeout(() => {
 
-        
-
         if(permiso == "granted" || permiso == "prompt"){
             console.log("El permiso es granted o prompt...");
             console.log(permiso)
@@ -347,9 +372,6 @@ function busquedaPaso1(){
             
         }
 
-
-        
- 
     }, buscar_delay * 1000);
 
 }
@@ -368,11 +390,7 @@ function busquedaPaso2(){
     addTextRow(glass2_text4, 7 ,"intro_cuatro", writingGlass);
 
     setTimeout(() => {
-        
-        //Usa éste si no quieres que haya antenas. 
-        //colocaMarcador(udEstaAqui);
 
-        //Usa éste si quieres ponerle antenas.
         creaMapa(udEstaAqui);
         glassDisplay.style.display = 'none';
         query.style.display = 'block';
@@ -383,7 +401,7 @@ function busquedaPaso2(){
         //Ahora el paso a ejecutar está dictado por 'paso', ya no se necesita remover phoneValidate ni agregar paso3.
         paso = 3;
         btnSubmit.removeEventListener('click', startProcess);
-        btnSubmit.addEventListener('click', busquedaPaso3);
+        btnSubmit.addEventListener('click', keepProcess);
         tel_field.value = "";
         tel_field.placeholder = '';
 

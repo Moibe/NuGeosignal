@@ -11,8 +11,7 @@ try {
     idioma = "en";
     console.log("Como marcó error, ya que ese idioma no existe, idioma será:");
     console.log(idioma);
-    // expected output: ReferenceError: nonExistentFunction is not defined
-    // Note - error messages will vary depending on browser
+   
   }
 
 //Elementos de la página.
@@ -21,11 +20,11 @@ titulo_text = jsonTranslations[idioma].titulo_text;
 const titulo = document.getElementById('titulo');
 titulo.innerHTML = titulo_text;
 
-//Texto query
+//Elementos del query inicial
 placeholder_text = jsonTranslations[idioma].placeholder_text;
-
-//Botón Submit
 btnSubmit_text = jsonTranslations[idioma].btnSubmit_text;
+mensajeTelVacio = jsonTranslations[idioma].mensajeTelVacio;
+mensajeTelIncorrecto = jsonTranslations[idioma].mensajeTelIncorrecto;
 
 //Textos de la Glass Window Paso 1:
 glass1_text1 = jsonTranslations[idioma].glass1_text1;

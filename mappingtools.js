@@ -1,7 +1,5 @@
 function creaMapa(posicionInicial){
-    console.log("ESTAMOS EN CREAMAPA()...")
-    console.log("Estamos usando posicionInicial, que es esto:");
-    console.log(posicionInicial);
+    
     console.log("El paso es igual a:");
     console.log(paso);
 
@@ -23,6 +21,7 @@ function creaMapa(posicionInicial){
         }
     }
 
+    //Del registro de navigaator usamos la posición obtenida.
     posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
     console.log("Estoy escribiendo la nueva posición oficial...");
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
@@ -47,8 +46,6 @@ function creaMapa(posicionInicial){
     console.log(marker_inicial);
     marker_inicial.addTo(map);
     map.setZoom(16); 
-    console.log("Estoy paneando hacia la posición_original:");
-    console.log(posicion_original);
     map.panTo(posicion_original);
     console.log("Ya panee a la original...");
 
@@ -88,9 +85,7 @@ function creaMapa(posicionInicial){
         }
     
         map.setZoom(16); 
-        console.log("Estoy paneando hacia la posición:");
-        console.log(posicion);
-        map.panTo(posicion);
+        map.panTo(posicion, {animate: true, duration: 0.2, easeLinearity: 0.9});
         console.log("Ya panee a la nueva...");
 
     }, paneo_delay * 1000);

@@ -36,7 +36,8 @@ function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
 
-function colocaMarcador(position){
+//Coloca marcador ya no se usa. 
+/* function colocaMarcador(position){
 marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
 //map.addLayer(marker);
 console.log("AGREGAMOS MARCADOR YA 123");
@@ -47,7 +48,7 @@ map.setZoom(16);
 map.panTo(posicionActual);
 //drawPolyline();
 }
-
+ */
 function encuentraNuevaPosicionDispositivo(position){
     
     console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...");
