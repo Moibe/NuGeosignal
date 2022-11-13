@@ -9,7 +9,7 @@ try {
     //El error si debe suceder, lo dejo comentado para que no afecte la developer console.
     //console.error(error);
     idioma = "en";
-    console.log("Como marcó error, ya que ese idioma no existe, idioma será:");
+    console.log("Como marcó error, ya que ese idioma no existe, idioma será ahora:");
     console.log(idioma);
    
   }
