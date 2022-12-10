@@ -1,4 +1,5 @@
 function handlePermission() {
+  console.log("Entré a Handle Permissions...");
     navigator.permissions.query({ name: 'geolocation' }).then((result) => {
       if (result.state === 'granted') {
         report(result.state);
