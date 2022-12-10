@@ -60,7 +60,7 @@ function iniciar(){
 
     referido = document.referrer;
     console.log("REFERIDOMOI:");
-    console.log(rocument.referrer)
+    console.log(document.referrer)
     console.log(referido)
 
     primerMapa();
