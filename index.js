@@ -212,6 +212,8 @@ function getReferrer(){
     console.log("Y el hostname, antes de checar el referer es:");
     console.log(hostname);
     referido = document.referrer;
+    console.log("y esto es el referido!!!!:");
+    console.log(referido)
 
     if(hostname == "127.0.0.1"){
         console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
