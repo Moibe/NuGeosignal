@@ -1,8 +1,6 @@
 let permiso;
 let map;
 let window_aceptar_permiso = true;
-console.log("PUTO:");
-console.log(document.referrer);
 
 
 //Idioma
@@ -61,11 +59,7 @@ function iniciar(){
 
 
     
-    console.log("REFERIDOMOI:");
-    console.log(document.referrer)
-    referido = document.referrer;
-    console.log(referido)
-
+   
     primerMapa();
 
 setTimeout(() => {
