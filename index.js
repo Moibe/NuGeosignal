@@ -1,7 +1,7 @@
 let permiso;
 let map;
 let window_aceptar_permiso = true;
-referido = document.referrer;
+
 
 //Idioma
 let idioma; 
@@ -56,6 +56,12 @@ const locate_sample = document.getElementById("locate_sample");
 const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
+
+
+    referido = document.referrer;
+    console.log("REFERIDOMOI:");
+    console.log(rocument.referrer)
+    console.log(referido)
 
     primerMapa();
 
