@@ -217,7 +217,7 @@ function getReferrer(){
     console.log(hostname);
     
     console.log("y esto es el document.referrer!!!!:");
-    console.log(document.referrer)
+    referido = document.referrer;
     console.log("y esto es el referido!!!!:");
     console.log(referido)
 
