@@ -66,6 +66,8 @@ setTimeout(() => {
   
     setIdiomaProducto();
     setPrecios();
+    //Como ya no sirve document.referrer, omitiré la función, y la activaré burdamente cuando quiera que se vaya a divrows hasta
+    //encontrar otro método para implementarlo o decidir que no se implementará. 
     getReferrer();
     variables_index();
     setTimeout(() => {
@@ -239,6 +241,7 @@ function getReferrer(){
 }
 
 function redireccionador(){
+    //Por como está ahora, referer ya siempre viene vacío, así es que siempre se irá a divrows.
     const protocol = window.location.protocol;
     console.log("Ésto es el protocolo:");
     console.log(protocol);
