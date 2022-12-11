@@ -32,5 +32,11 @@ function handlePermission() {
     console.log(`Permission ${state}`);
   }
   
+
+  function otraFuncion() {
+
+    console.log("Estoy en la otra función...");
+
+  }
  
   
