@@ -82,7 +82,7 @@ traducciones =
     "glass3_text4" : "Writing position.",
     "glass3_text5" : "Device located.",
     "glass3_text6" : "Creating map.",
-    "venta1_text1" : "The service can be paid using secure gateway.",
+    "venta1_text1" : "The service can be paid using a secure gateway.",
     "venta1_text2" : "Click on the button to read detailed information.",
     "btnForm_text": "Get Location"
      },
@@ -111,7 +111,7 @@ traducciones =
       "glass3_text4" : "Writing position.",
       "glass3_text5" : "Device located.",
       "glass3_text6" : "Creating map.",
-      "venta1_text1" : "The service can be paid using secure gateway.",
+      "venta1_text1" : "The service can be paid using a secure gateway.",
       "venta1_text2" : "Click on the button to read detailed information.",
       "btnForm_text": "Get Location"
        }
