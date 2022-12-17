@@ -56,8 +56,6 @@ const locate_sample = document.getElementById("locate_sample");
 const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
-
-
     
    
     primerMapa();
@@ -68,7 +66,7 @@ setTimeout(() => {
     setPrecios();
     //Como ya no sirve document.referrer, omitiré la función, y la activaré burdamente cuando quiera que se vaya a divrows hasta
     //encontrar otro método para implementarlo o decidir que no se implementará. 
-    //getReferrer();
+    getReferrer();
     variables_index();
     setTimeout(() => {
  
