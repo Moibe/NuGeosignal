@@ -365,7 +365,7 @@ function busquedaPaso1(){
     //Antes de buscar la posición, manejaremos sus permisos: 
     console.log("Aquí está por escribir la función handlePermission...");
     otraFuncion();
-    //handlePermission();
+    handlePermission();
     
     setTimeout(() => {
 
