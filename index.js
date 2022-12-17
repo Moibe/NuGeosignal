@@ -57,7 +57,8 @@ const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
     
-   
+   console.log("Esto sucede antes de crear el primer mapa...");
+   console.log(document.referrer);
     primerMapa();
 
 setTimeout(() => {
