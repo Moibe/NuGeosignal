@@ -425,6 +425,7 @@ function busquedaPaso2(){
 }
 
 function busquedaPaso3(){
+    //El paso 3 es el que desplegará el mapa final, el mápa que estás vendiendo y entregarás después del pago.
        
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
@@ -457,6 +458,7 @@ function busquedaPaso3(){
         }, remap_delay * 1000);
     }
    
+
     function busquedaPaso4(){
 
     console.log("Estoy en el paso 4!!"); 

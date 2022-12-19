@@ -11,6 +11,7 @@ function creaMapa(posicionInicial){
     }
     else{
         console.log("Entré al IF paso 3.");
+        //Voy a crear una nueva posición.
         console.log("Removimos marcador!");
         marker_inicial.remove();
         console.log(marker_inicial);
@@ -25,6 +26,7 @@ function creaMapa(posicionInicial){
     posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
     console.log("Estoy escribiendo la nueva posición oficial...");
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
+    //Y aquí en cambio ya está escribiendo la nueva posición para el otro dispositivo.
     posicion = new L.LatLng(latitud, longitud);
     console.log(posicion);
 
@@ -69,6 +71,7 @@ function creaMapa(posicionInicial){
         ne = bounds.getNorthEast();
     
         //Creador de las antenas: 
+        //Éste for iterará tantas veces como antenas quieras.
         for (var i = 0; i < maxPoints; i++) {
             var ptLat = Math.random() * (ne.lat - sw.lat) + sw.lat;
             var ptLng = Math.random() * (ne.lng - sw.lng) + sw.lng;
@@ -86,6 +89,8 @@ function creaMapa(posicionInicial){
     
         map.setZoom(16); 
         map.panTo(posicion, {animate: true, duration: 0.2, easeLinearity: 0.9});
+        console.log("Estoy trabajando con LocalStorage.");
+        localStorage.setItem('test_storage', 'Hello Storage');
         console.log("Ya panee a la nueva...");
 
     }, paneo_delay * 1000);
