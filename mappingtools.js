@@ -82,7 +82,7 @@ function creaMapa(posicionInicial){
             last_point = point;
     
             if (point.distanceTo(posicion) < (1 * 1000) && maxPoints > 1) {
-                addAntenas(map, point, "marker " + i);
+                addAntenas(map, point, "antenna" + i);
             } else if (maxPoints > 1) {
                 i--;
             }
@@ -90,7 +90,7 @@ function creaMapa(posicionInicial){
         }
     
         map.setZoom(16); 
-        console.log("OBTENIENDO OBJETO POSICION");
+        
         posicion_stored = JSON.parse(localStorage.getItem('objeto_posicion')); 
         console.log("Objeto posición obtenido...");
         map.panTo(posicion_stored, {animate: true, duration: 0.2, easeLinearity: 0.9});
@@ -110,6 +110,7 @@ function addAntenas(map, point, content) {
             iconUrl: iconFile,
             });
         
-        L.marker([point.lat, point.lng], {icon: myIcon}).addTo(map);
+        point_stored = JSON.parse(localStorage.getItem(content)); 
+        L.marker([point_stored.lat, point_stored.lng], {icon: myIcon}).addTo(map);
 
 }
