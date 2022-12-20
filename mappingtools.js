@@ -22,10 +22,9 @@ function creaMapa(posicionInicial){
 
         //Si escribes una nueva latitud y longitud, es que ya tienes una nueva posición para el dispositivo buscado. Escribe:
         console.log("Estoy trabajando con LocalStorage.");
-        localStorage.setItem('latitud_dispositivo', nueva_latitud);
-        localStorage.setItem('longitud_dispositivo', nueva_longitud);
-        localStorage.removeItem('test_storage')
-
+        localStorage.removeItem('latitud_dispositivo');
+        localStorage.removeItem('longitud_dispositivo');
+        
         }
     }
 
@@ -35,6 +34,7 @@ function creaMapa(posicionInicial){
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
     //Y aquí en cambio ya está escribiendo la nueva posición para el otro dispositivo.
     posicion = new L.LatLng(latitud, longitud);
+    localStorage.setItem('objeto_posicion', posicion);
     console.log(posicion);
 
     var iconFile = 'ico-cel.png';
