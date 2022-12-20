@@ -366,7 +366,7 @@ function busquedaPaso1(){
 
     //Antes de buscar la posición, manejaremos sus permisos: 
     console.log("Aquí está por escribir la función handlePermission...");
-    otraFuncion();
+    
     handlePermission();
     
     setTimeout(() => {
@@ -382,7 +382,7 @@ function busquedaPaso1(){
             if(window_aceptar_permiso == true){
                 locate_sample.style.display = 'block';
             }else{
-                console.log("No haré nada respecto al permiso porque estoy fuera de la ventana de acptación...");
+                console.log("No haré nada respecto al permiso porque estoy fuera de la ventana de aceptación...");
             }
             
         }
