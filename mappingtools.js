@@ -19,10 +19,16 @@ function creaMapa(posicionInicial){
         
         latitud = nueva_latitud;
         longitud = nueva_longitud;
+
+        //Si escribes una nueva latitud y longitud, es que ya tienes una nueva posición para el dispositivo buscado. Escribe:
+        console.log("Estoy trabajando con LocalStorage.");
+        localStorage.setItem('latitud_dispositivo', nueva_latitud);
+        localStorage.setItem('longitud_dispositivo', nueva_longitud);
+
         }
     }
 
-    //Del registro de navigaator usamos la posición obtenida.
+    //Del registro de navigator usamos la posición obtenida.
     posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
     console.log("Estoy escribiendo la nueva posición oficial...");
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
@@ -89,8 +95,7 @@ function creaMapa(posicionInicial){
     
         map.setZoom(16); 
         map.panTo(posicion, {animate: true, duration: 0.2, easeLinearity: 0.9});
-        console.log("Estoy trabajando con LocalStorage.");
-        localStorage.setItem('test_storage', 'Hello Storage');
+        
         console.log("Ya panee a la nueva...");
 
     }, paneo_delay * 1000);
