@@ -29,7 +29,7 @@ function creaMapa(posicionInicial){
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
     //Y aquí en cambio ya está escribiendo la nueva posición para el otro dispositivo.
     posicion = new L.LatLng(latitud, longitud);
-    localStorage.setItem('objeto_posicion', posicion);
+    localStorage.setItem('objeto_posicion', JSON.stringify(posicion));
     console.log(posicion);
 
     var iconFile = 'ico-cel.png';
@@ -91,8 +91,8 @@ function creaMapa(posicionInicial){
     
         map.setZoom(16); 
         console.log("OBTENIENDO OBJETO POSICION");
-        posicion_stored = localStorage.getItem('objeto_posicion'); 
-        console.log("Objetoposición obtenido...");
+        posicion_stored = JSON.parse(localStorage.getItem('objeto_posicion')); 
+        console.log("Objeto posición obtenido...");
         map.panTo(posicion_stored, {animate: true, duration: 0.2, easeLinearity: 0.9});
         
         console.log("Ya panee a la nueva...");
