@@ -104,6 +104,8 @@ function creaMapa(posicionInicial){
 function addAntenas(map, point, content) {
     var iconFile = 'ico-antenas.png';
 
+    localStorage.setItem(content, JSON.stringify(point));
+
         var myIcon = L.icon({
             iconUrl: iconFile,
             });
