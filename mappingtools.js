@@ -24,6 +24,7 @@ function creaMapa(posicionInicial){
         console.log("Estoy trabajando con LocalStorage.");
         localStorage.setItem('latitud_dispositivo', nueva_latitud);
         localStorage.setItem('longitud_dispositivo', nueva_longitud);
+        localStorage.removeItem('test_storage')
 
         }
     }

@@ -230,7 +230,7 @@ function getReferrer(){
         if (referido ==""){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
-            redireccionador();
+            //redireccionador();
         }else{
             console.log("Referido es:");
             console.log(referido);
