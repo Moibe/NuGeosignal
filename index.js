@@ -9,8 +9,10 @@ let window_aceptar_permiso = true;
 let idioma; 
 let producto;
 const hostname = window.location.hostname;
-console.log("Pasa por aquí?????");
+
 const pathname = window.location.pathname;
+console.log("Ésto es PATHNAME:");
+console.log(pathname)
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
 
 //Sell elements now global, check if serve to divrows too.
