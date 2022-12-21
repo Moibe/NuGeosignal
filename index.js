@@ -1,7 +1,7 @@
 let permiso;
 let map;
 let window_aceptar_permiso = true;
-localStorage.clear()
+
 //prod
 
 
@@ -9,6 +9,7 @@ localStorage.clear()
 let idioma; 
 let producto;
 const hostname = window.location.hostname;
+console.log("Pasa por aquí?????");
 const pathname = window.location.pathname;
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
 
