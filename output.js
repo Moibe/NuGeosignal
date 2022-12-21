@@ -80,6 +80,14 @@ setTimeout(() => {
  
         
         setSellButton();
+
+        setTimeout(() => {
+ 
+        
+            busquedaPaso3();
+            
+        
+        }, 2 * 1000);
         
     
     }, 2 * 1000);
@@ -290,12 +298,14 @@ retry_delay = 3;
 remap_delay = 14; 
 sell_delay = 15;
 paneo_delay = 2;
-tel_field.placeholder = placeholder_text;
+//NOT NEEDED AT OUTPUT...
+// tel_field.placeholder = placeholder_text;
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
-btnSubmit.value = btnSubmit_text;
-btnSubmit.addEventListener('click', startProcess);
+//NOT NEEDED AT OUTPUT...
+/* btnSubmit.value = btnSubmit_text;
+btnSubmit.addEventListener('click', startProcess); */
 }
  
 function startProcess(){
@@ -433,7 +443,8 @@ function busquedaPaso2(){
 function busquedaPaso3(){
     //El paso 3 es el que desplegará el mapa final, el mapa que estás vendiendo y entregarás después del pago.
        
-        query.style.display = 'none';
+        //NOT NEEDED AT OUTPUT.
+        /* query.style.display = 'none';
         glassDisplay.style.display = 'block';
         //Desaparece los textos que haya habido previamente.
         console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
@@ -444,11 +455,18 @@ function busquedaPaso3(){
         addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
         addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
         addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
-        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass);
+        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
 
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
-  
+        
+        //EN ESTE PUNTO ES DONDE NECESITO DARLE EL LOCALSTORAGE O SI NO VOLVER A BUSCAR:
+
+        //Checho localstorage y lo uso. 
+
+        //Si no, lanzo handlepermissions y subsequientes.
+
+
         creaMapa(udEstaAqui);
         glassDisplay.style.display = 'none';
         textRowArea.innerHTML = "";
