@@ -49,7 +49,7 @@ map.panTo(posicionActual);
 //drawPolyline();
 }
  */
-function encuentraNuevaPosicionDispositivo(position){
+function creaNuevaPosicionDispositivo(position){
     
     console.log("Estoy dentro de encuentraNuevaPosicionDispositivo()...");
     distancia_encuentro = Math.random() * (kmRadius1.max - kmRadius1.min) + kmRadius1.min;

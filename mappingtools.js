@@ -9,17 +9,22 @@ function creaMapa(posicionInicial){
         latitud = posicionInicial.coords.latitude;
         longitud = posicionInicial.coords.longitude;
     }
-    else{
-        console.log("Entré al IF paso 3.");
+    else if(paso == 3){
+        console.log("Entré al If paso 3.");
         //Voy a crear una nueva posición.
-        console.log("Removimos marcador!");
-        marker_inicial.remove();
+        //Remuevo el marcador original.
         console.log(marker_inicial);
-        if(encuentraNuevaPosicionDispositivo(udEstaAqui) == 1){
+        marker_inicial.remove();
+        
+        //En el paso 3, tienes que crear una nueva posición porque es la primera vez que "buscas" el dispositivo, no así el paso4.
+        if(creaNuevaPosicionDispositivo(udEstaAqui) == 1){
         
         latitud = nueva_latitud;
         longitud = nueva_longitud;
 
+        }
+        else if(paso == 4){
+            console.log("la variable paso es 4...");
         }
     }
 

@@ -145,6 +145,7 @@ function busquedaPaso3(){
             setTimeout(() => {
 
             creaMapa(udEstaAqui);
+            //Por hacer: creaMapa se usa tanto en index.js como en divrows.js, podrías mover uno solo a mappingtools.js
 
             setTimeout(() => {
                 //Tip: El timeout más interno se ejecuta al final. 

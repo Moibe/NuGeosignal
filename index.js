@@ -61,7 +61,7 @@ function iniciar(){
     
    console.log("Esto sucede antes de crear el primer mapa...");
    console.log(document.referrer);
-    primerMapa();
+   primerMapa();
 
 setTimeout(() => {
   
@@ -426,7 +426,7 @@ function busquedaPaso2(){
 }
 
 function busquedaPaso3(){
-    //El paso 3 es el que desplegará el mapa final, el mápa que estás vendiendo y entregarás después del pago.
+    //El paso 3 es el que desplegará el mapa final, el mapa que estás vendiendo y entregarás después del pago.
        
         query.style.display = 'none';
         glassDisplay.style.display = 'block';
