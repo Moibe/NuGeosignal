@@ -23,20 +23,22 @@ function exitoRegistroPosicion(position){
     udEstaAqui = position; 
     console.log("Esto es udEstaAqui:");
     console.log(udEstaAqui);
-}
+
+
+    
+   }
 
 function falloRegistroPosicion(){
     console.log("Registré la posición incorrectamente :(");
     console.log(idRegistroPosicion);
-   
-  
+ 
 }
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
     }
 
-//Coloca marcador ya no se usa. 
+    //Coloca marcador ya no se usa. 
 /* function colocaMarcador(position){
 marker_inicial = new L.Marker([position.coords.latitude, position.coords.longitude], {icon: myIcon});
 //map.addLayer(marker);
@@ -71,6 +73,8 @@ function creaNuevaPosicionDispositivo(position){
     console.log(nueva_latitud);
     console.log("Ésta es la nueva longitud...");
     console.log(nueva_longitud);
+
+
 
     return 1;
 }

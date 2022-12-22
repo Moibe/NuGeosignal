@@ -18,3 +18,20 @@ function addTextRow(text, delay, id, writing_area) {
         textRowArea.appendChild(p);
     }
 }
+
+function isLocalStorageAvailable(){
+    console.log("Estoy en isLocalStorageAvailable...");
+    var test = 'test';
+    try {
+        localStorage.setItem(test, test);
+        localStorage.removeItem(test);
+        local_storage_available = true;
+        return true;
+        
+       
+    } catch(e) {
+        return false;
+        local_storage_available = false;
+        
+    }
+}

@@ -1,9 +1,12 @@
+
 let permiso;
 let map;
 let window_aceptar_permiso = true;
+let local_storage_available;
+
+//localStorage.clear();
 
 //prod
-
 
 //Idioma
 let idioma; 
@@ -503,3 +506,6 @@ function busquedaPaso3(){
         console.log("Request complete! response:", res);
         });
     }
+
+   
+    

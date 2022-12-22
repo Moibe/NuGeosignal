@@ -4,6 +4,11 @@ let window_aceptar_permiso = true;
 
 //prod
 
+console.log("Obteniendo el objeto stored de posición...");
+posicion_stored = JSON.parse(localStorage.getItem('objeto_posicion')); 
+console.log("Objeto posición obtenido...");
+console.log(posicion_stored);
+
 
 //Idioma
 let idioma; 
@@ -24,7 +29,9 @@ let venta2 = document.getElementById('venta1_text2');
 let venta3 = document.getElementById('venta1_text3');
 let venta4 = document.getElementById('venta1_text4');
 
-let paso = 1; 
+let paso = 4; 
+//Aquí en output.js el paso será directamente el 4 para saltar todo 
+//Después se limpiará el código para no tener que indicarlo y que lo haga directo ya que las otras funciones no existirán en éste JS.
 
 let marker_inicial;
 var circle;
@@ -107,27 +114,8 @@ function primerMapa(){
 
 map = new L.map('map' , mapOptions, { zoomControl:false });
 
-/* var gl = L.mapboxGL({
-    attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
-    style: 'https://api.maptiler.com/maps/086ae9b3-1710-4dd4-8c1d-b0329d5778a7/style.json?key=tQdXtnpaX5QclVTl8hct'
-  }).addTo(map); */
-
-//mapboxgl.accessToken = 'pk.eyJ1IjoibW9pYmUxODIiLCJhIjoiY2w2eGRkamdwMnFyMzNjdGVibnBpajNtaiJ9.FVn7wRlJyxw-lLzDu4T9RA';
-
-  /* var gl = L.mapboxGL({
-    attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
-    style: 'mapbox://styles/moibe182/cl6x96lhj001w14o6k2psrzk4'
-  }).addTo(map); */
-
 let layer = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
 map.addLayer(layer);
-
-/* map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable(); 
-map.boxZoom.disable();
-map.keyboard.disable();
-map.zoomControl.disable(); */
 
 }
 
@@ -422,7 +410,7 @@ function busquedaPaso2(){
 
     setTimeout(() => {
 
-        creaMapa(udEstaAqui);
+        creaMapa(posicion_stored);
         glassDisplay.style.display = 'none';
         query.style.display = 'block';
         query.style.top = '60%';
@@ -467,7 +455,7 @@ function busquedaPaso3(){
         //Si no, lanzo handlepermissions y subsequientes.
 
 
-        creaMapa(udEstaAqui);
+        creaMapa(posicion_stored);
         glassDisplay.style.display = 'none';
         textRowArea.innerHTML = "";
 

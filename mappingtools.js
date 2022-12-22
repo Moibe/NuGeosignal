@@ -3,12 +3,18 @@ function creaMapa(posicionInicial){
     console.log("El paso es igual a:");
     console.log(paso);
 
+    
     //DEFINICION DE LAS COORDENADAS PARA CADA DETERMINADO MOMENTO.
     if(paso == 1){
         console.log("Entré al IF del paso 1.");
         latitud = posicionInicial.coords.latitude;
         longitud = posicionInicial.coords.longitude;
+
+        localStorage.setItem('original_latitud_stored', JSON.stringify(latitud));
+        localStorage.setItem('original_longitud_stored', JSON.stringify(longitud));
+
     }
+
     else if(paso == 3){
         console.log("Entré al If paso 3.");
         //Voy a crear una nueva posición.
@@ -22,20 +28,40 @@ function creaMapa(posicionInicial){
         latitud = nueva_latitud;
         longitud = nueva_longitud;
 
+    
+
+            //Ytambién las guardaremos en el storage 
+    //Ahora también la guardamos en localStorage: 
+    localStorage.setItem('nueva_latitud_stored', JSON.stringify(nueva_latitud));
+    localStorage.setItem('nueva_longitud_stored', JSON.stringify(nueva_longitud));
+
         }
         else if(paso == 4){
             console.log("la variable paso es 4...");
+
+        latitud = nueva_latitud;
+        longitud = nueva_longitud;
+            
         }
     }
 
     //Del registro de navigator usamos la posición obtenida.
+    //Se usará para panear desde ella más adelante.
+
+   /*  latitud_original = JSON.parse(localStorage.getItem(content)); 
+    longitud_original = JSON.parse(localStorage.getItem(content));  */
+
+    isLocalStorageAvailable();
+
+    console.log("Ésto es el localStorageavailability:");
+    console.log(local_storage_available);
+
     posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
-    console.log("Estoy escribiendo la nueva posición oficial...");
+    //console.log("Estoy escribiendo la nueva posición oficial...");
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
     //Y aquí en cambio ya está escribiendo la nueva posición para el otro dispositivo.
     posicion = new L.LatLng(latitud, longitud);
-    localStorage.setItem('objeto_posicion', JSON.stringify(posicion));
-    console.log(posicion);
+    
 
     var iconFile = 'ico-cel.png';
     //Icono:
@@ -96,8 +122,7 @@ function creaMapa(posicionInicial){
     
         map.setZoom(16); 
         
-        posicion_stored = JSON.parse(localStorage.getItem('objeto_posicion')); 
-        console.log("Objeto posición obtenido...");
+        
         map.panTo(posicion_stored, {animate: true, duration: 0.2, easeLinearity: 0.9});
         
         console.log("Ya panee a la nueva...");
@@ -109,13 +134,13 @@ function creaMapa(posicionInicial){
 function addAntenas(map, point, content) {
     var iconFile = 'ico-antenas.png';
 
-    localStorage.setItem(content, JSON.stringify(point));
+    //localStorage.setItem(content, JSON.stringify(point));
 
         var myIcon = L.icon({
             iconUrl: iconFile,
             });
         
-        point_stored = JSON.parse(localStorage.getItem(content)); 
+        //point_stored = JSON.parse(localStorage.getItem(content)); 
         L.marker([point_stored.lat, point_stored.lng], {icon: myIcon}).addTo(map);
 
 }
