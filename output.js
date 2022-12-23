@@ -74,9 +74,8 @@ setTimeout(() => {
   
     setIdiomaProducto();
     setPrecios();
-    //Como ya no sirve document.referrer, omitiré la función, y la activaré burdamente cuando quiera que se vaya a divrows hasta
-    //encontrar otro método para implementarlo o decidir que no se implementará. 
-    getReferrer();
+    //Test sin getReferrer, ver si output funciona.
+    //getReferrer();
     variables_index();
     setTimeout(() => {
  
@@ -92,7 +91,7 @@ setTimeout(() => {
         }, 1 * 1000);
         
     
-    }, 2 * 1000);
+    }, 1 * 1000);
  
 }, 2 * 1000);
 }
@@ -441,9 +440,12 @@ function busquedaPaso3(){
         
              setTimeout(() => {
            
-                glassDisplay.style.display = 'block';
-                blockDisplay.style.display = 'block';
-                busquedaPaso4();
+                //Ya no se harán éstas acciones porque ya pagó:
+                //glassDisplay.style.display = 'block';
+                //blockDisplay.style.display = 'block';
+                //busquedaPaso4();
+                //En cambio si podríamos agregar la acción de que aparezca la glasswindo chica diciendo, aquí está tu resultado.
+                //Y más adelante incluso invitando a suscribirte a las notificaciones de cambios.
 
         }, sell_delay * 1000);
  
