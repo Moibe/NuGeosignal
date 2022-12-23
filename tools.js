@@ -30,8 +30,9 @@ function isLocalStorageAvailable(){
         
        
     } catch(e) {
-        return false;
         local_storage_available = false;
+        return false;
+        
         
     }
 }

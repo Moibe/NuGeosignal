@@ -1,6 +1,7 @@
 const btnBuscar = document.getElementById('btnBuscar');
 
-btnBuscar.addEventListener('click', displayNotification);
+//Lo comento porque aún no agregamos notificaciones.
+//btnBuscar.addEventListener('click', displayNotification);
 
 function handlePermission() {
   console.log("Entré a Handle Permissions...");
