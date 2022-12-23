@@ -4,11 +4,6 @@ let window_aceptar_permiso = true;
 
 //prod
 
-console.log("Obteniendo el objeto stored de posición...");
-posicion_stored = JSON.parse(localStorage.getItem('objeto_posicion')); 
-console.log("Objeto posición obtenido...");
-console.log(posicion_stored);
-
 
 //Idioma
 let idioma; 
@@ -85,8 +80,8 @@ setTimeout(() => {
     variables_index();
     setTimeout(() => {
  
-        
-        setSellButton();
+        //Aquí no implementeremos setSellButton;
+        //setSellButton();
 
         setTimeout(() => {
  
@@ -94,7 +89,7 @@ setTimeout(() => {
             busquedaPaso3();
             
         
-        }, 2 * 1000);
+        }, 1 * 1000);
         
     
     }, 2 * 1000);
@@ -431,20 +426,6 @@ function busquedaPaso2(){
 function busquedaPaso3(){
     //El paso 3 es el que desplegará el mapa final, el mapa que estás vendiendo y entregarás después del pago.
        
-        //NOT NEEDED AT OUTPUT.
-        /* query.style.display = 'none';
-        glassDisplay.style.display = 'block';
-        //Desaparece los textos que haya habido previamente.
-        console.log("Estoy en el paso 3, desapareciendo los textos anteriores.");
-        textRowArea.innerHTML = "";
-        console.log("Estoy en el Paso 3:");
-        addTextRow(glass3_text1, 1 ,"intro_cerp", writingGlass);
-        addTextRow(glass3_text2, 3 ,"intro_uno", writingGlass);
-        addTextRow(glass3_text3, 5 ,"intro_dos", writingGlass);
-        addTextRow(glass3_text4, 7 ,"intro_tres", writingGlass);
-        addTextRow(glass3_text5, 9 ,"intro_cuatro", writingGlass);
-        addTextRow(glass3_text6, 12 ,"intro_cuatro", writingGlass); */
-
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
         
@@ -455,10 +436,9 @@ function busquedaPaso3(){
         //Si no, lanzo handlepermissions y subsequientes.
 
 
-        creaMapa(posicion_stored);
+        creaMapa();
         glassDisplay.style.display = 'none';
-        textRowArea.innerHTML = "";
-
+        
              setTimeout(() => {
            
                 glassDisplay.style.display = 'block';
@@ -478,7 +458,6 @@ function busquedaPaso3(){
     btnForm.value = btnForm_text;
     venta1.innerHTML = venta1_text1;
     venta2.innerHTML = venta1_text2;
-    
  
     setTimeout(() => {
 

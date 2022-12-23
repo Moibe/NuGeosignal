@@ -1,14 +1,13 @@
-function creaMapa(posicionInicial){
+function creaMapa(){
     
     console.log("El paso es igual a:");
     console.log(paso);
-
     
     //DEFINICION DE LAS COORDENADAS PARA CADA DETERMINADO MOMENTO.
     if(paso == 1){
         console.log("Entré al If del paso 1.");
-        latitud_original = posicionInicial.coords.latitude;
-        longitud_original = posicionInicial.coords.longitude;
+        latitud_original = udEstaAqui.coords.latitude;
+        longitud_original = udEstaAqui.coords.longitude;
 
         isLocalStorageAvailable();
         console.log("Ésto es el localStorageavailability:");
@@ -17,8 +16,8 @@ function creaMapa(posicionInicial){
         localStorage.setItem('original_latitud_stored', JSON.stringify(latitud_original));
         localStorage.setItem('original_longitud_stored', JSON.stringify(longitud_original));
 
-        latitud_nueva = posicionInicial.coords.latitude;
-        longitud_nueva = posicionInicial.coords.longitude;
+        latitud_nueva = udEstaAqui.coords.latitude;
+        longitud_nueva = udEstaAqui.coords.longitude;
 
     }
 
@@ -41,20 +40,24 @@ function creaMapa(posicionInicial){
         localStorage.setItem('nueva_longitud_stored', JSON.stringify(nueva_longitud));
 
         }
+
+    }
         else if(paso == 4){
 
+            console.log("ENTRE AL ELSEIF 4...");
             console.log("la variable paso es 4...");
 
             //Todo se obtendra de los localStorage:
+            latitud_original = JSON.parse(localStorage.getItem('original_latitud_stored')); 
+            console.log("La latitud original recién extraída es:");
+            console.log(latitud_original);
+            longitud_original = JSON.parse(localStorage.getItem('original_longitud_stored'));  
 
-            latitud_original = JSON.parse(localStorage.getItem(content)); 
-            longitud_original = JSON.parse(localStorage.getItem(content));  
-
-            latitud = JSON.parse(localStorage.getItem(nueva_latitud_stored)); 
-            longitud = JSON.parse(localStorage.getItem(nueva_longitud_stored));  
+            latitud_nueva = JSON.parse(localStorage.getItem('nueva_latitud_stored')); 
+            longitud_nueva = JSON.parse(localStorage.getItem('nueva_longitud_stored'));  
                 
         }
-    } 
+    
 
     //posicion_original = new L.LatLng(posicionInicial.coords.latitude, posicionInicial.coords.longitude);
     posicion_original = new L.LatLng(latitud_original, longitud_original);
@@ -62,8 +65,7 @@ function creaMapa(posicionInicial){
     console.log("Que en la primer vuelta sería la misma que la posición actual....");
     //Y aquí en cambio ya está escribiendo la nueva posición para el otro dispositivo.
     posicion_nueva = new L.LatLng(latitud_nueva, longitud_nueva);
-    
-
+ 
     var iconFile = 'ico-cel.png';
     //Icono:
     var myIcon = L.icon({

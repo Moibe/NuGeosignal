@@ -415,7 +415,7 @@ function busquedaPaso2(){
 
     setTimeout(() => {
 
-        creaMapa(udEstaAqui);
+        creaMapa();
         glassDisplay.style.display = 'none';
         query.style.display = 'block';
         query.style.top = '60%';
@@ -452,7 +452,7 @@ function busquedaPaso3(){
         //y ahora hacemos tiempo para que despliegue el nuevo mapa.
         setTimeout(() => {
   
-        creaMapa(udEstaAqui);
+        creaMapa();
         glassDisplay.style.display = 'none';
         textRowArea.innerHTML = "";
 
