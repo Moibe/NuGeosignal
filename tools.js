@@ -36,3 +36,21 @@ function isLocalStorageAvailable(){
         
     }
 }
+
+function storeVisita(){
+
+    if (document.referrer == ''){
+
+        console.log("El document referrer está vacío.");
+        referido = 'vacio';
+        localStorage.setItem('visitas', JSON.stringify(document.referrer));
+    
+    }
+    else{
+        console.log("No está vacío el referrer.");
+        console.log("El referrer es:");
+        console.log(document.referrer);
+        localStorage.setItem('visitas', JSON.stringify(document.referrer));
+    }
+
+}

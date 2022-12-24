@@ -14,19 +14,6 @@ const hostname = window.location.hostname;
 console.log("ESTO ES EL REFERRER DE OUTPUT:");
 console.log(document.referrer);
 
-if (document.referrer == ''){
-
-    console.log("El document referrer está vacío.");
-    referido = 'vacio';
-    localStorage.setItem('referido_stored', JSON.stringify(document.referrer));
-
-}
-else{
-    console.log("No está vacío el referrer.");
-    console.log("El referrer es:");
-    console.log(document.referrer);
-    localStorage.setItem('referido_stored', JSON.stringify(document.referrer));
-}
 
 const pathname = window.location.pathname;
 console.log("Ésto es PATHNAME:");
@@ -84,8 +71,10 @@ const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
     
-   console.log("Esto sucede antes de crear el primer mapa...");
+
+   console.log("Guardamos la visita desde...");
    console.log(document.referrer);
+   storeVisita();
    primerMapa();
 
 setTimeout(() => {
