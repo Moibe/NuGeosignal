@@ -62,7 +62,7 @@ function revisaVisitaConversion(){
     
     try {
         visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
-        console.log("Existe" + existe);
+        console.log("SI SI Existe");
         return true;
         
     } catch(e) {
