@@ -2,7 +2,7 @@ let permiso;
 let map;
 let window_aceptar_permiso = true;
 let referido; 
-let visitas;
+let visitas = 99;
 
 //prod
 
