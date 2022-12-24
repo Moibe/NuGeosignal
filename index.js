@@ -302,15 +302,15 @@ tel_field.placeholder = placeholder_text;
 //Revisa si existe visita_conversion.
 if(revisaVisitaConversion() == false){
     //Si no existe visitas conversión, es que nunca ha visitado el sitio. Y se debe crear en ceros.
-    console.log("Visita_Conversion no existe, la crearemos en cero...")
+    console.log("revisaVisitaConversion marcó false, o sea que no existe, por lo tanto la crearemos en cero...");
     localStorage.setItem('visita_conversion', JSON.stringify(0));
 }
 else{
     //Si sí existe no hagas nada
-    console.log("Visita Conversión si existe y vale:");
+    console.log("revisaVisitaConversion marco verdadero (o no marco falso).");
+    console.log("Por lo que concluyo que si existe y vale: (debería ser null");
     console.log(visitas);
 }
-
 
 
 //Inicialiación del botón Principal.

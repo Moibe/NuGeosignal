@@ -36,6 +36,29 @@ function isLocalStorageAvailable(){
     }
 }
 
+function revisaVisitaConversion(){
+    console.log("Estoy en revisaVisitaConversion...");
+    
+    try {
+        console.log("Estoy en el try de revisaVisitaConversion...")
+        console.log("Visitas vale antes:");
+        console.log(visitas);
+        visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
+        console.log("SI SI Existe y guardo un valor en visitas");
+        console.log("Éste valor:");
+        console.log(visitas);
+        return true;
+        
+    } catch(e) {
+        console.log("Caimos al catch de revisaVisitaConversión...");
+        console.log("Concluyo que visita_conversion no existía y por eso marcó error.");
+        console.log("Esto vale visitas al momento:");
+        console.log(visitas)
+        return false;
+    }
+
+}
+
 function sumaVisita(){
 
 
@@ -57,21 +80,3 @@ function sumaVisita(){
 
 }
 
-function revisaVisitaConversion(){
-    console.log("Estoy en revisaVisitaConversion...");
-    
-    try {
-        visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
-        console.log("SI SI Existe");
-        return true;
-        
-    } catch(e) {
-        visitas = 'No existe';
-        return false;
-    }
-
-    
-
-
-
-}
