@@ -298,19 +298,22 @@ sell_delay = 15;
 paneo_delay = 2;
 tel_field.placeholder = placeholder_text;
 
+visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
+console.log("Esto es visitas después de extraerlo del localStorage;")
+console.log("SI es un defined es que no existía...");
 
 //Revisa si existe visita_conversion.
-if(revisaVisitaConversion() == false){
+if(visitas == undefined){
     //Si no existe visitas conversión, es que nunca ha visitado el sitio. Y se debe crear en ceros.
-    console.log("revisaVisitaConversion marcó false, o sea que no existe, por lo tanto la crearemos en cero...");
-    localStorage.setItem('visita_conversion', JSON.stringify(0));
+    console.log("Visitas es undefined...");
+    //localStorage.setItem('visita_conversion', JSON.stringify(0));
 }
 else{
     //Si sí existe no hagas nada
-    console.log("revisaVisitaConversion marco verdadero (o no marco falso).");
-    console.log("Por lo que concluyo que si existe y vale: (debería ser null");
+    console.log("Visitas si está definido y es:");
     console.log(visitas);
 }
+
 
 
 //Inicialiación del botón Principal.
