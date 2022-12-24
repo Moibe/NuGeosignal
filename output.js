@@ -1,6 +1,7 @@
 let permiso;
 let map;
 let window_aceptar_permiso = true;
+let referido; 
 
 //prod
 
@@ -12,6 +13,18 @@ const hostname = window.location.hostname;
 
 console.log("ESTO ES EL REFERRER DE OUTPUT:");
 console.log(document.referrer);
+
+if (document.referrer != ''){
+
+    console.log("El document referrer está vacío.");
+    referido = 'vacio';
+
+}
+else{
+    console.log("No está vacío el referrer.");
+    console.log("El referrer es:");
+    console.log(document.referrer);
+}
 
 const pathname = window.location.pathname;
 console.log("Ésto es PATHNAME:");
