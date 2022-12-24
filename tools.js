@@ -32,29 +32,46 @@ function isLocalStorageAvailable(){
     } catch(e) {
         local_storage_available = false;
         return false;
-        
-        
+      
     }
 }
 
-function storeVisita(){
-
-
-    localStorage.setItem('visitas', JSON.stringify(document.referrer));
+function sumaVisita(){
 
 
     if (document.referrer == ''){
 
-        console.log("El document referrer está vacío.");
+        console.log("El document referrer está vacío no sumes.");
         referido = 'vacio';
-        
-    
+  
     }
     else{
         console.log("No está vacío el referrer.");
         console.log("El referrer es:");
         console.log(document.referrer);
+        visitas = visitas + 1;
         
     }
+
+    localStorage.setItem('visita_conversion', JSON.stringify(visitas));
+
+}
+
+function revisaVisitaConversion(){
+    console.log("Estoy en revisaVisitaConversion...");
+    
+    try {
+        visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
+        console.log("Existe" + existe);
+        return true;
+        
+    } catch(e) {
+        visitas = 'No existe';
+        return false;
+    }
+
+    
+
+
 
 }

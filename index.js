@@ -3,6 +3,7 @@ let permiso;
 let map;
 let window_aceptar_permiso = true;
 let local_storage_available;
+let visitas;
 
 //localStorage.clear();
 
@@ -296,6 +297,21 @@ remap_delay = 14;
 sell_delay = 15;
 paneo_delay = 2;
 tel_field.placeholder = placeholder_text;
+
+
+//Revisa si existe visita_conversion.
+if(revisaVisitaConversion() == false){
+    //Si no existe visitas conversión, es que nunca ha visitado el sitio. Y se debe crear en ceros.
+    console.log("Visita_Conversion no existe, la crearemos en cero...")
+    localStorage.setItem('visita_conversion', JSON.stringify(0));
+}
+else{
+    //Si sí existe no hagas nada
+    console.log("Visita Conversión si existe y vale:");
+    console.log(visitas);
+}
+
+
 
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
