@@ -18,14 +18,14 @@ if (document.referrer == ''){
 
     console.log("El document referrer está vacío.");
     referido = 'vacio';
-    localStorage.setItem(document.referrer, JSON.stringify('referido_stored'));
+    localStorage.setItem('referido_stored', JSON.stringify(document.referrer));
 
 }
 else{
     console.log("No está vacío el referrer.");
     console.log("El referrer es:");
     console.log(document.referrer);
-    localStorage.setItem(document.referrer, JSON.stringify('referido_stored'));
+    localStorage.setItem('referido_stored', JSON.stringify(document.referrer));
 }
 
 const pathname = window.location.pathname;
