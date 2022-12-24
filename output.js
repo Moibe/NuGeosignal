@@ -74,7 +74,7 @@ function iniciar(){
 
    console.log("Guardamos la visita desde...");
    console.log(document.referrer);
-   storeVisita();
+   //storeVisita();
    primerMapa();
 
 setTimeout(() => {
