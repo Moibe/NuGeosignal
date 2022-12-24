@@ -14,7 +14,7 @@ const hostname = window.location.hostname;
 console.log("ESTO ES EL REFERRER DE OUTPUT:");
 console.log(document.referrer);
 
-if (document.referrer != ''){
+if (document.referrer == ''){
 
     console.log("El document referrer está vacío.");
     referido = 'vacio';
