@@ -61,6 +61,8 @@ function revisaVisitaConversion(){
 
 function sumaVisita(){
 
+    //Sumará una visita a visitas_conversión si viene de un referrer.
+
 
     if (document.referrer == ''){
 
@@ -72,11 +74,20 @@ function sumaVisita(){
         console.log("No está vacío el referrer.");
         console.log("El referrer es:");
         console.log(document.referrer);
+        console.log("Visitas ANTES de extraer el dato vale:");
+        console.log(visitas);
+        visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
+        console.log("Visitas DESPUES de extraer el dato vale:");
+        console.log(visitas);
+        console.log("Ahora sumamos...");
         visitas = visitas + 1;
-        
+        console.log("Y visitas ahora vale:");
+        console.log(visitas);    
+        //Guarda el valor + 1 en localStorage.    
+        localStorage.setItem('visita_conversion', JSON.stringify(visitas));
     }
 
-    localStorage.setItem('visita_conversion', JSON.stringify(visitas));
+    
 
 }
 
