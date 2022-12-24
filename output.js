@@ -10,6 +10,9 @@ let idioma;
 let producto;
 const hostname = window.location.hostname;
 
+console.log("ESTO ES EL REFERRER DE OUTPUT:");
+console.log(document.referrer);
+
 const pathname = window.location.pathname;
 console.log("Ésto es PATHNAME:");
 console.log(pathname);

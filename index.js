@@ -7,6 +7,8 @@ let local_storage_available;
 //localStorage.clear();
 
 //prod
+console.log("ESTO ES EL REFERRER DE OUTPUT:");
+console.log(document.referrer);
 
 //Idioma
 let idioma; 
