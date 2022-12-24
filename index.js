@@ -300,13 +300,14 @@ tel_field.placeholder = placeholder_text;
 
 visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
 console.log("Esto es visitas después de extraerlo del localStorage;")
-console.log("SI es un defined es que no existía...");
+console.log("Si es undefined es que no existía...");
 
 //Revisa si existe visita_conversion.
 if(visitas == undefined){
     //Si no existe visitas conversión, es que nunca ha visitado el sitio. Y se debe crear en ceros.
     console.log("Visitas es undefined...");
-    //localStorage.setItem('visita_conversion', JSON.stringify(0));
+    console.log("Por lo tanto lo crearemos...");
+    localStorage.setItem('visita_conversion', JSON.stringify(0));
 }
 else{
     //Si sí existe no hagas nada
