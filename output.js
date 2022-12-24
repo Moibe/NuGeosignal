@@ -14,7 +14,7 @@ const hostname = window.location.hostname;
 console.log("ESTO ES EL REFERRER DE OUTPUT:");
 console.log(document.referrer);
 
-/* if (document.referrer == ''){
+if (document.referrer == ''){
 
     console.log("El document referrer está vacío.");
     referido = 'vacio';
@@ -26,7 +26,7 @@ else{
     console.log("El referrer es:");
     console.log(document.referrer);
     localStorage.setItem('referido_stored', JSON.stringify(document.referrer));
-} */
+}
 
 const pathname = window.location.pathname;
 console.log("Ésto es PATHNAME:");
