@@ -315,8 +315,6 @@ else{
     console.log(visitas);
 }
 
-
-
 //Inicialiación del botón Principal.
 const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = btnSubmit_text;

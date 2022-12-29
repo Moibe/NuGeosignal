@@ -3,7 +3,6 @@ let map;
 let window_aceptar_permiso = true;
 let referido; 
 let visitas;
-
 //prod
 
 
@@ -71,8 +70,7 @@ const locate_sample = document.getElementById("locate_sample");
 const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
-    
-
+ 
    console.log("Guardamos la visita desde...");
    console.log(document.referrer);
    sumaVisita();

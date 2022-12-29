@@ -36,13 +36,15 @@ function isLocalStorageAvailable(){
     }
 }
 
+//Creo que nunca es usada porque todo lo hace sumaVisita();
 function revisaVisitaConversion(){
     console.log("Estoy en revisaVisitaConversion...");
     
     try {
-        console.log("Estoy en el try de revisaVisitaConversion...")
-        console.log("Visitas vale antes:");
+        console.log("Estoy en el try de revisaVisitaConversion...");
+        console.log("Visitas vale antes de reextraerlo:");
         console.log(visitas);
+        console.log("Ahora lo reextraemos...");
         visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
         console.log("SI SI Existe y guardo un valor en visitas");
         console.log("Éste valor:");
@@ -60,15 +62,14 @@ function revisaVisitaConversion(){
 }
 
 function sumaVisita(){
-
     //Sumará una visita a visitas_conversión si viene de un referrer.
-
+    //Eso incluye a google y está bien, ya que si viene de una búsqueda, no quiero que lo marque en Ads como conversión. 
+    //Al final todo lo de la sumaVisita es para que tagManager solo marque las conversiones correctas.
 
     if (document.referrer == ''){
 
         console.log("El document referrer está vacío no sumes.");
         referido = 'vacio';
-  
     }
     else{
         console.log("No está vacío el referrer.");
