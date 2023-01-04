@@ -70,7 +70,7 @@ const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
     
-   console.log("Esto sucede antes de crear el primer mapa...");
+   console.log("Space before first global cart display...");
    console.log(document.referrer);
    primerMapa();
 
@@ -78,8 +78,6 @@ setTimeout(() => {
   
     setIdiomaProducto();
     setPrecios();
-    //Como ya no sirve document.referrer, omitiré la función, y la activaré burdamente cuando quiera que se vaya a divrows hasta
-    //encontrar otro método para implementarlo o decidir que no se implementará. 
     getReferrer();
     variables_index();
     setTimeout(() => {
@@ -242,7 +240,7 @@ function getReferrer(){
         if (referido ==""){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
-            //redireccionador();
+            redireccionador();
         }else{
             console.log("Referido es:");
             console.log(referido);
