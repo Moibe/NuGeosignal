@@ -32,7 +32,7 @@ let venta4 = document.getElementById('venta1_text4');
 
 let paso = 1; 
 
-btnSubmit.addEventListener('onbeforeunload', beforeGo);
+
 
 let marker_inicial;
 var circle;

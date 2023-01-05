@@ -69,6 +69,17 @@ const locate_sample = document.getElementById("locate_sample");
 // Elementos de la segunda sección:
 const glassDisplay = document.getElementById('glassDisplay');
 
+btnSubmit.addEventListener('beforeunload', function(e) {
+    var myPageIsDirty = true; //you implement this logic...
+    if(myPageIsDirty) {
+      //following two lines will cause the browser to ask the user if they
+      //want to leave. The text of this dialog is controlled by the browser.
+      e.preventDefault(); //per the standard
+      e.returnValue = ''; //required for Chrome
+    }
+    //else: user is allowed to leave without a warning dialog
+  });
+
 function iniciar(){
  
    console.log("Guardamos la visita desde...");
