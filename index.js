@@ -424,7 +424,7 @@ function busquedaPaso2(){
     btnGlass.style.display = 'none';
     //Desaparece los textos que haya habido previamente.
     textRowArea.innerHTML = "";
-    console.log("Estoy en busquedaPaso2()...");
+    console.log("Processing @ busquedaPaso2()...");
    
     addTextRow(glass2_text1, 1 ,"intro_uno", writingGlass);
     addTextRow(glass2_text2, 3 ,"intro_dos", writingGlass);
