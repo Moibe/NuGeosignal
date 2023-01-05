@@ -33,7 +33,6 @@ let venta4 = document.getElementById('venta1_text4');
 let paso = 1; 
 
 
-
 let marker_inicial;
 var circle;
 var maxPoints = 10;
@@ -325,11 +324,7 @@ btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
 }
 
-function beforeGo(){
-    console.log("Estoy en beforeGO!!!...");
-    
-  }
- 
+
 function startProcess(){
     console.log("Starting overall process...");
     if (phoneValidate() == true){
