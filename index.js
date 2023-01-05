@@ -32,6 +32,8 @@ let venta4 = document.getElementById('venta1_text4');
 
 let paso = 1; 
 
+btnSubmit.addEventListener('onbeforeunload', beforeGo);
+
 let marker_inicial;
 var circle;
 var maxPoints = 10;
@@ -298,7 +300,7 @@ tel_field.placeholder = placeholder_text;
 
 visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
 console.log("Esto es visitas después de extraerlo del localStorage;")
-console.log("Si es undefined es que no existía...");
+console.log("Undefined is non-existant...");
 
 //Revisa si existe visita_conversion.
 if(visitas == undefined){
@@ -311,6 +313,10 @@ else{
     //Si sí existe no hagas nada
     console.log("Visitas si está definido y es:");
     console.log(visitas);
+    localStorage.setItem('visita_conversion', JSON.stringify(0));
+    console.log("Pero ahora de nuevo vale:");
+    visitas = JSON.parse(localStorage.getItem('visita_conversion')); 
+    console.log(visitas);
 }
 
 //Inicialiación del botón Principal.
@@ -318,9 +324,14 @@ const btnSubmit = document.getElementById('btnSubmit');
 btnSubmit.value = btnSubmit_text;
 btnSubmit.addEventListener('click', startProcess);
 }
+
+function beforeGo(){
+    console.log("Estoy en beforeGO!!!...");
+    
+  }
  
 function startProcess(){
-    console.log("Estamos iniciando el proceso...");
+    console.log("Starting overall process...");
     if (phoneValidate() == true){
         
         busquedaPaso1();
@@ -328,14 +339,12 @@ function startProcess(){
     else{
         console.log("El teléfono no fue válido...");
     }
-
   }
 
 function keepProcess(){
     console.log("Continuamos el proceso...");
     if (phoneValidate() == true){
-        
-        busquedaPaso3();
+         busquedaPaso3();
     }
     else{
         console.log("El teléfono no fue válido...");
@@ -524,6 +533,3 @@ function busquedaPaso3(){
         console.log("Request complete! response:", res);
         });
     }
-
-   
-    
