@@ -17,10 +17,10 @@ let producto;
 const hostname = window.location.hostname;
 
 const pathname = window.location.pathname;
-console.log("Ésto es PATHNAME:");
+console.log("Ésto es PATHNAME (lo que va después del dominio):");
 console.log(pathname);
 let pathcut = pathname.replace(/\//g,''); // Remove all slashes from string
-console.log("Ésto es PATHCUT:");
+console.log("Ésto es PATHCUT (lo mismo pero sin diagonales):");
 console.log(pathcut);
 
 //Sell elements now global, check if serve to divrows too.
@@ -31,7 +31,6 @@ let venta3 = document.getElementById('venta1_text3');
 let venta4 = document.getElementById('venta1_text4');
 
 let paso = 1; 
-
 
 let marker_inicial;
 var circle;
@@ -57,7 +56,6 @@ var myIcon = L.icon({
 const btnGlass = document.getElementById('btnGlass');
 let writingGlass = document.getElementById('writingGlass');
 
-
 const blockDisplay = document.getElementById('blockDisplay');
 
 // Elementos de la primera sección: 
@@ -70,8 +68,8 @@ const locate_sample = document.getElementById("locate_sample");
 const glassDisplay = document.getElementById('glassDisplay');
 
 function iniciar(){
-    
-   console.log("Space before first global cart display...");
+   
+   console.log("Iniciar()...");
    console.log(document.referrer);
    primerMapa();
 
@@ -125,26 +123,21 @@ map.scrollWheelZoom.disable();
 map.boxZoom.disable();
 map.keyboard.disable();
 map.zoomControl.disable(); */
-
 }
 
 function setIdiomaProducto(){
 
     //El idioma defualt es el idioma que tendremos en local 127.0.0.1 porque no hay un subdominio que lo designe.
     let idioma_default = "en";
-    console.log("El idioma default es:" + idioma_default);
-    //El producto es el que le dará el precio y link de lo que estamos vendiendo que no siempre está ligado a un idioma a...
-    //traducir.
+    console.log("El idioma_default es:" + idioma_default);
+    //El producto es el que le dará el precio y link de lo que estamos vendiendo que no siempre está ligado a un idioma a traducir.
     let producto_default = "en";
-    console.log("El producto default es:" + producto_default);
-    
-    //Se cambia hostname hacia arriba para que sea global.
-    /* //Se revisa el hostname para saber si estamos en local o online.
-    const hostname = window.location.hostname; */
-    console.log("Esto es hostname:");
+    console.log("El producto_default es:" + producto_default);
+
+    console.log("Esto es hostname, que nos ayudará a definir el idioma y el producto cuando estamos en producción:");
     console.log(hostname);
     if(hostname == "127.0.0.1"){
-        console.log("Estamos en local...");
+        console.log("Estamos en local 127.0.0.1...");
         idioma = idioma_default;
         console.log("El idioma será:" + idioma);
         producto = producto_default;
@@ -152,17 +145,19 @@ function setIdiomaProducto(){
     }
     else{
         //Si estamos en producción el idioma lo definimos desde la url.
+        console.log("Estamos en producción...");
         console.log("Entramos a chequeo de path...");
         
         if (pathcut == ""){
-            console.log("pathcut está vacío...");
+            console.log("pathcut está vacío, entraremos a los valores default de idioma y producto...");
             //Si no hay patchcut entonces el idioma default será inglés.
-            //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión.
+            //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión. Usar localStorage?
             idioma = idioma_default;
             console.log("El idioma será:" + idioma);
             producto = producto_default;
             console.log("El producto será:" + producto);
         }else{
+            console.log("Estamos en producción y si hay un pathcut que define el idioma y el producto...");
             console.log("Esto es pathcut: " + pathcut);
             //El idioma se usa para las traducciones.
             idioma = pathcut;

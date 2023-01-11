@@ -11,7 +11,6 @@ try {
     idioma = "en";
     console.log("Como marcó error, ya que ese idioma no existe, idioma será:");
     console.log(idioma);
-   
   }
 
 //Elementos de la página.
