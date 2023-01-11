@@ -168,8 +168,7 @@ function setIdiomaProducto(){
         }
     }
     const todo = document.getElementById('todo');
- 
-    }
+     }
 
 function setPrecios(){
 

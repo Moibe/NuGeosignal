@@ -1,6 +1,8 @@
 function translations_alt(){
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
+console.log("Adquirí el archivo de traduccciones, y el idioma por ahora es:");
+console.log(idioma);
 
 try {
     titulo_text = jsonTranslations[idioma].titulo_text;
@@ -12,7 +14,6 @@ try {
     console.log("Como marcó error, ya que ese idioma no existe, idioma será:");
     console.log(idioma);
   }
-
 //Elementos de la página.
 //Título
 titulo_text = jsonTranslations[idioma].titulo_text;

@@ -10,8 +10,8 @@ try {
     //console.error(error);
     idioma = "en";
     console.log("Como marcó error, ya que ese idioma no existe, idioma será ahora:");
+    console.log(error);
     console.log(idioma);
-   
   }
 
 //Elementos de la página.
