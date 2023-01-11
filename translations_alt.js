@@ -2,6 +2,7 @@ function translations_alt(){
 //Declaramos el json con las variables de idioma.
 let jsonTranslations = JSON.parse(traducciones);
 console.log("Adquirí el archivo de traduccciones, y el idioma por ahora es:");
+idioma = JSON.parse(localStorage.getItem('idioma')); 
 console.log(idioma);
 
 try {

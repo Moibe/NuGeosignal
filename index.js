@@ -139,6 +139,7 @@ function setIdiomaProducto(){
     if(hostname == "127.0.0.1"){
         console.log("Estamos en local 127.0.0.1...");
         idioma = idioma_default;
+        localStorage.setItem('idioma', JSON.stringify(idioma));
         console.log("El idioma será:" + idioma);
         producto = producto_default;
         console.log("El producto será:" + producto);
@@ -153,6 +154,7 @@ function setIdiomaProducto(){
             //Si no hay patchcut entonces el idioma default será inglés.
             //Cambiar después a que lo guarde en una cookie, por ahora sin cookies hasta primer revisión. Usar localStorage?
             idioma = idioma_default;
+            localStorage.setItem('idioma', JSON.stringify(idioma));
             console.log("El idioma será:" + idioma);
             producto = producto_default;
             console.log("El producto será:" + producto);
@@ -161,6 +163,7 @@ function setIdiomaProducto(){
             console.log("Esto es pathcut: " + pathcut);
             //El idioma se usa para las traducciones.
             idioma = pathcut;
+            localStorage.setItem('idioma', JSON.stringify(idioma));
             console.log("El idioma será:" + idioma);
             //El producto se usa para los precios dependiendo de la Campaña y País.
             producto = pathcut;
