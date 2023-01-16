@@ -118,7 +118,36 @@ traducciones =
 
      "nl":
      {
-      "titulo_text": "Mobile Phone Locator UK 🌎",
+      "titulo_text": "Zoeker voor mobiele telefoons 🌎",
+      "placeholder_text": "Schrijf uw nummer om u te lokaliseren.",
+      "btnSubmit_text": "Begin",
+      "mensajeTelVacio" : "Voeg een telefoonnummer toe",
+      "mensajeTelIncorrecto" : "Ongeldig of niet-bestaand nummer",
+      "glass1_text1" : "Bezig met evalueren van apparaat en webbrowser.",
+      "glass1_text2" : "Apparaat wordt beoordeeld.",
+      "glass1_text3" : "Uw apparaat en browser voldoen aan de vereisten.",
+      "glass1_text4" : "Vergeet niet om locatie in uw webbrowser toe te staan. ⤴️",
+      "btnGlass_text" : "Zoeken",
+      "glass2_text1" : "Antennes opzoeken.",
+      "glass2_text2" : "Leesfrequentie.",
+      "glass2_text3" : "Schrijfpositie.",
+      "glass2_text4" : "Kaart maken.",
+      "mensajes_glass" : "Dit is uw locatie, typ nu het telefoonnummer dat u wilt vinden.",
+      "btnSubmit2_text": "Zoeken",
+      "glass3_text1" : "Op zoek naar het nieuwe apparaat.",
+      "glass3_text2" : "Antennes opzoeken.",
+      "glass3_text3" : "Leesfrequentie.",
+      "glass3_text4" : "Schrijfpositie.",
+      "glass3_text5" : "Apparaat gevonden.",
+      "glass3_text6" : "Kaart maken.",
+      "venta1_text1" : "De service kan worden betaald via een beveiligde gateway.",
+      "venta1_text2" : "Klik op de knop om gedetailleerde informatie te lezen.",
+      "btnForm_text": "Locatie ophalen"
+       },
+
+       "eu":
+     {
+      "titulo_text": "Mobile Phone Locator 🌎",
       "placeholder_text": "Write your number to locate you.",
       "btnSubmit_text": "Start",
       "mensajeTelVacio" : "Please add a phone number",
@@ -144,6 +173,7 @@ traducciones =
       "venta1_text2" : "Click on the button to read detailed information.",
       "btnForm_text": "Get Location"
        }
+
 }`
 
    
