@@ -8,7 +8,7 @@ let visitas;
 //localStorage.clear();
 
 //prod
-console.log("ESTO ES EL REFERRER DE OUTPUT:");
+console.log("Output referrer:");
 console.log(document.referrer);
 
 //Idioma
@@ -231,7 +231,7 @@ function getReferrer(){
     console.log("y esto es el referido!!!!:");
     console.log(referido)
 
-    if(hostname == "127.0.0.1"){
+    if(hostname == "127.0.0.1" || hostname == "moibe.dev"){
         console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
     }else{
 
