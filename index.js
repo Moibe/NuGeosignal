@@ -92,7 +92,7 @@ setTimeout(() => {
 
 function primerMapa(){
     
-    console.log("Creando el mapa inicial");
+    console.log("Creating base map...");
     let mapOptions = {
     center:[51.505, -0.09],
     zoom:10,
@@ -235,7 +235,7 @@ function getReferrer(){
         console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
     }else{
 
-        if (referido ==""){
+        if (referido =="" || pathcut == "nl"){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
             redireccionador();
