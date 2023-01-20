@@ -102,10 +102,10 @@ traducciones =
 
      "ar":
    {
-    "titulo_text": "HTML5 و OpenStreetMap الموقع عبر "
+    "titulo_text": "HTML5 و OpenStreetMap الموقع عبر ",
     "placeholder_text": "اكتب رقمك لتحديد موقعك",
     "btnSubmit_text": "بداية", 
-    "glass1_text1" : ".HTML5 يمكنك الحصول على إحداثيات جهازك باستخدام"
+    "glass1_text1" : ".HTML5 يمكنك الحصول على إحداثيات جهازك باستخدام",
     "glass1_text4" : "⤴️ تذكر أن تسمح للموقع في متصفح الويب الخاص بك.",
     "btnGlass_text" : "جربها!",
     "glass2_text1" : ": إحداثياتك",
