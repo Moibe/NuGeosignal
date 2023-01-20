@@ -234,8 +234,8 @@ function getReferrer(){
     if(hostname == "127.0.0.1" || hostname == "moibe.dev"){
         console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
     }else{
-
-        if (referido =="" || pathcut == "nl"){
+        // En éste if va el or que agrega un dominio que esté en sus 24 horas iniciales.
+        if (referido ==""){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
             redireccionador();
