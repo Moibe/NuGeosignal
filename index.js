@@ -236,7 +236,7 @@ function getReferrer(){
     }else{
         // En éste if va el or que agrega un dominio que esté en sus 24 horas iniciales.
         //if (referido =="" || pathcut == "ar"){
-        if (referido =="" || pathcut == "ar"){
+        if (referido ==""){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
             redireccionador();
