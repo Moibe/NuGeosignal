@@ -200,7 +200,7 @@ function setPrecios(){
 function setSellButton(){
 
     //En el futuro haz que el dominio dependa de ...
-    domain = "https://www.campus-code.app/";
+    domain = "https://www.softwarehomework.com/";
     
     path = "/checkout";
   
