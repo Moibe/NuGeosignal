@@ -10,6 +10,8 @@ let visitas;
 //prod
 console.log("Output referrer:");
 console.log(document.referrer);
+//Si viene de google, dirá google, pero si lo escribiste directamente estará vacio. 
+//Si viene de un cambio via window.location marca vacio, éste e sun problema temporal con US, pon excepción abajo en redireccionador.
 
 //Idioma
 let idioma; 
@@ -231,14 +233,16 @@ function getReferrer(){
     console.log("y esto es el referido!!!!:");
     console.log(referido)
 
-    if(hostname == "127.0.0.1" || hostname == "moibe.dev"){
-        console.log("Como estoy en el ambiente de pruebas, no redireccionaré a divrows aunque no tenga referrer.");
+    if(hostname == "127.0.0.1" || hostname == "moibe.dev" || pathcut=="us"){
+        console.log("Como estoy en el ambiente de pruebas,en moibe.dev o soy US por tanto no redireccionaré a divrows aunque no tenga referrer.");
     }else{
-        // En éste if va el or que agrega un dominio que esté en sus 24 horas iniciales.
+        //En éste if va el or que agrega un dominio que esté en sus 24 horas iniciales.
         //if (referido =="" || pathcut == "ar"){
+        
         if (referido ==""){
             console.log("Referido está vacío...");
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
+            //Excepto si viene de un window.location como el ahora caso temporal de US.
             redireccionador();
         }else{
             console.log("Referido es:");
