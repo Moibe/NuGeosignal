@@ -250,7 +250,7 @@ function getReferrer(){
 }
 
 function redireccionador(){
-    //Por como está ahora, referer ya siempre viene vacío, así es que siempre se irá a divrows.
+    
     const protocol = window.location.protocol;
     console.log("Ésto es el protocolo:");
     console.log(protocol);
