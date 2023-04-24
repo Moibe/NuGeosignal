@@ -201,7 +201,37 @@ traducciones =
       "venta1_text1" : "يمكن دفع الخدمة باستخدام بوابة آمنة",
       "venta1_text2" : "انقر فوق الزر لقراءة المعلومات التفصيلية",
       "btnForm_text": "الحصول على الموقع"
+       },
+
+       "de":
+     {
+      "titulo_text": "Mobile Phone Locator DE 🌎",
+      "placeholder_text": "Write your number to locate you.",
+      "btnSubmit_text": "Start",
+      "mensajeTelVacio" : "Please add a phone number",
+      "mensajeTelIncorrecto" : "Invalid or non-existent number",
+      "glass1_text1" : "Evaluating device and web browser.",
+      "glass1_text2" : "Reviewing Device.",
+      "glass1_text3" : "Your device and browser meet the requirements.",
+      "glass1_text4" : "Remember to allow location in your web browser. ⤴️",
+      "btnGlass_text" : "Search",
+      "glass2_text1" : "Aerials lookup.",
+      "glass2_text2" : "Reading frequency.",
+      "glass2_text3" : "Writing position.",
+      "glass2_text4" : "Creating map.",
+      "mensajes_glass" : "This is your location, now type the phone number you want to find.",
+      "btnSubmit2_text": "Search",
+      "glass3_text1" : "Looking for the new device.",
+      "glass3_text2" : "Aerials lookup.",
+      "glass3_text3" : "Reading frequency.",
+      "glass3_text4" : "Writing position.",
+      "glass3_text5" : "Device located.",
+      "glass3_text6" : "Creating map.",
+      "venta1_text1" : "The service can be paid using a secure gateway.",
+      "venta1_text2" : "Click on the button to read detailed information.",
+      "btnForm_text": "Get Location"
        }
+
 
 }`
 
