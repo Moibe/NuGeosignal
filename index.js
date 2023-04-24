@@ -244,6 +244,7 @@ function getReferrer(){
             //Como el referido está vacío significa que entraron directamente y por lo tanto debe irse al proceso ALTERNO (divrows).
             //Excepto si viene de un window.location como el ahora caso temporal de US.
             //redireccionador();
+            console.log("Pasamos el redireccionador...");
         }else{
             console.log("Referido es:");
             console.log(referido);
