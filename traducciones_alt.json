@@ -118,6 +118,26 @@ traducciones =
     "venta1_text2" : "هذا حقًا سهل النشر مع بعض سطور التعليمات البرمجية البسيطة",
     "venta1_text3" : "يمكنك الحصول على الكود المصدري الكامل لنشره بسرعة وسهولة",
     "venta1_text4" : "لمزيد من المعلومات حول التكلفة ومحتويات ملف التنفيذ ، انقر للحصول على مزيد من المعلومات"
+     },
+
+     "de":
+   {
+    "titulo_text": "Location via HTML5 & OpenStreetMap 🌎",
+    "placeholder_text": "Write your number to locate you.",
+    "btnSubmit_text": "Start", 
+    "glass1_text1" : "You can get the coordinates of your device using HTML5.",
+    "glass1_text4" : "Remember to allow location in your web browser. ⤴️",
+    "btnGlass_text" : "Try it!",
+    "glass2_text1" : "Your coordinates:",
+    "glass2_text3" : "This numeric position is represented in the coordinates system UTM, the same standard used by global positioning system (GPS).",
+    "glass2_text4" : "Now the next step is to put the coordinates in a map.",
+    "btnGlass2_text": "Next Step",
+    "message1_text1" : "OpenStreetMap's API allows you to map any place in the world.",
+    "btnForm_text" : "More info",
+    "venta1_text1" : "As you can see, now you have a map with your location.",
+    "venta1_text2" : "This is really easy to deploy with some simple lines of code.",
+    "venta1_text3" : "You can get the complete source code to deploy it fast and easily.",
+    "venta1_text4" : "For more information about the cost and contents of the implementation pdf click for More Info."
      }
 
 }`
