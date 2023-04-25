@@ -219,17 +219,17 @@ traducciones =
       "glass2_text2" : "Lesehäufigkeit.",
       "glass2_text3" : "Schreibposition.",
       "glass2_text4" : "Karte erstellen.",
-      "mensajes_glass" : "This is your location, now type the phone number you want to find.",
-      "btnSubmit2_text": "Search",
-      "glass3_text1" : "Looking for the new device.",
-      "glass3_text2" : "Aerials lookup.",
-      "glass3_text3" : "Reading frequency.",
-      "glass3_text4" : "Writing position.",
-      "glass3_text5" : "Device located.",
-      "glass3_text6" : "Creating map.",
-      "venta1_text1" : "The service can be paid using a secure gateway.",
-      "venta1_text2" : "Click on the button to read detailed information.",
-      "btnForm_text": "Get Location"
+      "mensajes_glass" : "Dies ist Ihr Standort, geben Sie jetzt die Telefonnummer ein, die Sie finden möchten.",
+      "btnSubmit2_text": "suchen",
+      "glass3_text1" : "Suche nach dem neuen Gerät.",
+      "glass3_text2" : "Luftaufnahme.",
+      "glass3_text3" : "Lesehäufigkeit.",
+      "glass3_text4" : "Schreibposition.",
+      "glass3_text5" : "Gerät gefunden.",
+      "glass3_text6" : "Karte erstellen.",
+      "venta1_text1" : "Der Dienst kann über ein sicheres Gateway bezahlt werden.",
+      "venta1_text2" : "Klicken Sie auf die Schaltfläche, um detaillierte Informationen zu lesen.",
+      "btnForm_text": "Standort erhalten"
        }
 
 }`
