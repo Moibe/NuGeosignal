@@ -17,8 +17,15 @@
 
         <script>
             window.dataLayer = window.dataLayer || [];
+            var urlParams = new URLSearchParams(window.location.search);
+            var precio = urlParams.get('pr');
+
+            if (!precio) {
+                precio = 250;
+            }
+
             dataLayer.push({
-                'precio' : 250
+                'precio' : precio
             });
         </script>
 
