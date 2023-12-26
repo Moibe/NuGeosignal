@@ -19,13 +19,17 @@
             window.dataLayer = window.dataLayer || [];
             var urlParams = new URLSearchParams(window.location.search);
             var precio = urlParams.get('pr');
+            var resultado;
 
             if (!precio) {
                 precio = 250;
+                resultado = precio
             }
-
-             // Multiplicar la variable precio por otro número
-            var resultado = precio * 16.85; 
+            else{
+                // Multiplicar la variable precio por otro número
+           resultado = precio * 16.85; 
+            }
+             
 
             dataLayer.push({
                 'precio' : resultado
